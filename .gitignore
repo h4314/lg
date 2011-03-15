@@ -1,0 +1,4 @@
+.*.swp
+analyseXML
+lex.yy.c
+yy.tab.h
