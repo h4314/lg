@@ -1,6 +1,6 @@
 all: analyseXML
 
-analyseXML: *.l *.y makefile
+analyseXML: *.l *.y Makefile
 	flex  xml.l
 	bison --debug --verbose --defines=yy.tab.h xml.y
 	g++ -Wall -pedantic -ansi -g -DYYDEBUG=1 -o analyseXML  lex.yy.c  xml.tab.c 
