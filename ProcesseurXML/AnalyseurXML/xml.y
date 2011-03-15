@@ -46,12 +46,15 @@ declaration
  ;
 
 element
- : start          
+ : start
+   attributes           
+   empty_or_content 
+ | start           
    empty_or_content 
  ;
 start
  : START		
- | NSSTART	
+ | NSSTART 	
  ;
 empty_or_content
  : SLASH CLOSE	
@@ -74,6 +77,16 @@ content
  | content element      
  | /*empty*/         
  ;
+
+attributes
+: attributes attribut
+| attribut
+;
+
+attribut
+: NAME EQ VALUE
+| /* vide */
+;
 %%
 
 int main(int argc, char **argv)

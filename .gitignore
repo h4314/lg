@@ -7,3 +7,4 @@ analyseDTD
 lex.*.c
 *.tab.h
 *.output
+*~

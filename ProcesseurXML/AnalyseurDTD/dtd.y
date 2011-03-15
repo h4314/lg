@@ -24,10 +24,62 @@ main: dtd
     ;
 
 dtd: dtd ATTLIST NAME 
-     att_definition CLOSE            
-   | /* empty */                     
+     att_definition CLOSE
+   | dtd element
+   | /* empty */
    ;
 
+element:
+	ELEMENT NAME contenu CLOSE;
+
+contenu
+: EMPTY
+| ANY
+| children
+| /* vide */
+;
+
+children
+: sequence_ou_choix cardinalite
+;
+
+sequence_ou_choix
+: sequence
+| choix
+;
+
+sequence
+: OPENPAR liste_sequence CLOSEPAR
+;
+
+liste_sequence
+: item
+| liste_sequence COMMA item
+;
+
+cardinalite
+: QMARK
+| PLUS
+| AST
+| /* vide */
+;
+
+item
+: NAME cardinalite
+| att_type
+| children
+;
+
+choix
+: OPENPAR liste_choix_plus CLOSEPAR;
+
+liste_choix_plus
+: liste_choix  PIPE item
+;
+
+liste_choix
+: liste_choix PIPE item | item
+;
 
 att_definition
 : att_definition attribut
@@ -40,6 +92,7 @@ attribut
 
 att_type
 : CDATA    
+| PCDATA
 | TOKENTYPE
 | type_enumere
 ;
@@ -70,7 +123,7 @@ defaut_declaration
 int main(int argc, char **argv)
 {
   int err;
-
+  yydebug = 1;
   err = yyparse();
   if (err != 0) printf("Parse ended with %d error(s)\n", err);
         else  printf("Parse ended with sucess\n", err);
