@@ -1,5 +1,10 @@
 %{
 
+/**
+ * Analyseur XML : c'est ici qu'est définie la grammaire qui va permettre de
+ * générer l'analyseur syntaxique.
+ */
+
 using namespace std;
 #include <cstring>
 #include <string>
@@ -26,7 +31,7 @@ int yylex(void);
 %%
 
 document
- : declarations element misc_seq_opt 
+ : declarations element misc_seq_opt
  ;
 misc_seq_opt
  : misc_seq_opt misc
@@ -40,14 +45,17 @@ declarations
  : declaration
  | /*empty*/
  ;
- 
+
 declaration
- : DOCTYPE NAME NAME VALUE CLOSE 
+ : DOCTYPE NAME NAME VALUE CLOSE
  ;
 
 element
- : start          
-   empty_or_content 
+ : start
+   empty_or_content
+ | start
+   attributes
+   empty_or_content
  ;
 start
  : START		
@@ -55,24 +63,34 @@ start
  ;
 empty_or_content
  : SLASH CLOSE	
- | close_content_and_end 
-   name_or_nsname_opt CLOSE 
+ | close_content_and_end
+   name_or_nsname_opt CLOSE
  ;
-name_or_nsname_opt 
- : NAME     
- | NSNAME  
+name_or_nsname_opt
+ : NAME
+ | NSNAME
  | /* empty */
  ;
 close_content_and_end
  : CLOSE			
-   content 
-   END 
+   content
+   END
  ;
-content 
+content
  : content DATA		
- | content misc        
- | content element      
- | /*empty*/         
+ | content misc
+ | content element
+ | /*empty*/
+ ;
+
+attributes
+ : attributes attribute
+ | attribute
+ ;
+
+attribute
+ : NAME EQ VALUE
+ | NSNAME EQ VALUE
  ;
 %%
 
