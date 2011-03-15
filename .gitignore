@@ -3,4 +3,7 @@ analyseXML
 analyseDTD
 *.o
 *.obj
-*.tab.c lex.*.c *.tab.h *.output
+*.tab.c
+lex.*.c
+*.tab.h
+*.output
