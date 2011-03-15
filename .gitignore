@@ -1,4 +1,6 @@
 .*.swp
 analyseXML
-lex.yy.c
-yy.tab.h
+analyseDTD
+*.o
+*.obj
+*.tab.c lex.*.c *.tab.h *.output
