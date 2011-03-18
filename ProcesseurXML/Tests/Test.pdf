@@ -1,0 +1,1444 @@
+%PDF-1.3
+%“Œ‹ž ReportLab Generated PDF document http://www.reportlab.com
+% 'BasicFonts': class PDFDictionary 
+1 0 obj
+% The standard fonts dictionary
+<< /F1 2 0 R
+ /F2 3 0 R
+ /F3 4 0 R
+ /F4 5 0 R
+ /F5 7 0 R >>
+endobj
+% 'F1': class PDFType1Font 
+2 0 obj
+% Font Helvetica
+<< /BaseFont /Helvetica
+ /Encoding /WinAnsiEncoding
+ /Name /F1
+ /Subtype /Type1
+ /Type /Font >>
+endobj
+% 'F2': class PDFType1Font 
+3 0 obj
+% Font Helvetica-Bold
+<< /BaseFont /Helvetica-Bold
+ /Encoding /WinAnsiEncoding
+ /Name /F2
+ /Subtype /Type1
+ /Type /Font >>
+endobj
+% 'F3': class PDFType1Font 
+4 0 obj
+% Font Times-Roman
+<< /BaseFont /Times-Roman
+ /Encoding /WinAnsiEncoding
+ /Name /F3
+ /Subtype /Type1
+ /Type /Font >>
+endobj
+% 'F4': class PDFType1Font 
+5 0 obj
+% Font Helvetica-Oblique
+<< /BaseFont /Helvetica-Oblique
+ /Encoding /WinAnsiEncoding
+ /Name /F4
+ /Subtype /Type1
+ /Type /Font >>
+endobj
+% 'Page1': class PDFPage 
+6 0 obj
+% Page dictionary
+<< /Contents 15 0 R
+ /MediaBox [ 0
+ 0
+ 595.2756
+ 841.8898 ]
+ /Parent 14 0 R
+ /Resources << /Font 1 0 R
+ /ProcSet [ /PDF
+ /Text
+ /ImageB
+ /ImageC
+ /ImageI ] >>
+ /Rotate 0
+ /Trans <<  >>
+ /Type /Page >>
+endobj
+% 'F5': class PDFType1Font 
+7 0 obj
+% Font Helvetica-BoldOblique
+<< /BaseFont /Helvetica-BoldOblique
+ /Encoding /WinAnsiEncoding
+ /Name /F5
+ /Subtype /Type1
+ /Type /Font >>
+endobj
+% 'Page2': class PDFPage 
+8 0 obj
+% Page dictionary
+<< /Contents 16 0 R
+ /MediaBox [ 0
+ 0
+ 595.2756
+ 841.8898 ]
+ /Parent 14 0 R
+ /Resources << /Font 1 0 R
+ /ProcSet [ /PDF
+ /Text
+ /ImageB
+ /ImageC
+ /ImageI ] >>
+ /Rotate 0
+ /Trans <<  >>
+ /Type /Page >>
+endobj
+% 'R9': class PDFCatalog 
+9 0 obj
+% Document Root
+<< /Outlines 11 0 R
+ /PageLabels 17 0 R
+ /PageMode /UseNone
+ /Pages 14 0 R
+ /Type /Catalog >>
+endobj
+% 'R10': class PDFInfo 
+10 0 obj
+<< /Author (H4314)
+ /CreationDate (D:20110318113454-01'00')
+ /Keywords ()
+ /Producer (ReportLab http://www.reportlab.com)
+ /Subject (\(unspecified\))
+ /Title (Projet 4IF: Traitement de langage, D\351veloppement d'un processeur XML) >>
+endobj
+% 'R11': class PDFOutlines 
+11 0 obj
+<< /Count 2
+ /First 12 0 R
+ /Last 13 0 R
+ /Type /Outlines >>
+endobj
+% 'Outline.0': class OutlineEntryObject 
+12 0 obj
+<< /Dest [ 6 0 R
+ /XYZ
+ 62.69291
+ 650.0236
+ 0 ]
+ /Next 13 0 R
+ /Parent 11 0 R
+ /Title (Rappels des restrictions au traitement) >>
+endobj
+% 'Outline.1': class OutlineEntryObject 
+13 0 obj
+<< /Dest [ 6 0 R
+ /XYZ
+ 62.69291
+ 569.0236
+ 0 ]
+ /Parent 11 0 R
+ /Prev 12 0 R
+ /Title (Tests par rapport aux fichier 'rap1.xml' et 'rap1.dtd' fournis) >>
+endobj
+% 'R14': class PDFPages 
+14 0 obj
+% page tree
+<< /Count 2
+ /Kids [ 6 0 R
+ 8 0 R ]
+ /Type /Pages >>
+endobj
+% 'R15': class PDFStream 
+15 0 obj
+% page stream
+<< /Length 7480 >>
+stream
+1 0 0 1 0 0 cm BT /F1 12 Tf 14.4 TL ET
+q
+1 0 0 1 62.69291 717.0236 cm
+q
+BT 1 0 0 1 0 33.64 Tm 74.34488 0 Td 24 TL /F2 20 Tf 0 0 0 rg (Projet 4IF: Traitement de langage,) Tj T* -17.93 0 Td (D\351veloppement d'un processeur XML) Tj T* -56.41488 0 Td ET
+Q
+Q
+q
+1 0 0 1 62.69291 692.0236 cm
+0 0 0 rg
+BT /F3 10 Tf 12 TL ET
+q
+1 0 0 1 6 3 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 4.82 Tm /F2 10 Tf 12 TL 36.93937 0 Td (Author:) Tj T* -36.93937 0 Td ET
+Q
+Q
+q
+1 0 0 1 91.03937 3 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 4.82 Tm /F1 10 Tf 12 TL (H4314) Tj T* ET
+Q
+Q
+q
+Q
+Q
+q
+1 0 0 1 62.69291 662.0236 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 16.82 Tm /F1 10 Tf 12 TL .11811 Tw (Ce document pr\351sente les diff\351rents plans de tests correspondant \340 ce projet, et indique les fichier fournis) Tj T* 0 Tw (pour r\351aliser ces tests.) Tj T* ET
+Q
+Q
+q
+1 0 0 1 62.69291 629.0236 cm
+q
+BT 1 0 0 1 0 8.435 Tm 21 TL /F2 17.5 Tf 0 0 0 rg (Rappels des restrictions au traitement) Tj T* ET
+Q
+Q
+q
+1 0 0 1 62.69291 617.0236 cm
+Q
+q
+1 0 0 1 62.69291 617.0236 cm
+Q
+q
+1 0 0 1 62.69291 599.0236 cm
+0 0 0 rg
+BT /F3 10 Tf 12 TL ET
+q
+1 0 0 1 6 3 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 4.82 Tm /F1 10 Tf 12 TL 5.66 0 Td (1.) Tj T* -5.66 0 Td ET
+Q
+Q
+q
+1 0 0 1 23 3 cm
+q
+BT 1 0 0 1 0 4.82 Tm 12 TL /F1 10 Tf 0 0 0 rg (On ne traite pas les r\351f\351rences, les instructions et les sections ) Tj /F4 10 Tf (CDATA) Tj T* ET
+Q
+Q
+q
+Q
+Q
+q
+1 0 0 1 62.69291 599.0236 cm
+Q
+q
+1 0 0 1 62.69291 599.0236 cm
+Q
+q
+1 0 0 1 62.69291 581.0236 cm
+0 0 0 rg
+BT /F3 10 Tf 12 TL ET
+q
+1 0 0 1 6 3 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 4.82 Tm /F1 10 Tf 12 TL 5.66 0 Td (2.) Tj T* -5.66 0 Td ET
+Q
+Q
+q
+1 0 0 1 23 3 cm
+q
+BT 1 0 0 1 0 4.82 Tm 12 TL /F1 10 Tf 0 0 0 rg (Dans la DTD, les attributs seront toujours d\351clar\351s avec le type ) Tj /F4 10 Tf (CDATA ) Tj /F1 10 Tf (et le d\351faut ) Tj /F4 10 Tf (#implied) Tj /F1 10 Tf (.) Tj T* ET
+Q
+Q
+q
+Q
+Q
+q
+1 0 0 1 62.69291 581.0236 cm
+Q
+q
+1 0 0 1 62.69291 581.0236 cm
+Q
+q
+1 0 0 1 62.69291 527.0236 cm
+q
+BT 1 0 0 1 0 29.435 Tm 21 TL /F2 17.5 Tf 0 0 0 rg (Tests par rapport aux fichier 'rap1.xml' et 'rap1.dtd') Tj T* (fournis) Tj T* ET
+Q
+Q
+q
+1 0 0 1 62.69291 509.0236 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 4.82 Tm /F1 10 Tf 12 TL (Tests:) Tj T* ET
+Q
+Q
+q
+1 0 0 1 62.69291 503.0236 cm
+Q
+q
+1 0 0 1 62.69291 503.0236 cm
+Q
+q
+1 0 0 1 62.69291 455.0236 cm
+0 0 0 rg
+BT /F3 10 Tf 12 TL ET
+q
+1 0 0 1 6 33 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 4.82 Tm /F1 10 Tf 12 TL 5.66 0 Td (1.) Tj T* -5.66 0 Td ET
+Q
+Q
+q
+1 0 0 1 23 3 cm
+0 0 0 rg
+BT /F3 10 Tf 12 TL ET
+q
+1 0 0 1 0 27 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 4.82 Tm /F2 10 Tf 12 TL (Fichier non-xml) Tj T* ET
+Q
+Q
+BT 1 0 0 1 0 14 Tm  T* ET
+q
+1 0 0 1 10 18 cm
+Q
+q
+1 0 0 1 10 18 cm
+Q
+q
+1 0 0 1 10 0 cm
+0 0 0 rg
+BT /F3 10 Tf 12 TL ET
+q
+1 0 0 1 6 3 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 4.82 Tm /F1 10 Tf 12 TL 5.66 0 Td (1.) Tj T* -5.66 0 Td ET
+Q
+Q
+q
+1 0 0 1 23 3 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 4.82 Tm /F1 10 Tf 12 TL (du texte avec n'importe quoi sans balise) Tj T* ET
+Q
+Q
+q
+Q
+Q
+q
+1 0 0 1 10 0 cm
+Q
+q
+1 0 0 1 10 0 cm
+Q
+q
+Q
+Q
+q
+Q
+Q
+q
+1 0 0 1 62.69291 455.0236 cm
+Q
+q
+1 0 0 1 62.69291 455.0236 cm
+Q
+q
+1 0 0 1 62.69291 257.0236 cm
+0 0 0 rg
+BT /F3 10 Tf 12 TL ET
+q
+1 0 0 1 6 183 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 4.82 Tm /F1 10 Tf 12 TL 5.66 0 Td (2.) Tj T* -5.66 0 Td ET
+Q
+Q
+q
+1 0 0 1 23 3 cm
+0 0 0 rg
+BT /F3 10 Tf 12 TL ET
+q
+1 0 0 1 0 177 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 4.82 Tm /F2 10 Tf 12 TL (Fichier xml mal structur\351) Tj T* ET
+Q
+Q
+BT 1 0 0 1 0 164 Tm  T* ET
+q
+1 0 0 1 10 168 cm
+Q
+q
+1 0 0 1 10 168 cm
+Q
+q
+1 0 0 1 10 84 cm
+0 0 0 rg
+BT /F3 10 Tf 12 TL ET
+q
+1 0 0 1 6 69 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 4.82 Tm /F1 10 Tf 12 TL 5.66 0 Td (1.) Tj T* -5.66 0 Td ET
+Q
+Q
+q
+1 0 0 1 23 3 cm
+0 0 0 rg
+BT /F3 10 Tf 12 TL ET
+q
+1 0 0 1 0 63 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 4.82 Tm /F2 10 Tf 12 TL (balises non ferm\351es) Tj T* ET
+Q
+Q
+BT 1 0 0 1 0 50 Tm  T* ET
+q
+1 0 0 1 10 54 cm
+Q
+q
+1 0 0 1 10 54 cm
+Q
+q
+1 0 0 1 10 36 cm
+0 0 0 rg
+BT /F3 10 Tf 12 TL ET
+q
+1 0 0 1 6 3 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 4.82 Tm /F1 10 Tf 12 TL 5.66 0 Td (1.) Tj T* -5.66 0 Td ET
+Q
+Q
+q
+1 0 0 1 23 3 cm
+q
+BT 1 0 0 1 0 4.82 Tm 12 TL /F1 10 Tf 0 0 0 rg (balise ) Tj /F4 10 Tf (<) Tj (/rapport) Tj (> ) Tj /F1 10 Tf (absente alors que balise ) Tj /F4 10 Tf (<) Tj (rapport) Tj (> ) Tj /F1 10 Tf (pr\351sente -) Tj (> Erreur) Tj T* ET
+Q
+Q
+q
+Q
+Q
+q
+1 0 0 1 10 36 cm
+Q
+q
+1 0 0 1 10 36 cm
+Q
+q
+1 0 0 1 10 18 cm
+0 0 0 rg
+BT /F3 10 Tf 12 TL ET
+q
+1 0 0 1 6 3 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 4.82 Tm /F1 10 Tf 12 TL 5.66 0 Td (2.) Tj T* -5.66 0 Td ET
+Q
+Q
+q
+1 0 0 1 23 3 cm
+q
+BT 1 0 0 1 0 4.82 Tm 12 TL /F1 10 Tf 0 0 0 rg (balise ) Tj /F4 10 Tf (<) Tj (/chapitre) Tj (> ) Tj /F1 10 Tf (absente alors que balise ) Tj /F4 10 Tf (<) Tj (chapitre) Tj (> ) Tj /F1 10 Tf (pr\351sente -) Tj (> Erreur) Tj T* ET
+Q
+Q
+q
+Q
+Q
+q
+1 0 0 1 10 18 cm
+Q
+q
+1 0 0 1 10 18 cm
+Q
+q
+1 0 0 1 10 0 cm
+0 0 0 rg
+BT /F3 10 Tf 12 TL ET
+q
+1 0 0 1 6 3 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 4.82 Tm /F1 10 Tf 12 TL 5.66 0 Td (3.) Tj T* -5.66 0 Td ET
+Q
+Q
+q
+1 0 0 1 23 3 cm
+q
+BT 1 0 0 1 0 4.82 Tm 12 TL /F1 10 Tf 0 0 0 rg (balise ) Tj /F4 10 Tf (<) Tj (/p) Tj (> ) Tj /F1 10 Tf (absente alors que balise ) Tj /F4 10 Tf (<) Tj (p) Tj (> ) Tj /F1 10 Tf (pr\351sente -) Tj (> Erreur) Tj T* ET
+Q
+Q
+q
+Q
+Q
+q
+1 0 0 1 10 0 cm
+Q
+q
+1 0 0 1 10 0 cm
+Q
+q
+Q
+Q
+q
+Q
+Q
+q
+1 0 0 1 10 84 cm
+Q
+q
+1 0 0 1 10 84 cm
+Q
+q
+1 0 0 1 10 0 cm
+0 0 0 rg
+BT /F3 10 Tf 12 TL ET
+q
+1 0 0 1 6 69 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 4.82 Tm /F1 10 Tf 12 TL 5.66 0 Td (2.) Tj T* -5.66 0 Td ET
+Q
+Q
+q
+1 0 0 1 23 3 cm
+0 0 0 rg
+BT /F3 10 Tf 12 TL ET
+q
+1 0 0 1 0 63 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 4.82 Tm /F2 10 Tf 12 TL (balises ferm\351es mais non ouvertes) Tj T* ET
+Q
+Q
+BT 1 0 0 1 0 50 Tm  T* ET
+q
+1 0 0 1 10 54 cm
+Q
+q
+1 0 0 1 10 54 cm
+Q
+q
+1 0 0 1 10 36 cm
+0 0 0 rg
+BT /F3 10 Tf 12 TL ET
+q
+1 0 0 1 6 3 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 4.82 Tm /F1 10 Tf 12 TL 5.66 0 Td (1.) Tj T* -5.66 0 Td ET
+Q
+Q
+q
+1 0 0 1 23 3 cm
+q
+BT 1 0 0 1 0 4.82 Tm 12 TL /F1 10 Tf 0 0 0 rg (balise ) Tj /F4 10 Tf (<) Tj (/rapport) Tj (> ) Tj /F1 10 Tf (pr\351sente mais ) Tj /F4 10 Tf (<) Tj (rapport) Tj (> ) Tj /F1 10 Tf (absente -) Tj (> Erreur) Tj T* ET
+Q
+Q
+q
+Q
+Q
+q
+1 0 0 1 10 36 cm
+Q
+q
+1 0 0 1 10 36 cm
+Q
+q
+1 0 0 1 10 18 cm
+0 0 0 rg
+BT /F3 10 Tf 12 TL ET
+q
+1 0 0 1 6 3 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 4.82 Tm /F1 10 Tf 12 TL 5.66 0 Td (2.) Tj T* -5.66 0 Td ET
+Q
+Q
+q
+1 0 0 1 23 3 cm
+q
+BT 1 0 0 1 0 4.82 Tm 12 TL /F1 10 Tf 0 0 0 rg (balise ) Tj /F4 10 Tf (<) Tj (/chapitre) Tj (> ) Tj /F1 10 Tf (pr\351sente mais ) Tj /F4 10 Tf (<) Tj (chapitre) Tj (> ) Tj /F1 10 Tf (absente -) Tj (> Erreur) Tj T* ET
+Q
+Q
+q
+Q
+Q
+q
+1 0 0 1 10 18 cm
+Q
+q
+1 0 0 1 10 18 cm
+Q
+q
+1 0 0 1 10 0 cm
+0 0 0 rg
+BT /F3 10 Tf 12 TL ET
+q
+1 0 0 1 6 3 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 4.82 Tm /F1 10 Tf 12 TL 5.66 0 Td (3.) Tj T* -5.66 0 Td ET
+Q
+Q
+q
+1 0 0 1 23 3 cm
+q
+BT 1 0 0 1 0 4.82 Tm 12 TL /F1 10 Tf 0 0 0 rg (balise ) Tj /F4 10 Tf (<) Tj (/p) Tj (> ) Tj /F1 10 Tf (pr\351sente mais ) Tj /F4 10 Tf (<) Tj (p) Tj (> ) Tj /F1 10 Tf (absente -) Tj (> Erreur) Tj T* ET
+Q
+Q
+q
+Q
+Q
+q
+1 0 0 1 10 0 cm
+Q
+q
+1 0 0 1 10 0 cm
+Q
+q
+Q
+Q
+q
+Q
+Q
+q
+1 0 0 1 10 0 cm
+Q
+q
+1 0 0 1 10 0 cm
+Q
+q
+Q
+Q
+q
+Q
+Q
+q
+1 0 0 1 62.69291 257.0236 cm
+Q
+q
+1 0 0 1 62.69291 257.0236 cm
+Q
+ 
+endstream
+
+endobj
+% 'R16': class PDFStream 
+16 0 obj
+% page stream
+<< /Length 14986 >>
+stream
+1 0 0 1 0 0 cm BT /F1 12 Tf 14.4 TL ET
+q
+1 0 0 1 62.69291 99.02362 cm
+0 0 0 rg
+BT /F3 10 Tf 12 TL ET
+q
+1 0 0 1 6 651 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 4.82 Tm /F1 10 Tf 12 TL 5.66 0 Td (3.) Tj T* -5.66 0 Td ET
+Q
+Q
+q
+1 0 0 1 23 3 cm
+0 0 0 rg
+BT /F3 10 Tf 12 TL ET
+q
+1 0 0 1 0 645 cm
+q
+BT 1 0 0 1 0 4.82 Tm 12 TL /F2 10 Tf 0 0 0 rg (Fichier xml-conforme avec la DTD ) Tj /F5 10 Tf (rap1.dtd) Tj T* ET
+Q
+Q
+BT 1 0 0 1 0 632 Tm  T* ET
+q
+1 0 0 1 10 636 cm
+Q
+q
+1 0 0 1 10 636 cm
+Q
+q
+1 0 0 1 10 552 cm
+0 0 0 rg
+BT /F3 10 Tf 12 TL ET
+q
+1 0 0 1 6 69 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 4.82 Tm /F1 10 Tf 12 TL 5.66 0 Td (1.) Tj T* -5.66 0 Td ET
+Q
+Q
+q
+1 0 0 1 23 3 cm
+0 0 0 rg
+BT /F3 10 Tf 12 TL ET
+q
+1 0 0 1 0 63 cm
+q
+BT 1 0 0 1 0 4.82 Tm 12 TL /F2 10 Tf 0 0 0 rg (test par rapport \340 ) Tj /F5 10 Tf (<) Tj (!ELEMENT titre \(#PCDATA\)) Tj (> ) Tj /F2 10 Tf (de la DTD) Tj T* ET
+Q
+Q
+BT 1 0 0 1 0 50 Tm  T* ET
+q
+1 0 0 1 10 54 cm
+Q
+q
+1 0 0 1 10 54 cm
+Q
+q
+1 0 0 1 10 36 cm
+0 0 0 rg
+BT /F3 10 Tf 12 TL ET
+q
+1 0 0 1 6 3 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 4.82 Tm /F1 10 Tf 12 TL 5.66 0 Td (1.) Tj T* -5.66 0 Td ET
+Q
+Q
+q
+1 0 0 1 23 3 cm
+q
+BT 1 0 0 1 0 4.82 Tm 12 TL /F1 10 Tf 0 0 0 rg (absence de texte entre deux balises ) Tj /F4 10 Tf (<) Tj (titre) Tj (> ) Tj /F1 10 Tf (et ) Tj /F4 10 Tf (<) Tj (/titre) Tj (> ) Tj /F1 10 Tf (-) Tj (> Ok) Tj T* ET
+Q
+Q
+q
+Q
+Q
+q
+1 0 0 1 10 36 cm
+Q
+q
+1 0 0 1 10 36 cm
+Q
+q
+1 0 0 1 10 18 cm
+0 0 0 rg
+BT /F3 10 Tf 12 TL ET
+q
+1 0 0 1 6 3 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 4.82 Tm /F1 10 Tf 12 TL 5.66 0 Td (2.) Tj T* -5.66 0 Td ET
+Q
+Q
+q
+1 0 0 1 23 3 cm
+q
+BT 1 0 0 1 0 4.82 Tm 12 TL /F1 10 Tf 0 0 0 rg (pr\351sence de texte entre deux balises ) Tj /F4 10 Tf (<) Tj (titre) Tj (> ) Tj /F1 10 Tf (et ) Tj /F4 10 Tf (<) Tj (/titre) Tj (> ) Tj /F1 10 Tf (-) Tj (> Ok) Tj T* ET
+Q
+Q
+q
+Q
+Q
+q
+1 0 0 1 10 18 cm
+Q
+q
+1 0 0 1 10 18 cm
+Q
+q
+1 0 0 1 10 0 cm
+0 0 0 rg
+BT /F3 10 Tf 12 TL ET
+q
+1 0 0 1 6 3 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 4.82 Tm /F1 10 Tf 12 TL 5.66 0 Td (3.) Tj T* -5.66 0 Td ET
+Q
+Q
+q
+1 0 0 1 23 3 cm
+q
+BT 1 0 0 1 0 4.82 Tm 12 TL /F1 10 Tf 0 0 0 rg (combinaison des deux test pr\351c\351dents -) Tj (> Ok) Tj T* ET
+Q
+Q
+q
+Q
+Q
+q
+1 0 0 1 10 0 cm
+Q
+q
+1 0 0 1 10 0 cm
+Q
+q
+Q
+Q
+q
+Q
+Q
+q
+1 0 0 1 10 552 cm
+Q
+q
+1 0 0 1 10 552 cm
+Q
+q
+1 0 0 1 10 468 cm
+0 0 0 rg
+BT /F3 10 Tf 12 TL ET
+q
+1 0 0 1 6 69 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 4.82 Tm /F1 10 Tf 12 TL 5.66 0 Td (2.) Tj T* -5.66 0 Td ET
+Q
+Q
+q
+1 0 0 1 23 3 cm
+0 0 0 rg
+BT /F3 10 Tf 12 TL ET
+q
+1 0 0 1 0 63 cm
+q
+BT 1 0 0 1 0 4.82 Tm 12 TL /F2 10 Tf 0 0 0 rg (test par rapport \340 ) Tj /F5 10 Tf (<) Tj (!ELEMENT p \(#PCDATA\)) Tj (> ) Tj /F2 10 Tf (de la DTD) Tj T* ET
+Q
+Q
+BT 1 0 0 1 0 50 Tm  T* ET
+q
+1 0 0 1 10 54 cm
+Q
+q
+1 0 0 1 10 54 cm
+Q
+q
+1 0 0 1 10 36 cm
+0 0 0 rg
+BT /F3 10 Tf 12 TL ET
+q
+1 0 0 1 6 3 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 4.82 Tm /F1 10 Tf 12 TL 5.66 0 Td (1.) Tj T* -5.66 0 Td ET
+Q
+Q
+q
+1 0 0 1 23 3 cm
+q
+BT 1 0 0 1 0 4.82 Tm 12 TL /F1 10 Tf 0 0 0 rg (absence de texte entre deux balises ) Tj /F4 10 Tf (<) Tj (p) Tj (> ) Tj /F1 10 Tf (et ) Tj /F4 10 Tf (<) Tj (/p) Tj (> ) Tj /F1 10 Tf (-) Tj (> Ok) Tj T* ET
+Q
+Q
+q
+Q
+Q
+q
+1 0 0 1 10 36 cm
+Q
+q
+1 0 0 1 10 36 cm
+Q
+q
+1 0 0 1 10 18 cm
+0 0 0 rg
+BT /F3 10 Tf 12 TL ET
+q
+1 0 0 1 6 3 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 4.82 Tm /F1 10 Tf 12 TL 5.66 0 Td (2.) Tj T* -5.66 0 Td ET
+Q
+Q
+q
+1 0 0 1 23 3 cm
+q
+BT 1 0 0 1 0 4.82 Tm 12 TL /F1 10 Tf 0 0 0 rg (pr\351sence de texte entre deux balises ) Tj /F4 10 Tf (<) Tj (p) Tj (> ) Tj /F1 10 Tf (et ) Tj /F4 10 Tf (<) Tj (/p) Tj (> ) Tj /F1 10 Tf (-) Tj (> Ok) Tj T* ET
+Q
+Q
+q
+Q
+Q
+q
+1 0 0 1 10 18 cm
+Q
+q
+1 0 0 1 10 18 cm
+Q
+q
+1 0 0 1 10 0 cm
+0 0 0 rg
+BT /F3 10 Tf 12 TL ET
+q
+1 0 0 1 6 3 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 4.82 Tm /F1 10 Tf 12 TL 5.66 0 Td (3.) Tj T* -5.66 0 Td ET
+Q
+Q
+q
+1 0 0 1 23 3 cm
+q
+BT 1 0 0 1 0 4.82 Tm 12 TL /F1 10 Tf 0 0 0 rg (combinaison des deux test pr\351c\351dents -) Tj (> Ok) Tj T* ET
+Q
+Q
+q
+Q
+Q
+q
+1 0 0 1 10 0 cm
+Q
+q
+1 0 0 1 10 0 cm
+Q
+q
+Q
+Q
+q
+Q
+Q
+q
+1 0 0 1 10 468 cm
+Q
+q
+1 0 0 1 10 468 cm
+Q
+q
+1 0 0 1 10 126 cm
+0 0 0 rg
+BT /F3 10 Tf 12 TL ET
+q
+1 0 0 1 6 327 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 4.82 Tm /F1 10 Tf 12 TL 5.66 0 Td (3.) Tj T* -5.66 0 Td ET
+Q
+Q
+q
+1 0 0 1 23 3 cm
+0 0 0 rg
+BT /F3 10 Tf 12 TL ET
+q
+1 0 0 1 0 321 cm
+q
+BT 1 0 0 1 0 4.82 Tm 12 TL /F2 10 Tf 0 0 0 rg (test par rapport \340 ) Tj /F5 10 Tf (<) Tj (!ELEMENT section \(titre, p+\)) Tj (> ) Tj /F2 10 Tf (de la DTD) Tj T* ET
+Q
+Q
+BT 1 0 0 1 0 308 Tm  T* ET
+q
+1 0 0 1 10 312 cm
+Q
+q
+1 0 0 1 10 312 cm
+Q
+q
+1 0 0 1 10 294 cm
+0 0 0 rg
+BT /F3 10 Tf 12 TL ET
+q
+1 0 0 1 6 3 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 4.82 Tm /F1 10 Tf 12 TL 5.66 0 Td (1.) Tj T* -5.66 0 Td ET
+Q
+Q
+q
+1 0 0 1 23 3 cm
+q
+BT 1 0 0 1 0 4.82 Tm 12 TL /F1 10 Tf 0 0 0 rg (absence d'un \351l\351ment ) Tj /F4 10 Tf (<) Tj (titre) Tj (>) Tj (...) Tj (<) Tj (/titre) Tj (> ) Tj /F1 10 Tf (dans un noeud ) Tj /F4 10 Tf (<) Tj (section) Tj (> ) Tj /F1 10 Tf (-) Tj (> Erreur) Tj T* ET
+Q
+Q
+q
+Q
+Q
+q
+1 0 0 1 10 294 cm
+Q
+q
+1 0 0 1 10 294 cm
+Q
+q
+1 0 0 1 10 264 cm
+0 0 0 rg
+BT /F3 10 Tf 12 TL ET
+q
+1 0 0 1 6 15 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 4.82 Tm /F1 10 Tf 12 TL 5.66 0 Td (2.) Tj T* -5.66 0 Td ET
+Q
+Q
+q
+1 0 0 1 23 3 cm
+q
+BT 1 0 0 1 0 16.82 Tm 2.389979 Tw 12 TL /F1 10 Tf 0 0 0 rg (absence d'un \351l\351m\351nt ) Tj /F4 10 Tf (<) Tj (p) Tj (>) Tj (..) Tj (<) Tj (/p) Tj (> ) Tj /F1 10 Tf (\340 la suite d'un \351l\351ment ) Tj /F4 10 Tf (<) Tj (titre) Tj (>) Tj (...) Tj (<) Tj (/titre) Tj (> ) Tj /F1 10 Tf (dans un) Tj T* 0 Tw (noeud ) Tj /F4 10 Tf (<) Tj (section) Tj (> ) Tj /F1 10 Tf (-) Tj (> Erreur) Tj T* ET
+Q
+Q
+q
+Q
+Q
+q
+1 0 0 1 10 264 cm
+Q
+q
+1 0 0 1 10 264 cm
+Q
+q
+1 0 0 1 10 234 cm
+0 0 0 rg
+BT /F3 10 Tf 12 TL ET
+q
+1 0 0 1 6 15 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 4.82 Tm /F1 10 Tf 12 TL 5.66 0 Td (3.) Tj T* -5.66 0 Td ET
+Q
+Q
+q
+1 0 0 1 23 3 cm
+q
+BT 1 0 0 1 0 16.82 Tm 2.087251 Tw 12 TL /F1 10 Tf 0 0 0 rg (pr\351sence d'un \351l\351m\351nt ) Tj /F4 10 Tf (<) Tj (p) Tj (>) Tj (..) Tj (<) Tj (/p) Tj (> ) Tj /F1 10 Tf (\340 la suite d'un \351l\351ment ) Tj /F4 10 Tf (<) Tj (titre) Tj (>) Tj (...) Tj (<) Tj (/titre) Tj (> ) Tj /F1 10 Tf (dans un) Tj T* 0 Tw (noeud ) Tj /F4 10 Tf (<) Tj (section) Tj (> ) Tj /F1 10 Tf (-) Tj (> Ok) Tj T* ET
+Q
+Q
+q
+Q
+Q
+q
+1 0 0 1 10 234 cm
+Q
+q
+1 0 0 1 10 234 cm
+Q
+q
+1 0 0 1 10 204 cm
+0 0 0 rg
+BT /F3 10 Tf 12 TL ET
+q
+1 0 0 1 6 15 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 4.82 Tm /F1 10 Tf 12 TL 5.66 0 Td (4.) Tj T* -5.66 0 Td ET
+Q
+Q
+q
+1 0 0 1 23 3 cm
+q
+BT 1 0 0 1 0 16.82 Tm 2.099976 Tw 12 TL /F1 10 Tf 0 0 0 rg (pr\351sence de plusieurs \351l\351ments ) Tj /F4 10 Tf (<) Tj (p) Tj (>) Tj (..) Tj (<) Tj (/p) Tj (> ) Tj /F1 10 Tf (\340 la suite d'un \351l\351ment ) Tj /F4 10 Tf (<) Tj (titre) Tj (>) Tj (...) Tj (<) Tj (/titre) Tj (>) Tj T* 0 Tw /F1 10 Tf (dans un noeud ) Tj /F4 10 Tf (<) Tj (section) Tj (> ) Tj /F1 10 Tf (-) Tj (> Ok) Tj T* ET
+Q
+Q
+q
+Q
+Q
+q
+1 0 0 1 10 204 cm
+Q
+q
+1 0 0 1 10 204 cm
+Q
+q
+1 0 0 1 10 174 cm
+0 0 0 rg
+BT /F3 10 Tf 12 TL ET
+q
+1 0 0 1 6 15 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 4.82 Tm /F1 10 Tf 12 TL 5.66 0 Td (5.) Tj T* -5.66 0 Td ET
+Q
+Q
+q
+1 0 0 1 23 3 cm
+q
+BT 1 0 0 1 0 16.82 Tm 1.818976 Tw 12 TL /F1 10 Tf 0 0 0 rg (pr\351sence d'un \351l\351ment ) Tj /F4 10 Tf (<) Tj (p) Tj (>) Tj (..) Tj (<) Tj (/p) Tj (> ) Tj /F1 10 Tf (avant un \351l\351ment ) Tj /F4 10 Tf (<) Tj (titre) Tj (>) Tj (..) Tj (<) Tj (/titre) Tj (> ) Tj /F1 10 Tf (dans un noeud) Tj T* 0 Tw /F4 10 Tf (<) Tj (section) Tj (> ) Tj /F1 10 Tf (-) Tj (> Erreur) Tj T* ET
+Q
+Q
+q
+Q
+Q
+q
+1 0 0 1 10 174 cm
+Q
+q
+1 0 0 1 10 174 cm
+Q
+q
+1 0 0 1 10 144 cm
+0 0 0 rg
+BT /F3 10 Tf 12 TL ET
+q
+1 0 0 1 6 15 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 4.82 Tm /F1 10 Tf 12 TL 5.66 0 Td (6.) Tj T* -5.66 0 Td ET
+Q
+Q
+q
+1 0 0 1 23 3 cm
+q
+BT 1 0 0 1 0 16.82 Tm .844976 Tw 12 TL /F1 10 Tf 0 0 0 rg (pr\351sence de plusieurs \351l\351ments ) Tj /F4 10 Tf (<) Tj (p) Tj (>) Tj (..) Tj (<) Tj (/p) Tj (> ) Tj /F1 10 Tf (avant un \351l\351ment ) Tj /F4 10 Tf (<) Tj (titre) Tj (>) Tj (..) Tj (<) Tj (/titre) Tj (> ) Tj /F1 10 Tf (dans un) Tj T* 0 Tw (noeud ) Tj /F4 10 Tf (<) Tj (section) Tj (> ) Tj /F1 10 Tf (-) Tj (> Erreur) Tj T* ET
+Q
+Q
+q
+Q
+Q
+q
+1 0 0 1 10 144 cm
+Q
+q
+1 0 0 1 10 144 cm
+Q
+q
+1 0 0 1 10 102 cm
+0 0 0 rg
+BT /F3 10 Tf 12 TL ET
+q
+1 0 0 1 6 27 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 4.82 Tm /F1 10 Tf 12 TL 5.66 0 Td (7.) Tj T* -5.66 0 Td ET
+Q
+Q
+q
+1 0 0 1 23 3 cm
+q
+BT 1 0 0 1 0 28.82 Tm 1.072976 Tw 12 TL /F1 10 Tf 0 0 0 rg (pr\351sence d'un \351l\351ment ) Tj /F4 10 Tf (<) Tj (p) Tj (>) Tj (..) Tj (<) Tj (/p) Tj (> ) Tj /F1 10 Tf (avant un \351l\351ment ) Tj /F4 10 Tf (<) Tj (titre) Tj (>) Tj (..) Tj (<) Tj (/titre) Tj (> ) Tj /F1 10 Tf (et pr\351sence d'un) Tj T* 0 Tw 2.260976 Tw (\351l\351ment ) Tj /F4 10 Tf (<) Tj (p) Tj (>) Tj (..) Tj (<) Tj (/p) Tj (> ) Tj /F1 10 Tf (apr\350s cet \351l\351ment ) Tj /F4 10 Tf (<) Tj (titre) Tj (>) Tj (..) Tj (<) Tj (/titre) Tj (> ) Tj /F1 10 Tf (dans un noeud ) Tj /F4 10 Tf (<) Tj (section) Tj (> ) Tj /F1 10 Tf (-) Tj (>) Tj T* 0 Tw (Erreur) Tj T* ET
+Q
+Q
+q
+Q
+Q
+q
+1 0 0 1 10 102 cm
+Q
+q
+1 0 0 1 10 102 cm
+Q
+q
+1 0 0 1 10 60 cm
+0 0 0 rg
+BT /F3 10 Tf 12 TL ET
+q
+1 0 0 1 6 27 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 4.82 Tm /F1 10 Tf 12 TL 5.66 0 Td (8.) Tj T* -5.66 0 Td ET
+Q
+Q
+q
+1 0 0 1 23 3 cm
+q
+BT 1 0 0 1 0 28.82 Tm 1.819976 Tw 12 TL /F1 10 Tf 0 0 0 rg (pr\351sence d'un \351l\351ment ) Tj /F4 10 Tf (<) Tj (p) Tj (>) Tj (..) Tj (<) Tj (/p) Tj (> ) Tj /F1 10 Tf (avant un \351l\351ment ) Tj /F4 10 Tf (<) Tj (titre) Tj (>) Tj (..) Tj (<) Tj (/titre) Tj (> ) Tj /F1 10 Tf (et pr\351sence de) Tj T* 0 Tw 3.65664 Tw (plusieurs \351l\351ments ) Tj /F4 10 Tf (<) Tj (p) Tj (>) Tj (..) Tj (<) Tj (/p) Tj (> ) Tj /F1 10 Tf (apr\350s cet \351l\351ment ) Tj /F4 10 Tf (<) Tj (titre) Tj (>) Tj (..) Tj (<) Tj (/titre) Tj (> ) Tj /F1 10 Tf (dans un noeud) Tj T* 0 Tw /F4 10 Tf (<) Tj (section) Tj (> ) Tj /F1 10 Tf (-) Tj (> Erreur) Tj T* ET
+Q
+Q
+q
+Q
+Q
+q
+1 0 0 1 10 60 cm
+Q
+q
+1 0 0 1 10 60 cm
+Q
+q
+1 0 0 1 10 30 cm
+0 0 0 rg
+BT /F3 10 Tf 12 TL ET
+q
+1 0 0 1 6 15 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 4.82 Tm /F1 10 Tf 12 TL 5.66 0 Td (9.) Tj T* -5.66 0 Td ET
+Q
+Q
+q
+1 0 0 1 23 3 cm
+q
+BT 1 0 0 1 0 16.82 Tm .49998 Tw 12 TL /F1 10 Tf 0 0 0 rg (pr\351sence de plrs \351lmts ) Tj /F4 10 Tf (<) Tj (p) Tj (>) Tj (..) Tj (<) Tj (/p) Tj (> ) Tj /F1 10 Tf (avant un \351lmt ) Tj /F4 10 Tf (<) Tj (titre) Tj (>) Tj (..) Tj (<) Tj (/titre) Tj (> ) Tj /F1 10 Tf (et pr\351sence d'un \351lmt) Tj T* 0 Tw /F4 10 Tf (<) Tj (p) Tj (>) Tj (..) Tj (<) Tj (/p) Tj (> ) Tj /F1 10 Tf (apr\350s cet \351lmt ) Tj /F4 10 Tf (<) Tj (titre) Tj (>) Tj (..) Tj (<) Tj (/titre) Tj (> ) Tj /F1 10 Tf (dans un noeud ) Tj /F4 10 Tf (<) Tj (section) Tj (> ) Tj /F1 10 Tf (-) Tj (> Erreur) Tj T* ET
+Q
+Q
+q
+Q
+Q
+q
+1 0 0 1 10 30 cm
+Q
+q
+1 0 0 1 10 30 cm
+Q
+q
+1 0 0 1 10 0 cm
+0 0 0 rg
+BT /F3 10 Tf 12 TL ET
+q
+1 0 0 1 6 15 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 4.82 Tm /F1 10 Tf 12 TL .1 0 Td (10.) Tj T* -0.1 0 Td ET
+Q
+Q
+q
+1 0 0 1 23 3 cm
+q
+BT 1 0 0 1 0 16.82 Tm .93748 Tw 12 TL /F1 10 Tf 0 0 0 rg (pr\351sence de plrs \351lmts ) Tj /F4 10 Tf (<) Tj (p) Tj (>) Tj (..) Tj (<) Tj (/p) Tj (> ) Tj /F1 10 Tf (avant un \351lmt ) Tj /F4 10 Tf (<) Tj (titre) Tj (>) Tj (..) Tj (<) Tj (/titre) Tj (> ) Tj /F1 10 Tf (et pr\351sence de plsrs) Tj T* 0 Tw (\351lmts ) Tj /F4 10 Tf (<) Tj (p) Tj (>) Tj (..) Tj (<) Tj (/p) Tj (> ) Tj /F1 10 Tf (apr\350s cet \351lmt ) Tj /F4 10 Tf (<) Tj (titre) Tj (>) Tj (..) Tj (<) Tj (/titre) Tj (> ) Tj /F1 10 Tf (dans un noeud ) Tj /F4 10 Tf (<) Tj (section) Tj (> ) Tj /F1 10 Tf (-) Tj (> Erreur) Tj T* ET
+Q
+Q
+q
+Q
+Q
+q
+1 0 0 1 10 0 cm
+Q
+q
+1 0 0 1 10 0 cm
+Q
+q
+Q
+Q
+q
+Q
+Q
+q
+1 0 0 1 10 126 cm
+Q
+q
+1 0 0 1 10 126 cm
+Q
+q
+1 0 0 1 10 108 cm
+0 0 0 rg
+BT /F3 10 Tf 12 TL ET
+q
+1 0 0 1 6 3 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 4.82 Tm /F1 10 Tf 12 TL 5.66 0 Td (4.) Tj T* -5.66 0 Td ET
+Q
+Q
+q
+1 0 0 1 23 3 cm
+q
+BT 1 0 0 1 0 4.82 Tm 12 TL /F1 10 Tf 0 0 0 rg (test par rapport \340 ) Tj /F4 10 Tf (<) Tj (!ELEMENT chapitre \(titre, \(p | section\)+\)) Tj (> ) Tj /F1 10 Tf (de la DTD) Tj T* ET
+Q
+Q
+q
+Q
+Q
+q
+1 0 0 1 10 108 cm
+Q
+q
+1 0 0 1 10 108 cm
+Q
+q
+1 0 0 1 10 90 cm
+0 0 0 rg
+BT /F3 10 Tf 12 TL ET
+q
+1 0 0 1 6 3 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 4.82 Tm /F1 10 Tf 12 TL 5.66 0 Td (5.) Tj T* -5.66 0 Td ET
+Q
+Q
+q
+1 0 0 1 23 3 cm
+q
+BT 1 0 0 1 0 4.82 Tm 12 TL /F1 10 Tf 0 0 0 rg (test par rapport \340 ) Tj /F4 10 Tf (<) Tj (!ELEMENT resume \(#PCDATA\)) Tj (> ) Tj /F1 10 Tf (de la DTD) Tj T* ET
+Q
+Q
+q
+Q
+Q
+q
+1 0 0 1 10 90 cm
+Q
+q
+1 0 0 1 10 90 cm
+Q
+q
+1 0 0 1 10 72 cm
+0 0 0 rg
+BT /F3 10 Tf 12 TL ET
+q
+1 0 0 1 6 3 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 4.82 Tm /F1 10 Tf 12 TL 5.66 0 Td (6.) Tj T* -5.66 0 Td ET
+Q
+Q
+q
+1 0 0 1 23 3 cm
+q
+BT 1 0 0 1 0 4.82 Tm 12 TL /F1 10 Tf 0 0 0 rg (test par rapport \340 ) Tj /F4 10 Tf (<) Tj (!ELEMENT resume \(#PCDATA\)) Tj (> ) Tj /F1 10 Tf (de la DTD) Tj T* ET
+Q
+Q
+q
+Q
+Q
+q
+1 0 0 1 10 72 cm
+Q
+q
+1 0 0 1 10 72 cm
+Q
+q
+1 0 0 1 10 54 cm
+0 0 0 rg
+BT /F3 10 Tf 12 TL ET
+q
+1 0 0 1 6 3 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 4.82 Tm /F1 10 Tf 12 TL 5.66 0 Td (7.) Tj T* -5.66 0 Td ET
+Q
+Q
+q
+1 0 0 1 23 3 cm
+q
+BT 1 0 0 1 0 4.82 Tm 12 TL /F1 10 Tf 0 0 0 rg (test par rapport \340 ) Tj /F4 10 Tf (<) Tj (!ELEMENT prenom \(#PCDATA\)) Tj (> ) Tj /F1 10 Tf (de la DTD) Tj T* ET
+Q
+Q
+q
+Q
+Q
+q
+1 0 0 1 10 54 cm
+Q
+q
+1 0 0 1 10 54 cm
+Q
+q
+1 0 0 1 10 36 cm
+0 0 0 rg
+BT /F3 10 Tf 12 TL ET
+q
+1 0 0 1 6 3 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 4.82 Tm /F1 10 Tf 12 TL 5.66 0 Td (8.) Tj T* -5.66 0 Td ET
+Q
+Q
+q
+1 0 0 1 23 3 cm
+q
+BT 1 0 0 1 0 4.82 Tm 12 TL /F1 10 Tf 0 0 0 rg (test par rapport \340 ) Tj /F4 10 Tf (<) Tj (!ELEMENT nom \(#PCDATA\)) Tj (> ) Tj /F1 10 Tf (de la DTD) Tj T* ET
+Q
+Q
+q
+Q
+Q
+q
+1 0 0 1 10 36 cm
+Q
+q
+1 0 0 1 10 36 cm
+Q
+q
+1 0 0 1 10 18 cm
+0 0 0 rg
+BT /F3 10 Tf 12 TL ET
+q
+1 0 0 1 6 3 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 4.82 Tm /F1 10 Tf 12 TL 5.66 0 Td (9.) Tj T* -5.66 0 Td ET
+Q
+Q
+q
+1 0 0 1 23 3 cm
+q
+BT 1 0 0 1 0 4.82 Tm 12 TL /F1 10 Tf 0 0 0 rg (test par rapport \340 ) Tj /F4 10 Tf (<) Tj (!ELEMENT auteur \(prenom, nom\)) Tj (> ) Tj /F1 10 Tf (de la DTD) Tj T* ET
+Q
+Q
+q
+Q
+Q
+q
+1 0 0 1 10 18 cm
+Q
+q
+1 0 0 1 10 18 cm
+Q
+q
+1 0 0 1 10 0 cm
+0 0 0 rg
+BT /F3 10 Tf 12 TL ET
+q
+1 0 0 1 6 3 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 4.82 Tm /F1 10 Tf 12 TL .1 0 Td (10.) Tj T* -0.1 0 Td ET
+Q
+Q
+q
+1 0 0 1 23 3 cm
+q
+BT 1 0 0 1 0 4.82 Tm 12 TL /F1 10 Tf 0 0 0 rg (test par rapport \340 ) Tj /F4 10 Tf (<) Tj (!ELEMENT rapport \(titre, auteur+, resume, chapitre+\)) Tj (> ) Tj /F1 10 Tf (de la DTD) Tj T* ET
+Q
+Q
+q
+Q
+Q
+q
+1 0 0 1 10 0 cm
+Q
+q
+1 0 0 1 10 0 cm
+Q
+q
+Q
+Q
+q
+Q
+Q
+q
+1 0 0 1 62.69291 99.02362 cm
+Q
+q
+1 0 0 1 62.69291 99.02362 cm
+Q
+ 
+endstream
+
+endobj
+% 'R17': class PDFPageLabels 
+17 0 obj
+% Document Root
+<< /Nums [ 0
+ 18 0 R
+ 1
+ 19 0 R ] >>
+endobj
+% 'R18': class PDFPageLabel 
+18 0 obj
+% None
+<< /S /D
+ /St 1 >>
+endobj
+% 'R19': class PDFPageLabel 
+19 0 obj
+% None
+<< /S /D
+ /St 2 >>
+endobj
+xref
+0 20
+0000000000 65535 f
+0000000113 00000 n
+0000000257 00000 n
+0000000422 00000 n
+0000000597 00000 n
+0000000766 00000 n
+0000000945 00000 n
+0000001226 00000 n
+0000001413 00000 n
+0000001692 00000 n
+0000001850 00000 n
+0000002138 00000 n
+0000002263 00000 n
+0000002461 00000 n
+0000002667 00000 n
+0000002782 00000 n
+0000010363 00000 n
+0000025455 00000 n
+0000025561 00000 n
+0000025638 00000 n
+trailer
+<< /ID 
+ % ReportLab generated PDF document -- digest (http://www.reportlab.com) 
+ [(\271\324\220\276\016i\251G\232|-+\222H\235\260) (\271\324\220\276\016i\251G\232|-+\222H\235\260)] 
+
+ /Info 10 0 R
+ /Root 9 0 R
+ /Size 20 >>
+startxref
+25685
+%%EOF
