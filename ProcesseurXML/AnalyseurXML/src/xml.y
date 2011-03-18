@@ -71,9 +71,9 @@ empty_or_content
  | close_content_and_end name_or_nsname_opt CLOSE 
  ;
 
-name_or_nsname_opt 
- : NAME     
- | NSNAME  
+name_or_nsname_opt
+ : NAME
+ | NSNAME
  | /* empty */
  ;
 close_content_and_end
@@ -81,9 +81,9 @@ close_content_and_end
  ;
 content 
  : content DATA		
- | content misc        
- | content element      
- | /*empty*/         
+ | content misc
+ | content element
+ | /*empty*/
  ;
 
 attributes
