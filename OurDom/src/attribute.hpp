@@ -6,21 +6,36 @@
 #ifndef XML_ATTRIBUTE_H
 #define XML_ATTRIBUTE_H
 
+#include <vector>
+
 namespace xml {
 
+typedef AttributeList vector<Attribute&>;
+
 /**
- * @brief
+ * @brief La classe représente un attribut d'un élement xml dans un fichier xml ou dans un DTD
  */
 class Attribute
 {
-  public:
-    Attribute();
+	public:
+	/**
+	 * @brief Le constructeur par défaut de la classe Attribute
+	 */
+	Attribute();
 
-  protected:
-  private:
+	/**
+	 * @brief Le constructeur de la classe Attribute
+	 * @param name le nom de l'attribut
+	 * @param value la valeur de l'attribut dans un xml ou la valeur par défaut dans un DTD
+	 */
+	Attribute(string name, string value);
+	protected:
+
+	private:
+	string _name;
+	string _value;
 };
 
 }
-
 #endif
 
