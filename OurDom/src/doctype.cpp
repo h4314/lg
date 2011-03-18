@@ -10,17 +10,14 @@ using namespace std;
 namespace xml {
 
 Doctype::Doctype() {
-public:
 
     Doctype() {};
     
-    Doctype(string name) 
+    Doctype(std::string name) 
     {
     	_name = name;
     }
 
-  protected:
-  private:
     
 }
 

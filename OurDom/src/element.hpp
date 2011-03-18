@@ -15,9 +15,13 @@
 
 namespace xml {
 
-
+/** La cardinalité d'un noeud fils est défini par une paire d'entiers 
+ *  contenant le nombre min et max possible dans l'élement
+ */
 typedef Cardinality pair<int, int>;
-typedef CardinalityList vector<Cardinality>;
+
+/** La liste pour stocker le nom d'un noeud fils et sa cardinalité */ 
+typedef CardinalityList map<string, Cardinality>;
 
 /**
  * @brief La classe représente un élément dans un xml ou dans un DTD

@@ -7,6 +7,7 @@
 #define XML_DOCTYPE_H
 
 #include <istream>
+#include <string>
 
 namespace xml {
 
@@ -25,11 +26,11 @@ class Doctype
      * @brief Le constructeur
      * @param name Le nom du doctype
      */
-    Doctype(string name);
+    Doctype(std::string name);
 
   protected:
   private:
-    string _name;
+    std::string _name;
 };
 
 }
