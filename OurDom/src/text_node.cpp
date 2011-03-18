@@ -9,7 +9,11 @@ using namespace std;
 
 namespace xml {
 
-TextNode::TextNode() : Node() {
+TextNode::TextNode(string content) : Node(), _content(content) {
+}
+
+void TextNode::setContent(string content) {
+  _content = content;
 }
 
 }

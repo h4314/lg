@@ -8,18 +8,37 @@
 
 #include "node.hpp"
 
+#include <string>
+
 namespace xml {
 
 /**
- * @brief
+ * @brief Représente un noeud texte
  */
 class TextNode : public Node
 {
   public:
-    TextNode();
+    /**
+     * @brief Constructeur d'un noeud texte
+     * @param content valeur textuelle du noeud
+     */
+    TextNode(std::string content);
 
-  protected:
+    /**
+     * @brief identifie le contenu du noeud
+     */
+    void setContent(std::string content);
+
+    /**
+     * @brief donne le contenu du noeud
+     */
+    inline std::string& content() const {
+      return _content;
+    }
+
   private:
+    /** valeur textuelle du noeud */
+    std::string _content;
 };
 
 }
