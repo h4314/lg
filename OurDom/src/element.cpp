@@ -9,29 +9,20 @@ using namespace std;
 
 namespace xml {
 
-Element::Element() : Node() {
-public:
+Element::Element() : Node(), Element("") {
+}
 
-    Element() {};
-    
-    Element(string name) 
-    {
-    	_name = name;
-    }
-    
-    int AppendChild(Node& newChild) 
-    {
-    	_children.push_back(newChild);
-    }
+Element::Element(string name) :
+  Node(), _name(name), _children(), _attributes(), _cardinalityChildren() {
+}
 
-    int AddAttribute(Attribute& newAttribute)
-    {
-    	_attributes.push_back(newAttribute);
-    }
+int Element::appendChild(Node& newChild) {
+  _children.push_back(&newChild);
+  return _children.size();
+}
 
-  protected:
-    
-  private:
+int Element::addAttribute(Attribute& newAttribute) {
+  _attributes.push_back(newAttribute);
 }
 
 }
