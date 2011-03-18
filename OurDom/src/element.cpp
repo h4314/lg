@@ -9,7 +9,7 @@ using namespace std;
 
 namespace xml {
 
-Element::Element() : Node(), Element("") {
+Element::Element() : Node(), Element(string("")) {
 }
 
 Element::Element(string name) :

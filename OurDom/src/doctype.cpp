@@ -9,16 +9,10 @@ using namespace std;
 
 namespace xml {
 
-Doctype::Doctype() {
+Doctype::Doctype(): Doctype(string("")) {
+}
 
-    Doctype() {};
-    
-    Doctype(std::string name) 
-    {
-    	_name = name;
-    }
-
-    
+Doctype::Doctype(string name): _name(name) {
 }
 
 }

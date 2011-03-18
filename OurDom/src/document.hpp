@@ -28,7 +28,9 @@ class Document
     Document(std::istream instream);
 
     /**
-     * 
+     * @brief Lance l'analyse du fichier xml.
+     * Les erreurs sont affichées sur la sortie d'erreur.
+     * TODO vérifier.
      */
     void parse();
 
