@@ -5,11 +5,12 @@ using namespace std;
 #include <cstring>
 #include <cstdio>
 #include <cstdlib>
+#include "dtd.h"
 
 
-void yyerror(char *msg);
-int yywrap(void);
-int yylex(void);
+void dtderror(char *msg);
+int dtdwrap(void);
+int dtdlex(void);
 %}
 
 %union { 
@@ -20,14 +21,66 @@ int yylex(void);
 %token <s> NAME TOKENTYPE DECLARATION STRING
 %%
 
-main: dtd                           
+main: dtd
     ;
 
 dtd: dtd ATTLIST NAME 
-     att_definition CLOSE            
-   | /* empty */                     
+     att_definition CLOSE
+   | dtd element
+   | /* empty */
    ;
 
+element:
+	ELEMENT NAME contenu CLOSE;
+
+contenu
+: EMPTY
+| ANY
+| children
+| /* vide */
+;
+
+children
+: sequence_ou_choix cardinalite
+;
+
+sequence_ou_choix
+: sequence
+| choix
+;
+
+sequence
+: OPENPAR liste_sequence CLOSEPAR
+;
+
+liste_sequence
+: item
+| liste_sequence COMMA item
+;
+
+cardinalite
+: QMARK
+| PLUS
+| AST
+| /* vide */
+;
+
+item
+: NAME cardinalite
+| att_type
+| children
+;
+
+choix
+: OPENPAR liste_choix_plus CLOSEPAR;
+
+liste_choix_plus
+: liste_choix  PIPE item
+;
+
+liste_choix
+: liste_choix PIPE item | item
+;
 
 att_definition
 : att_definition attribut
@@ -39,7 +92,8 @@ attribut
 ;
 
 att_type
-: CDATA    
+: CDATA
+| PCDATA
 | TOKENTYPE
 | type_enumere
 ;
@@ -67,21 +121,31 @@ defaut_declaration
 | FIXED STRING 
 ;
 %%
-int main(int argc, char **argv)
+int parse_dtd()
 {
   int err;
-
-  err = yyparse();
-  if (err != 0) printf("Parse ended with %d error(s)\n", err);
-        else  printf("Parse ended with sucess\n", err);
-  return 0;
+// Compilation conditionelle pour la sortie de debug.
+#ifdef dtdDEBUG
+  dtddebug = 1;
+#endif
+  err = dtdparse();
+  if (err != 0) 
+	printf("DTD file : parse ended with %d error(s)\n", err);
+  else  printf("DTD file : parse ended with sucess\n");
+  return err;
 }
-int yywrap(void)
+
+int main_dtd(int argc, char* argv[])
+{
+	return parse_dtd();
+}
+
+int dtdwrap(void)
 {
   return 1;
 }
 
-void yyerror(char *msg)
+void dtderror(char *msg)
 {
   fprintf(stderr, "%s\n", msg);
 }

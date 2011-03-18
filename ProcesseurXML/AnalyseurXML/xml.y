@@ -1,21 +1,23 @@
 %{
 
-/**
- * Analyseur XML : c'est ici qu'est définie la grammaire qui va permettre de
- * générer l'analyseur syntaxique.
- */
-
 using namespace std;
 #include <cstring>
 #include <string>
 #include <cstdio>
 #include <cstdlib>
+#include <iostream>
 #include "commun.h"
-#include "yy.tab.h"
+#include "xml.tab.h"
+#include "dtd.h"
+#include "xmlparse.h"
 
-int yywrap(void);
-void yyerror(char *msg);
-int yylex(void);
+int xmlwrap(void);
+void xmlerror(char *msg);
+int xmllex(void);
+
+/// Cette variable globale va recevoir le nom de la DTD, pour initier l'analyse
+/// du fichier référencer dans le fichier xml.
+std::string dtd_name;
 
 %}
 
@@ -31,7 +33,7 @@ int yylex(void);
 %%
 
 document
- : declarations element misc_seq_opt
+ : declarations element misc_seq_opt 
  ;
 misc_seq_opt
  : misc_seq_opt misc
@@ -45,38 +47,39 @@ declarations
  : declaration
  | /*empty*/
  ;
-
+ 
 declaration
- : DOCTYPE NAME NAME VALUE CLOSE
+ /* Déclaration de la DTD trouvée : le 4e token est le chemin de la DTD.
+  * Il faut maintenant valider la DTD à l'aide de la fonction handle_dtd
+  * L'analyse du document XML continue après l'analyse de la DTD.
+  */
+ : DOCTYPE NAME NAME VALUE CLOSE { dtd_name = $4; handle_dtd(dtd_name);  }
  ;
 
 element
- : start
-   empty_or_content
- | start
-   attributes
-   empty_or_content
+ : start attributes empty_or_content 
+ | start empty_or_content 
  ;
+
 start
  : START		
- | NSSTART	
+ | NSSTART 	
  ;
+
 empty_or_content
  : SLASH CLOSE	
- | close_content_and_end
-   name_or_nsname_opt CLOSE
+ | close_content_and_end name_or_nsname_opt CLOSE 
  ;
+
 name_or_nsname_opt
  : NAME
  | NSNAME
  | /* empty */
  ;
 close_content_and_end
- : CLOSE			
-   content
-   END
+ : CLOSE content END 
  ;
-content
+content 
  : content DATA		
  | content misc
  | content element
@@ -84,31 +87,34 @@ content
  ;
 
 attributes
- : attributes attribute
- | attribute
- ;
+: attributes attribut
+| attribut
+;
 
-attribute
- : NAME EQ VALUE
- | NSNAME EQ VALUE
- ;
+attribut
+: NAME EQ VALUE
+;
 %%
 
 int main(int argc, char **argv)
 {
   int err;
 
-  err = yyparse();
-  if (err != 0) printf("Parse ended with %d error(s)\n", err);
-  	else  printf("Parse ended with sucess\n", err);
+  // parsing du xml en utilisant le parser généré par Bison
+  err = xmlparse();
+  if (err != 0) printf("XML file : parse ended with %d error(s)\n", err);
+  	else  printf("XML file : parse ended with sucess\n");
+
   return 0;
 }
-int yywrap(void)
+
+// Cette fonction permet de pouvoir parser plusieurs fichiers
+int xmlwrap(void)
 {
   return 1;
 }
 
-void yyerror(char *msg)
+void xmlerror(char *msg)
 {
   fprintf(stderr, "%s\n", msg);
 }
