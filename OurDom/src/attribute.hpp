@@ -29,12 +29,12 @@ class Attribute
 	 * @param name le nom de l'attribut
 	 * @param value la valeur de l'attribut dans un xml ou la valeur par défaut dans un DTD
 	 */
-	Attribute(string name, string value);
+	Attribute(std::string name, std::string value);
 	protected:
 
 	private:
-	string _name;
-	string _value;
+	std::string _name;
+	std::string _value;
 };
 
 }

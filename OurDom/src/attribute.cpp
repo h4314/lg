@@ -10,18 +10,14 @@ using namespace std;
 namespace xml {
 
 Attribute::Attribute() {
-  public:
 
 	Attribute() {};
 
-	Attribute(string name, string value)
+	Attribute(std::string name, std::string value)
 	{
 		_name = name;
 		_value = value;
 	}
-  protected:
-
-  private:
 
 }
 
