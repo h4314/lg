@@ -1,4 +1,4 @@
-<!DOCTYPE rapport SYSTEM "rap1.dtd">
+<!DOCTYPE rapport SYSTEM "../AnalyseurDTD/rap1.dtd">
 <rapport>
   <titre>Réaliser un compilateur</titre>
   <auteur>
@@ -20,7 +20,7 @@
     <section>
       <titre>Réalisation d'un compilateur</titre>
       <p>Comme l'écriture d'un compilateur est une tâche fort complexe, 
-	le programmateur a tout intérêt à travailler en utilisant un langage 
+	le programmateur a tout interêt à travailler en utilisant un langage 
 	de programmation de haut niveau.</p>
     </section>
   </chapitre>

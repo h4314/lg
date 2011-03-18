@@ -8,3 +8,4 @@ lex.*.c
 *.tab.h
 *.output
 *~
+*.so

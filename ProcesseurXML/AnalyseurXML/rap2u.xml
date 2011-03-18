@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <!DOCTYPE rapport SYSTEM "../AnalyseurDTD/rap2.dtd">
 <rapport>
- <titre>R�aliser un compilateur</titre>
+ <titre>Réaliser un compilateur</titre>
  <auteur>
   <nom>Nino</nom>
   <prenom>Silverio</prenom>
  </auteur>
- <resume>Ceci est un extrait du livre "R�aliser un compilateur: 
+ <resume>Ceci est un extrait du livre "Réaliser un compilateur: 
 	les outils Lex et Yacc" de Nino Silverio</resume>
  <chapitre titre="Introduction: concepts de base">
    <section titre="Fonctions et structure d'un compilateur">
@@ -17,9 +17,9 @@
 	doit exécuter le programme ainsi traduit est appelé machine cible.</p>
    </section>
 
-   <section titre="Réalisation d'un compilateur">
+   <section titre="RÃ©alisation d'un compilateur">
     <p>Comme l'écriture d'un compilateur est une tâche fort complexe, 
-	le programmateur a tout intérêt à travailler en utilisant un langage 
+	le programmateur a tout intérêt Ã  travailler en utilisant un langage 
 	de programmation de haut niveau.</p>
    </section>
  </chapitre>
