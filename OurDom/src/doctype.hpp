@@ -11,18 +11,25 @@
 namespace xml {
 
 /**
- * @brief
+ * @brief La classe représente le doctype d'un DTD
  */
 class Doctype
 {
   public:
     /**
-     * @brief
+     * @brief Le constructeur par défaut 
      */
     Doctype();
+    
+    /**
+     * @brief Le constructeur
+     * @param name Le nom du doctype
+     */
+    Doctype(string name);
 
   protected:
   private:
+    string _name;
 };
 
 }
