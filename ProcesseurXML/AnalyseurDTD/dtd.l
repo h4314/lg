@@ -5,7 +5,7 @@
 #include <ctype.h>
 #include <string.h>
 #include <stdlib.h>
-#include "yy.tab.h"
+#include "dtd.tab.h"
 
 static char* skipSpace(char *s) {
   char *buf;
@@ -20,7 +20,7 @@ static char* skipSpace(char *s) {
 }
   
 /* affecte la valeur de la chaine de caractère et renvoie le token */
-#define stringreturn(tokenval) yylval.s=skipSpace(yytext);return(tokenval)
+#define stringreturn(tokenval) dtdlval.s=skipSpace(dtdtext);return(tokenval)
 
 %}
 %option noyywrap
@@ -62,26 +62,26 @@ any "ANY"
 %%
 
 <INITIAL>{ws}		            { /* skip */}
-<INITIAL>{element}            {printf("%s",yytext); BEGIN(INSIDE); return ELEMENT; }
-<INITIAL>{attlist}            {printf("%s",yytext); BEGIN(INSIDE); return ATTLIST; }
-<INSIDE>{close}               {printf("%s",yytext); BEGIN(INITIAL); return CLOSE; }
-<INSIDE>{openpar}             {printf("%s",yytext); return OPENPAR; }
-<INSIDE>{closepar}{ws}?       {printf("%s",yytext); return CLOSEPAR; }
-<INSIDE>{comma}{ws}?          {printf("%s",yytext); return COMMA; }
-<INSIDE>{pipe}{ws}?           {printf("%s",yytext); return PIPE; }
-<INSIDE>{declaration}         {printf("%s",yytext); stringreturn(DECLARATION); }
-<INSIDE>{fixed}               {printf("%s",yytext); return FIXED; }
-<INSIDE>{ast}                 {printf("%s",yytext); return AST ; }
-<INSIDE>{qmark}               {printf("%s",yytext); return QMARK ; }
-<INSIDE>{plus}                {printf("%s",yytext); return PLUS ; }
-<INSIDE>{empty}               {printf("%s",yytext); return EMPTY; }
-<INSIDE>{any}                 {printf("%s",yytext); return ANY; }
-<INSIDE>{pcdata}              {printf("%s",yytext); return PCDATA; }
-<INSIDE>{cdata}               {printf("%s",yytext); return CDATA; }
-<INSIDE>{string}              {printf("%s",yytext); stringreturn(STRING); }
-<INSIDE>{tokentype}{ws}?      {printf("%s",yytext); stringreturn(TOKENTYPE); }
-<INSIDE>{name}{ws}?           {printf("%s",yytext); stringreturn(NAME); }
-{comment}		               {printf("%s",yytext); /* skip comments stringreturn(COMMENT); */ }
+<INITIAL>{element}            {printf("%s",dtdtext); BEGIN(INSIDE); return ELEMENT; }
+<INITIAL>{attlist}            {printf("%s",dtdtext); BEGIN(INSIDE); return ATTLIST; }
+<INSIDE>{close}               {printf("%s",dtdtext); BEGIN(INITIAL); return CLOSE; }
+<INSIDE>{openpar}             {printf("%s",dtdtext); return OPENPAR; }
+<INSIDE>{closepar}{ws}?       {printf("%s",dtdtext); return CLOSEPAR; }
+<INSIDE>{comma}{ws}?          {printf("%s",dtdtext); return COMMA; }
+<INSIDE>{pipe}{ws}?           {printf("%s",dtdtext); return PIPE; }
+<INSIDE>{declaration}         {printf("%s",dtdtext); stringreturn(DECLARATION); }
+<INSIDE>{fixed}               {printf("%s",dtdtext); return FIXED; }
+<INSIDE>{ast}                 {printf("%s",dtdtext); return AST ; }
+<INSIDE>{qmark}               {printf("%s",dtdtext); return QMARK ; }
+<INSIDE>{plus}                {printf("%s",dtdtext); return PLUS ; }
+<INSIDE>{empty}               {printf("%s",dtdtext); return EMPTY; }
+<INSIDE>{any}                 {printf("%s",dtdtext); return ANY; }
+<INSIDE>{pcdata}              {printf("%s",dtdtext); return PCDATA; }
+<INSIDE>{cdata}               {printf("%s",dtdtext); return CDATA; }
+<INSIDE>{string}              {printf("%s",dtdtext); stringreturn(STRING); }
+<INSIDE>{tokentype}{ws}?      {printf("%s",dtdtext); stringreturn(TOKENTYPE); }
+<INSIDE>{name}{ws}?           {printf("%s",dtdtext); stringreturn(NAME); }
+{comment}		               {printf("%s",dtdtext); /* skip comments stringreturn(COMMENT); */ }
 
-.			{printf("%s",yytext);fprintf(stderr, "!ERROR(%c)\n", *yytext);}
-{nl}			{printf("%s",yytext);/* skip, must be an extra one at EOF */;}
+.			{printf("%s",dtdtext);fprintf(stderr, "!ERROR(%c)\n", *dtdtext);}
+{nl}			{printf("%s",dtdtext);/* skip, must be an extra one at EOF */;}

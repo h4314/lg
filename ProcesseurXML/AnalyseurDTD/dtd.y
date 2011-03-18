@@ -5,11 +5,12 @@ using namespace std;
 #include <cstring>
 #include <cstdio>
 #include <cstdlib>
+#include "dtd.h"
 
 
-void yyerror(char *msg);
-int yywrap(void);
-int yylex(void);
+void dtderror(char *msg);
+int dtdwrap(void);
+int dtdlex(void);
 %}
 
 %union { 
@@ -120,21 +121,28 @@ defaut_declaration
 | FIXED STRING 
 ;
 %%
-int main(int argc, char **argv)
+int parse_dtd()
 {
   int err;
-  yydebug = 1;
-  err = yyparse();
-  if (err != 0) printf("Parse ended with %d error(s)\n", err);
-        else  printf("Parse ended with sucess\n", err);
-  return 0;
+  dtddebug = 1;
+  err = dtdparse();
+  if (err != 0) 
+	printf("Parse ended with %d error(s)\n", err);
+  else  printf("Parse ended with sucess\n");
+  return err;
 }
-int yywrap(void)
+
+int main(int argc, char* argv[])
+{
+	return parse_dtd();
+}
+
+int dtdwrap(void)
 {
   return 1;
 }
 
-void yyerror(char *msg)
+void dtderror(char *msg)
 {
   fprintf(stderr, "%s\n", msg);
 }
