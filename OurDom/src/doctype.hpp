@@ -7,6 +7,7 @@
 #define XML_DOCTYPE_H
 
 #include <istream>
+#include <string>
 
 namespace xml {
 
