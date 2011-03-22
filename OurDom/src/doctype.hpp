@@ -18,15 +18,10 @@ class Doctype
 {
   public:
     /**
-     * @brief Le constructeur par défaut 
-     */
-    Doctype();
-
-    /**
      * @brief Le constructeur
      * @param name Le nom du doctype
      */
-    Doctype(std::string name);
+    Doctype(std::string name = "");
 
     /**
      * @breif donne le nom du doctype

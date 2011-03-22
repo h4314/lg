@@ -11,7 +11,9 @@
 
 namespace xml {
 
-typedef AttributeList std::vector<Attribute&>;
+class Attribute;
+
+typedef std::vector<Attribute*> AttributeList;
 
 /**
  * @brief La classe représente un attribut d'un élement xml dans un fichier xml
@@ -21,22 +23,17 @@ class Attribute
 {
 	public:
 	/**
-	 * @brief Le constructeur par défaut de la classe Attribute
-	 */
-	Attribute();
-
-	/**
 	 * @brief Le constructeur de la classe Attribute
 	 * @param name le nom de l'attribut
    * @param value la valeur de l'attribut dans un xml ou la valeur par défaut
    * dans un DTD
 	 */
-	Attribute(std::string name, std::string value);
+	Attribute(std::string name = "", std::string value = "");
 
   /**
    * @brief donne le nom de l'attrbut
    */
-  inline std::string& name() const {
+  inline const std::string& name() const {
     return _name;
   }
 
@@ -48,7 +45,7 @@ class Attribute
   /**
    * @brief donne la valeur de l'attrbut
    */
-  inline std::string& value() const {
+  inline const std::string& value() const {
     return _value;
   }
 

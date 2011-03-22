@@ -9,17 +9,14 @@ using namespace std;
 
 namespace xml {
 
-Attribute::Attribute(): Attribute(string(""), string("")) {
-}
-
-Attribute::Attribute(string name, stirng value): _name(name), _value(value) {
+Attribute::Attribute(std::string name, std::string value): _name(name), _value(value) {
 };
 
-void Attribute::setName(string name) {
+void Attribute::setName(std::string name) {
   _name = name;
 }
 
-void Attribute::setValue(string value) {
+void Attribute::setValue(std::string value) {
   _value = value;
 }
 

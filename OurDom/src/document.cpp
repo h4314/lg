@@ -9,16 +9,16 @@ using namespace std;
 
 namespace xml {
 
-Document::Document(std::istream instream):
-  _instream(instream), _xmlElement(), _doctype(0) {
+Document::Document(std::istream* instream):
+  _instream(instream), _xmlElement(0), _doctype(0) {
 }
 
-Document::setRoot(Element& element) {
+void Document::setRoot(Element* element) {
   _xmlElement = element;
 }
 
-Document::setDoctype(Doctype& doctype) {
-  _doctype = &doctype;
+void Document::setDoctype(Doctype* doctype) {
+  _doctype = doctype;
 }
 
 }
