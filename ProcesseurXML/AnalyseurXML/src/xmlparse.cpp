@@ -3,7 +3,7 @@
 #include <cstdio>
 #include <cstdlib>
 #include <errno.h>
-#include "../AnalyseurDTD/dtd.h"
+#include "dtd.h"
 
 /// Flux d'entrée du parser pour la DTD, crée par Flex.
 extern "C" FILE* dtdin;
