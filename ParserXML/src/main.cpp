@@ -1,8 +1,10 @@
 #include <fstream>
 #include <cstdlib>
+#include <cstdio>
 #include <cstring>
 
 #include "document.hpp"
+#include "xmlparse.h"
 
 using namespace std;
 using namespace xml;
@@ -15,33 +17,29 @@ using namespace xml;
  */
 int main(int argc, char** argv)
 {
-	istream* is = 0;
+	FILE* f;
 
   if(argc >= 2 && strcmp(argv[1], "-"))
 	{
-		is = new ifstream(argv[1], ios_base::in);
+		f = fopen(argv[1], "r");
 	}
 	else
 	{
-		is = &cin;
+		f = stdin;
 	}
-  if(is->bad())
+  if( ! f)
   {
     cerr << "Error opening file" << endl;
     exit(EXIT_FAILURE);
   }
 
-  Document doc(is);
+  Document doc(f);
+	doc.root();
   // A toi de jouer !
   doc.parse();
 
-	 cerr << doc.root()->name() << endl;
 
 
-	
-  if(argc >= 2 && strcmp(argv[1], "-"))
-	{
-		delete is;
-	}
+ fclose(f);
   return 0;
 }

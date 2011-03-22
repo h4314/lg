@@ -48,8 +48,10 @@ dtd: $(SRC)/dtd/dtd.tab.c $(SRC)/dtd/lex.dtd.c
 
 	
 clean:
-	rm $(OBJ)/*
-	rm $(BIN)/parser
+	find . -name "*.o" -exec rm {} \;
+	rm src/xml/xml.tab.c
+	rm src/dtd/dtd.tab.c
+	rm bin/parser
 
 $(BIN)/parser : $(DEPS)
 	$(CXX) $(CPPFLAGS) $+ -o $@ 

@@ -125,8 +125,8 @@ int parse_dtd()
 {
   int err;
 // Compilation conditionelle pour la sortie de debug.
-#ifdef dtdDEBUG
-  dtddebug = 1;
+#ifdef DEBUG
+  dtddebug = 0;
 #endif
   err = dtdparse();
   if (err != 0) 

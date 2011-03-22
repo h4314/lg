@@ -2,16 +2,18 @@
 #define XMLPARSE_H
 
 #include <string>
+#include <cstdio>
 
 #include "dom.hpp"
 
 void handle_dtd(const std::string& filename);
-void parseXML(xml::Document * doc);
+void parseXML(FILE* f, xml::Document * doc);
 
 int xmlparse();
 
 
-static xml::Document * document = 0;
-static xml::Element* current = 0;
+extern xml::Document* document_;
+extern xml::Element* current_;
+
 
 #endif // XMLPARSE_H

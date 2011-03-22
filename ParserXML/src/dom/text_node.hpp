@@ -27,7 +27,7 @@ class TextNode : public Node
     /**
      * @brief identifie le contenu du noeud
      */
-    void setContent(std::string content);
+    void setContent(const std::string& content);
 
     /**
      * @brief donne le contenu du noeud
@@ -36,6 +36,7 @@ class TextNode : public Node
       return _content;
     }
 
+    virtual void display();
   private:
     /** valeur textuelle du noeud */
     std::string _content;

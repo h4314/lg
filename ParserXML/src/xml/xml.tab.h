@@ -51,8 +51,8 @@
      COMMENT = 267,
      NAME = 268,
      NSNAME = 269,
-     NSSTART = 270,
-     START = 271,
+     START = 270,
+     NSSTART = 271,
      STARTSPECIAL = 272
    };
 #endif
@@ -64,7 +64,7 @@ typedef union YYSTYPE
 {
 
 /* Line 1676 of yacc.c  */
-#line 26 "src/xml/xml.y"
+#line 29 "src/xml/xml.y"
 
    char * s;
    ElementName * en;  /* le nom d'un element avec son namespace */

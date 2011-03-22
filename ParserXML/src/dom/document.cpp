@@ -5,27 +5,28 @@
 
 #include "document.hpp"
 #include "xmlparse.h"
+#include <cassert>
 
 using namespace std;
 
 namespace xml {
 
-Document::Document(std::istream* instream):
-  _instream(instream), _xmlElement(0), _doctype(0) {
-}
+  Document::Document(FILE* f):
+    f_(f), _xmlElement(0), _doctype(0) {
+    }
 
-void Document::setRoot(Element* element) {
-  _xmlElement = element;
-}
+  void Document::setRoot(Element* element) {
+    _xmlElement = element;
+  }
 
-void Document::setDoctype(Doctype* doctype) {
-	std::cerr << __FILE__ << " " << __LINE__ << std::endl;
-  _doctype = doctype;
-}
+  void Document::setDoctype(Doctype* doctype) {
+    assert(this != 0);
+    _doctype = doctype;
+  }
 
-void Document::parse() {
-  parseXML(this);
-}
+  void Document::parse() {
+    parseXML(f_, this);
+  }
 
 }
 

@@ -26,6 +26,7 @@ class Node
   public:
     Node(Element* parent);
 		Element* parent();
+    virtual void display();
 	protected:
 		Element* parent_;
 };

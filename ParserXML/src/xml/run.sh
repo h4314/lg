@@ -1,1 +1,0 @@
-LD_LIBRARY_PATH=../AnalyseurDTD/:$LD_LIBRARY$PATH ./analyseXML < rap1.xml && LD_LIBRARY_PATH=../AnalyseurDTD/:$LD_LIBRARY$PATH ./analyseXML < rap2.xml && LD_LIBRARY_PATH=../AnalyseurDTD/:$LD_LIBRARY$PATH ./analyseXML < rap3.xml

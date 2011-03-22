@@ -21,7 +21,7 @@ class Doctype
      * @brief Le constructeur
      * @param name Le nom du doctype
      */
-    Doctype(std::string name = "");
+    Doctype(const std::string& name);
 
     /**
      * @breif donne le nom du doctype

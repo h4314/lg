@@ -21,6 +21,9 @@ int xmllex(void);
 /// du fichier référencer dans le fichier xml.
 std::string dtd_name;
 
+xml::Document* document_ = 0;
+xml::Element* current_ = 0;
+
 %}
 
 %union {
@@ -29,8 +32,8 @@ std::string dtd_name;
 }
 
 %token EQ SLASH CLOSE END CLOSESPECIAL DOCTYPE
-%token <s> ENCODING VALUE DATA COMMENT NAME NSNAME
-%token <en> NSSTART START STARTSPECIAL
+%token <s> ENCODING VALUE DATA COMMENT NAME NSNAME START 
+%token <en> NSSTART STARTSPECIAL
 
 %%
 
@@ -55,8 +58,14 @@ declaration
   * Il faut maintenant valider la DTD à l'aide de la fonction handle_dtd
   * L'analyse du document XML continue après l'analyse de la DTD.
   */
- : DOCTYPE NAME NAME VALUE CLOSE { dtd_name = $4; handle_dtd(dtd_name);
-document->setDoctype(new xml::Doctype(dtd_name)); cerr << "plop" <<  endl;  }
+ : DOCTYPE NAME NAME VALUE CLOSE
+{
+	dtd_name = $4;
+	handle_dtd(dtd_name);
+
+
+	document_->setDoctype(new xml::Doctype(dtd_name));
+}
  ;
 
 element
@@ -65,8 +74,28 @@ element
  ;
 
 start
- : START		
- | NSSTART 	
+ : START	{
+ xml::Element * node = new xml::Element(current_, $1);
+if(current_ == 0)
+{
+  document_->setRoot(node);
+}
+else
+{
+	current_->appendChild(node);
+}
+  current_ = node; 
+}
+	
+ | NSSTART {
+cerr << "not implemented yet" << endl;
+
+exit(EXIT_FAILURE);
+ //xml::Element * node = new xml::Element(current_, $1);
+//if(current_ == 0) { cerr << __LINE__ << endl; document_->setRoot(node); }
+//current_->appendChild(node); current_ = node; 
+}
+
  ;
 
 empty_or_content
@@ -75,23 +104,22 @@ empty_or_content
  ;
 
 name_or_nsname_opt
- : NAME  {
- xml::Element * node = new xml::Element(current, $1);
-if(current == 0) { cerr << __LINE__ << endl; document->setRoot(node); }
-	current->appendChild(node); current = node; 
-}
- | NSNAME {
- xml::Element * node = new xml::Element(current, $1);
-if(current == 0) { cerr << __LINE__ << endl; document->setRoot(node); }
-current->appendChild(node); current = node; 
-}
+ : NAME   
+ | NSNAME  
  | /* empty */
  ;
 close_content_and_end
- : CLOSE content END { current = current->parent(); }
+ : CLOSE content END 
+ {
+  current_ = current_->parent(); 
+ }
  ;
 content 
- : content DATA	{ xml::TextNode * node = new xml::TextNode(current, $2); current->appendChild(node); }		
+ : content DATA	
+{
+  xml::TextNode * node = new xml::TextNode(current_, $2);
+  current_->appendChild(node);
+}
  | content misc
  | content element
  | /*empty*/
@@ -103,7 +131,7 @@ attributes
 ;
 
 attribut
-: NAME EQ VALUE { current->addAttribute(new xml::Attribute($1, $3));}
+: NAME EQ VALUE { current_->addAttribute(new xml::Attribute($1, $3));}
 ;
 %%
 

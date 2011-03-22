@@ -10,8 +10,10 @@ using namespace std;
 
 namespace xml {
 
-Doctype::Doctype(string name): _name(name) {
-	std::cerr << __LINE__ << ":" << __FILE__ << std::endl;
+Doctype::Doctype(const std::string& name)
+:_name(name) 
+{
+  cerr << "Creating doctype element: " << name << endl;
 }
 
 }

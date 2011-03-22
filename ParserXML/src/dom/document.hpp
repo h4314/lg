@@ -6,8 +6,8 @@
 #ifndef XML_DOCUMENT_H
 #define XML_DOCUMENT_H
 
-#include <istream>
 #include <iostream>
+#include <cstdio>
 
 #include "element.hpp"
 #include "doctype.hpp"
@@ -26,7 +26,7 @@ class Document
      * @brief Constructeur d'un objet Document
      * @param instream Flux d'entrée
      */
-    Document(std::istream* instream = &std::cin);
+    Document(FILE* f = stdin);
 
     /**
      * @brief Lance l'analyse du fichier xml.
@@ -63,7 +63,7 @@ class Document
 
   private:
     /** flux de lecture du document XML. */
-    std::istream* _instream;
+    FILE* f_;
 
     /** element racine */
     Element* _xmlElement;
