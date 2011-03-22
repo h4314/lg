@@ -4,12 +4,19 @@
  */
 
 #include "node.hpp"
+#include "element.hpp"
 
 using namespace std;
 
 namespace xml {
 
-Node::Node() {
+Node::Node(Element* parent) 
+	:parent_(parent)
+{
+}
+
+Element* Node::parent() {
+	return parent_;
 }
 
 }

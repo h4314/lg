@@ -68,14 +68,14 @@ typedef union YYSTYPE
 {
 
 /* Line 1676 of yacc.c  */
-#line 16 "src/dtd.y"
+#line 16 "src/dtd/dtd.y"
  
    char *s; 
    
 
 
 /* Line 1676 of yacc.c  */
-#line 79 "src/dtd.tab.h"
+#line 79 "src/dtd/dtd.tab.h"
 } YYSTYPE;
 # define YYSTYPE_IS_TRIVIAL 1
 # define yystype YYSTYPE /* obsolescent; will be withdrawn */

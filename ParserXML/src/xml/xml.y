@@ -7,7 +7,8 @@ using namespace std;
 #include <cstdlib>
 #include <iostream>
 #include "commun.h"
-#include "element.h"
+#include "element.hpp"
+#include "text_node.hpp"
 #include "xml.tab.h"
 #include "dtd.h"
 #include "xmlparse.h"
@@ -54,7 +55,8 @@ declaration
   * Il faut maintenant valider la DTD à l'aide de la fonction handle_dtd
   * L'analyse du document XML continue après l'analyse de la DTD.
   */
- : DOCTYPE NAME NAME VALUE CLOSE { dtd_name = $4; handle_dtd(dtd_name); document->setDoctype(new Doctype(dtd_name));  }
+ : DOCTYPE NAME NAME VALUE CLOSE { dtd_name = $4; handle_dtd(dtd_name);
+document->setDoctype(new xml::Doctype(dtd_name)); cerr << "plop" <<  endl;  }
  ;
 
 element
@@ -74,13 +76,13 @@ empty_or_content
 
 name_or_nsname_opt
  : NAME  {
- Element * node = new Element($1);
-if(current == 0) { document->setRoot(node); }
-current->appendChild(node); current = node; 
+ xml::Element * node = new xml::Element(current, $1);
+if(current == 0) { cerr << __LINE__ << endl; document->setRoot(node); }
+	current->appendChild(node); current = node; 
 }
  | NSNAME {
- Element * node = new Element($1);
-if(current == 0) { document->setRoot(node); }
+ xml::Element * node = new xml::Element(current, $1);
+if(current == 0) { cerr << __LINE__ << endl; document->setRoot(node); }
 current->appendChild(node); current = node; 
 }
  | /* empty */
@@ -89,7 +91,7 @@ close_content_and_end
  : CLOSE content END { current = current->parent(); }
  ;
 content 
- : content DATA	{ TextNode * node = new TextNode($2); current->appendChild(node); current = node; }		
+ : content DATA	{ xml::TextNode * node = new xml::TextNode(current, $2); current->appendChild(node); }		
  | content misc
  | content element
  | /*empty*/
@@ -101,21 +103,9 @@ attributes
 ;
 
 attribut
-: NAME EQ VALUE { current->addAttribute(new Attribute($1, $3));}
+: NAME EQ VALUE { current->addAttribute(new xml::Attribute($1, $3));}
 ;
 %%
-
-int main(int argc, char **argv)
-{
-  int err;
-
-  // parsing du xml en utilisant le parser généré par Bison
-  err = xmlparse();
-  if (err != 0) printf("XML file : parse ended with %d error(s)\n", err);
-  	else  printf("XML file : parse ended with sucess\n");
-
-  return 0;
-}
 
 // Cette fonction permet de pouvoir parser plusieurs fichiers
 int xmlwrap(void)

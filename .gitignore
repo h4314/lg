@@ -1,3 +1,4 @@
+parser
 .*.swp
 analyseXML
 analyseDTD
@@ -5,7 +6,6 @@ analyseDTD
 *.obj
 *.tab.c
 lex.*.c
-*.tab.h
 *.output
 *~
 *.so

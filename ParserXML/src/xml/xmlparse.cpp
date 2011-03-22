@@ -1,9 +1,10 @@
-#include "xmlparse.h"
 #include <string>
 #include <cstdio>
 #include <cstdlib>
 #include <errno.h>
+#include <iostream>
 #include "dtd.h"
+#include "xmlparse.h"
 
 
 
@@ -40,6 +41,8 @@ void parseXML(xml::Document * doc) {
   int err;
 
   document = doc;
+
+	std::cerr << "About to parse the xml file" << std::endl;
 
   // parsing du xml en utilisant le parser généré par Bison
   err = xmlparse();

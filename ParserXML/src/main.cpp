@@ -35,7 +35,7 @@ int main(int argc, char** argv)
   // A toi de jouer !
   doc.parse();
 
- cerr << doc.root()->name() << endl;
+	 cerr << doc.root()->name() << endl;
 
 
 	

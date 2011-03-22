@@ -11,6 +11,7 @@
 namespace xml {
 
 class Node;
+class Element;
 /**
  * @brief Représente une liste de pointeurs sur des noeuds
  */
@@ -23,7 +24,10 @@ typedef std::vector<Node*> NodeList ;
 class Node
 {
   public:
-    Node();
+    Node(Element* parent);
+		Element* parent();
+	protected:
+		Element* parent_;
 };
 
 }

@@ -34,7 +34,7 @@ class Element: public Node
      * @brief Le constructeur
      * @param Le nom de l'élément
      */
-    Element(std::string name = "");
+    Element(Element* parent, const std::string& name = "");
 
     /**
      * @brief La fonction pour ajouter un noeud fils à l'élément

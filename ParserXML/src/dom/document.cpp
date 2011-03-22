@@ -19,6 +19,7 @@ void Document::setRoot(Element* element) {
 }
 
 void Document::setDoctype(Doctype* doctype) {
+	std::cerr << __FILE__ << " " << __LINE__ << std::endl;
   _doctype = doctype;
 }
 

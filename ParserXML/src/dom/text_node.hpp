@@ -22,7 +22,7 @@ class TextNode : public Node
      * @brief Constructeur d'un noeud texte
      * @param content valeur textuelle du noeud
      */
-    TextNode(std::string content);
+    TextNode(Element* parent, std::string content);
 
     /**
      * @brief identifie le contenu du noeud

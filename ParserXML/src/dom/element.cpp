@@ -9,8 +9,8 @@ using namespace std;
 
 namespace xml {
 
-Element::Element(string name) :
-  Node(), _name(name), _children(), _attributes(), _cardinalityChildren() {
+Element::Element(Element* parent, const std::string& name) :
+  Node(parent), _name(name), _children(), _attributes(), _cardinalityChildren() {
 }
 
 int Element::appendChild(Node* newChild) {
@@ -22,6 +22,7 @@ int Element::addAttribute(Attribute* newAttribute) {
   _attributes.push_back(newAttribute);
 	return _attributes.size();
 }
+
 
 }
 
