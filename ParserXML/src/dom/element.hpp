@@ -50,6 +50,11 @@ class Element: public Node
      */
     int addAttribute(Attribute* newAttribute);
 
+    const std::string& name()
+	{
+return _name;
+}
+
   private:
     /** le nom de l'élement */
     std::string _name;

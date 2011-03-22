@@ -4,6 +4,7 @@
  */
 
 #include "document.hpp"
+#include "xmlparse.h"
 
 using namespace std;
 
@@ -19,6 +20,10 @@ void Document::setRoot(Element* element) {
 
 void Document::setDoctype(Doctype* doctype) {
   _doctype = doctype;
+}
+
+void Document::parse() {
+  parseXML(this);
 }
 
 }

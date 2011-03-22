@@ -33,6 +33,11 @@ int main(int argc, char** argv)
 
   Document doc(is);
   // A toi de jouer !
+  doc.parse();
+
+ cerr << doc.root()->name() << endl;
+
+
 	
   if(argc >= 2 && strcmp(argv[1], "-"))
 	{
