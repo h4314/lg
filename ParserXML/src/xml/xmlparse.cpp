@@ -3,7 +3,10 @@
 #include <cstdio>
 #include <cstdlib>
 #include <errno.h>
-#include "../AnalyseurDTD/dtd.h"
+#include "dtd.h"
+
+
+
 
 /// Flux d'entrée du parser pour la DTD, crée par Flex.
 extern "C" FILE* dtdin;
@@ -31,4 +34,16 @@ void handle_dtd(const std::string& filename)
   // Lancer l'analyse de la DTD.
 	err = parse_dtd();
 	fclose(fid);
+}
+
+void parseXML(xml::Document * doc) {
+  int err;
+
+  document = doc;
+
+  // parsing du xml en utilisant le parser généré par Bison
+  err = xmlparse();
+  if (err != 0) printf("XML file : parse ended with %d error(s)\n", err);
+  	else  printf("XML file : parse ended with sucess\n");
+
 }

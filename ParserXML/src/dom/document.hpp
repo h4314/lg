@@ -7,6 +7,7 @@
 #define XML_DOCUMENT_H
 
 #include <istream>
+#include <iostream>
 
 #include "element.hpp"
 #include "doctype.hpp"
@@ -25,7 +26,7 @@ class Document
      * @brief Constructeur d'un objet Document
      * @param instream Flux d'entrée
      */
-    Document(std::istream instream);
+    Document(std::istream* instream = &std::cin);
 
     /**
      * @brief Lance l'analyse du fichier xml.
@@ -37,35 +38,35 @@ class Document
     /**
      * @brief Donne l'élément racine du document XML
      */
-    inline Element& root() const {
+    inline Element* root() const {
       return _xmlElement;
     }
 
     /**
      * @brief Identifie la racine du document XML
      */
-    void setRoot(Element& root);
+    void setRoot(Element* root);
 
     /**
      * @brief Donne le doctype du fichier
      * Note : on suppose par simplification qu'un document XML n'est associé
      * qu'à une seule DTD, définie dans un autre document.
      */
-    inline Doctype& doctype() const {
+    inline Doctype* doctype() const {
       return _doctype;
     }
 
     /**
      * @brief identifie le doctype du fichier.
      */
-    void setDoctype(Doctype& doctype);
+    void setDoctype(Doctype* doctype);
 
   private:
     /** flux de lecture du document XML. */
-    std::istream _instream;
+    std::istream* _instream;
 
     /** element racine */
-    Element& _xmlElement;
+    Element* _xmlElement;
 
     /** doctype du fichier */
     Doctype* _doctype;

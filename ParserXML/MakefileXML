@@ -1,8 +1,8 @@
 CXX = g++
 RELEASE= -O3
 DEBUG= -DDEBUG -g
-CPPFLAGS = -Wall -ansi -shared $(LD)
-LD = -I../AnalyseurDTD/ -L../AnalyseurDTD/ -lanalysedtd 
+CPPFLAGS = -Wall -ansi -shared $(LD) -fPIC
+LD = -I../AnalyseurDTD/src -L../AnalyseurDTD/ -lanalysedtd -I../../OurDom/src
 SRC=src
 OBJ=obj
 BIN=bin

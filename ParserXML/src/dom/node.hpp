@@ -10,10 +10,11 @@
 
 namespace xml {
 
+class Node;
 /**
  * @brief Représente une liste de pointeurs sur des noeuds
  */
-typedef NodeList std::vector<Node*>;
+typedef std::vector<Node*> NodeList ;
 
 /**
  * @brief Représente un noeud dans le modèle objet du document XML.

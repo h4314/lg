@@ -12,16 +12,17 @@
 #include <vector>
 #include <utility>
 #include <string>
+#include <map>
 
 namespace xml {
 
 /** La cardinalité d'un noeud fils est défini par une paire d'entiers
  *  contenant le nombre min et max possible dans l'élement
  */
-typedef Cardinality std::pair<int, int>;
+typedef std::pair<int, int> Cardinality;
 
 /** La liste pour stocker le nom d'un noeud fils et sa cardinalité */
-typedef CardinalityList std::map<string, Cardinality>;
+typedef std::map<std::string, Cardinality> CardinalityList;
 
 /**
  * @brief La classe représente un élément dans un xml ou dans un DTD
@@ -30,29 +31,29 @@ class Element: public Node
 {
   public:
     /**
-     * @brief Le constructeur par défaut
-     */
-    Element();
-
-    /**
      * @brief Le constructeur
      * @param Le nom de l'élément
      */
-    Element(string name);
+    Element(std::string name = "");
 
     /**
      * @brief La fonction pour ajouter un noeud fils à l'élément
      * @param newChild Le noeud fils à ajouter
      * @return le nombre de noeud fils dans l'élement
      */
-    int appendChild(Node& newChild);
+    int appendChild(Node* newChild);
 
     /**
      * @brief La fonction pour ajouter un nouvel attribut à l'élement
      * @param newAttribute L'attribut à ajouter
      * @return Le nombre d'attributs dans l'élement
      */
-    int addAttribute(Attribute& newAttribute);
+    int addAttribute(Attribute* newAttribute);
+
+    const std::string& name()
+	{
+return _name;
+}
 
   private:
     /** le nom de l'élement */

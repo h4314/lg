@@ -32,7 +32,7 @@ class TextNode : public Node
     /**
      * @brief donne le contenu du noeud
      */
-    inline std::string& content() const {
+    inline const std::string& content() const {
       return _content;
     }
 

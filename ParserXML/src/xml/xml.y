@@ -7,6 +7,7 @@ using namespace std;
 #include <cstdlib>
 #include <iostream>
 #include "commun.h"
+#include "element.h"
 #include "xml.tab.h"
 #include "dtd.h"
 #include "xmlparse.h"
@@ -53,7 +54,7 @@ declaration
   * Il faut maintenant valider la DTD à l'aide de la fonction handle_dtd
   * L'analyse du document XML continue après l'analyse de la DTD.
   */
- : DOCTYPE NAME NAME VALUE CLOSE { dtd_name = $4; handle_dtd(dtd_name);  }
+ : DOCTYPE NAME NAME VALUE CLOSE { dtd_name = $4; handle_dtd(dtd_name); document->setDoctype(new Doctype(dtd_name));  }
  ;
 
 element
@@ -72,27 +73,35 @@ empty_or_content
  ;
 
 name_or_nsname_opt
- : NAME
- | NSNAME
+ : NAME  {
+ Element * node = new Element($1);
+if(current == 0) { document->setRoot(node); }
+current->appendChild(node); current = node; 
+}
+ | NSNAME {
+ Element * node = new Element($1);
+if(current == 0) { document->setRoot(node); }
+current->appendChild(node); current = node; 
+}
  | /* empty */
  ;
 close_content_and_end
- : CLOSE content END 
+ : CLOSE content END { current = current->parent(); }
  ;
 content 
- : content DATA		
+ : content DATA	{ TextNode * node = new TextNode($2); current->appendChild(node); current = node; }		
  | content misc
  | content element
  | /*empty*/
  ;
 
 attributes
-: attributes attribut
+: attributes attribut 
 | attribut
 ;
 
 attribut
-: NAME EQ VALUE
+: NAME EQ VALUE { current->addAttribute(new Attribute($1, $3));}
 ;
 %%
 
