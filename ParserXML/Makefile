@@ -7,7 +7,7 @@ SRC=src
 OBJ=obj
 BIN=bin
 DOC=doc
-DEPS= $(SRC)/xml/xml.tab.c $(SRC)/xml/lex.xml.c $(OBJ)/xmlparse.o $(SRC)/dtd/dtd.tab.c $(SRC)/dtd/lex.dtd.c src/dom/attribute.o  src/dom/doctype.o  src/dom/document.o  src/dom/dom.o  src/dom/element.o  src/dom/node.o  src/dom/text_node.o
+DEPS= $(SRC)/xml/xml.tab.c $(SRC)/xml/lex.xml.c $(OBJ)/xml/xmlparse.o $(SRC)/dtd/dtd.tab.c $(SRC)/dtd/lex.dtd.c src/dom/attribute.o  src/dom/doctype.o  src/dom/document.o  src/dom/dom.o  src/dom/element.o  src/dom/node.o  src/dom/text_node.o
 
 
 $(OBJ)/%.o : $(SRC)/%.cpp $(SRC)/%.o

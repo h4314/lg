@@ -3,7 +3,7 @@
 
 #include <string>
 
-#include "../../../OurDom/src/dom.hpp"
+#include "dom.hpp"
 
 void handle_dtd(const std::string& filename);
 void parseXML(xml::Document * doc);
