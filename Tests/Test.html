@@ -323,9 +323,41 @@ ul.auto-toc {
 <li>Dans la DTD, les attributs seront toujours déclarés avec le type <cite>CDATA</cite> et le défaut <cite>#implied</cite>.</li>
 </ol>
 </div>
+<div class="section" id="tests">
+<h1>Tests</h1>
 <div class="section" id="tests-par-rapport-aux-fichier-rap1-xml-et-rap1-dtd-fournis">
-<h1>Tests par rapport aux fichier 'rap1.xml' et 'rap1.dtd' fournis</h1>
-<p>Tests:</p>
+<h2>Tests par rapport aux fichier 'rap1.xml' et 'rap1.dtd' fournis</h2>
+<p>Ci-dessous sont décrits les tests que doit satisfaire l'application. Ils ont été spécifiés à partir des fichiers donnés sur la machine <cite>iftpserv2.insa-lyon.fr</cite> dans le répertoire <cite>/public/tp/ProcesseurXML/</cite>.</p>
+<p>Comment lire ces tests?</p>
+<p>Les tests sont décrits de la manière suivante:</p>
+<ul>
+<li><ol class="first loweralpha" start="24">
+<li><dl class="first docutils">
+<dt>objet test</dt>
+<dd><ul class="first last">
+<li><ol class="first loweralpha" start="25">
+<li><dl class="first docutils">
+<dt>cas test</dt>
+<dd><ul class="first last simple">
+<li><ol class="first loweralpha" start="26">
+<li>sous cas du test</li>
+</ol>
+</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ol>
+</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ol>
+</li>
+</ul>
+<p>Pour chaque test, un fichier xml de test est fourni. Il est intitulé <cite>Testx-y-z.xml</cite>.</p>
+<p>La technique et le plan de test qui a été développé ci-dessous est loin d'être parfait. En effet, les tests ont été basés sur les fichiers DTD <cite>rap1.dtd</cite>, <cite>rap2.dtd</cite> et <cite>rap3.dtd</cite>, qu'on a considéré. L'idéal aurait été de faire des tests &quot;génériques&quot; par rapport à la norme XML et de la DTD, mais nous avons pris ce qui était le plus simple et le plus efficace pour nous.</p>
 <ol class="arabic">
 <li><dl class="first docutils">
 <dt>Fichier non-xml</dt>
@@ -533,6 +565,52 @@ ul.auto-toc {
 </dl>
 </li>
 </ol>
+</div>
+<div class="section" id="tests-par-rapport-aux-fichier-rap2-xml-et-rap3-dtd-fournis">
+<h2>Tests par rapport aux fichier 'rap2.xml' et 'rap3.dtd' fournis</h2>
+<p>Tous les tests présentés dans la section précédente doivent aussi être satisfaits, en remplaçant  le fichier <cite>rap1.dtd</cite>, pris en entrée de l'application, par <cite>rap3.dtd</cite>. Sauf mention contraire (voir ci-dessous) Les fichiers de tests à prendre sont les mêmes (<cite>Testx-y-z.xml</cite>).</p>
+<p>Changement dans le plan de test par rapport à ceux présentés dans la section précédente:</p>
+<ul class="simple">
+<li>Les tests 3.1.1, 3.1.2, 3.1.3, 3.3.1, 3.3.5, 3.3.6, 3.3.7, 3.3.8, 3.3.9, 3.3.10, 3.3.12, 3.3.13, 3.3.14, 3.3.15, 3.3.16, 3.4.1, 3.4.2, 3.4.7,3.4.8, 3.4.9, 3.4.10 sont supprimés.</li>
+</ul>
+<p>Modification de tests:</p>
+<ul class="simple">
+<li>Pour les tests 3.3.x et 3.4.y, il faut les faire avec les fichiers xml <cite>Test-Rap3-dtd-3.3.x.xml</cite> et <cite>Test-Rap3-dtd-3.4.y.xml</cite></li>
+<li>Pour les testss 3.3.x et 3.4.y, il faut remplacer dans les énoncés des tests la mention &quot;présence d'un élément <cite>&lt;titre&gt;..&lt;/titre&gt;</cite>&quot; par la mention &quot;présence de l'attribut <cite>titre</cite>&quot;.</li>
+</ul>
+<p>Nouveaux tests à réaliser:</p>
+<ol class="arabic" start="4">
+<li><dl class="first docutils">
+<dt>tests de conformité avec <cite>rap3.dtd</cite></dt>
+<dd><ol class="first last arabic">
+<li><dl class="first docutils">
+<dt>Tests avec l'ajout des éléments <cite>&lt;!ATTLIST chapitre titre CDATA #IMPLIED&gt;</cite></dt>
+<dd><ol class="first last arabic simple">
+<li>absence de l'attribut <cite>titre</cite> pour l'élément <cite>&lt;chapitre&gt;..&lt;/chapitre&gt;</cite> dans un noeud <cite>&lt;chapitre&gt;</cite> -&gt; Erreur</li>
+<li>présence de l'attribut <cite>titre</cite> pour l'élément <cite>&lt;chapitre&gt;..&lt;/chapitre&gt;</cite> dans un noeud <cite>&lt;chapitre&gt;</cite>-&gt; Ok</li>
+<li>absence de l'attribut <cite>titre</cite> mais présence de l'élément <cite>&lt;titre&gt;..&lt;/titre&gt;</cite> pour l'élément <cite>&lt;chapitre&gt;..&lt;/chapitre&gt;</cite> dans un noeud <cite>&lt;chapitre&gt;</cite> -&gt; Erreur</li>
+<li>présence de l'attribut <cite>titre</cite> et  présence de l'élément <cite>&lt;titre&gt;..&lt;/titre&gt;</cite> pour l'élément <cite>&lt;chapitre&gt;..&lt;/chapitre&gt;</cite> dans un noeud <cite>&lt;chapitre&gt;</cite> -&gt; Erreur</li>
+</ol>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Tests avec l'ajout de l'élément <cite>&lt;!ATTLIST section titre CDATA #IMPLIED&gt;</cite></dt>
+<dd><ol class="first last arabic simple">
+<li>Même test que 4.1.1 avec <cite>chapitre</cite> remplacé par <cite>section</cite></li>
+<li>Même test que 4.1.2 avec <cite>chapitre</cite> remplacé par <cite>section</cite></li>
+<li>Même test que 4.1.3 avec <cite>chapitre</cite> remplacé par <cite>section</cite></li>
+<li>Même test que 4.1.4 avec <cite>chapitre</cite> remplacé par <cite>section</cite></li>
+</ol>
+</dd>
+</dl>
+</li>
+</ol>
+</dd>
+</dl>
+</li>
+</ol>
+</div>
 </div>
 </div>
 </body>
