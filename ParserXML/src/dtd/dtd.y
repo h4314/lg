@@ -7,6 +7,9 @@ using namespace std;
 #include <cstdlib>
 #include "dtd.h"
 
+xml::DtdElement * current_elt_ = 0;
+stack<xml::MultipleValidator*> current_multi_; 
+
 
 void dtderror(char *msg);
 int dtdwrap(void);
@@ -31,22 +34,30 @@ dtd: dtd ATTLIST NAME
    ;
 
 element:
-	ELEMENT NAME contenu CLOSE;
+	ELEMENT NAME contenu CLOSE
+{
+	/* nouvel element DTD a ajouter à la liste des element DTD du doctype */
+	xml::DtdElement * elt = new DtdElement($2);
+	document_->doctype()->addElement(elt);
+	
+	/* garde cet element comme courant */
+	current_elt_ = elt;
+}
+;
 
 contenu
-: EMPTY
-| ANY
+: EMPTY {current_elt_->setValidator(new xml::EmptyValidator());}
+| ANY {current_elt_->setValidator(new xml::AnyValidator());}
 | children
 | /* vide */
 ;
 
 children
-: sequence_ou_choix cardinalite
-;
+: sequence_ou_choix cardinalite;
 
 sequence_ou_choix
-: sequence
-| choix
+: sequence 
+| choix 
 ;
 
 sequence
@@ -63,23 +74,45 @@ cardinalite
 | PLUS
 | AST
 | /* vide */
+{
+	
+}
 ;
 
 item
-: NAME cardinalite
+: NAME cardinalite 
+{
+	/* item trouvé dans une sequence ou un choix */
+	current_multi_.top()->appendValidator(new XmlElementValidator($1));
+}
 | att_type
 | children
 ;
 
 choix
-: OPENPAR liste_choix_plus CLOSEPAR;
+: OPENPAR liste_choix_plus CLOSEPAR
+{
+	/* fin d'un choix, elimination du validator mulitple courant situe en top de la stack*/
+	current_multi_.pop();
+	/* le top de la stack est maintenant soit vide : pas de multiple validator en cours de parsage 
+	   soit le top de la pile est le multiple validator du niveau du dessus
+	*/
+}
+;
 
 liste_choix_plus
 : liste_choix  PIPE item
 ;
 
 liste_choix
-: liste_choix PIPE item | item
+: liste_choix PIPE item 
+{
+	/* sequence rencontré */
+	xml::AltValidator * v = new AltValidator();
+	/* defini ce validateur de choix comme le validateur multiple courant */
+	current_multi_.push_back(v);
+}
+| item
 ;
 
 att_definition
