@@ -51,9 +51,9 @@
      COMMENT = 267,
      NAME = 268,
      NSNAME = 269,
-     START = 270,
-     NSSTART = 271,
-     STARTSPECIAL = 272
+     NSSTART = 270,
+     STARTSPECIAL = 271,
+     START = 272
    };
 #endif
 
