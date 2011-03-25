@@ -1,0 +1,16 @@
+<!DOCTYPE rapport SYSTEM "rap1.dtd">
+<rapport>
+  <titre>Réaliser un compilateur</titre>
+  <auteur>
+    <prenom> Nino </prenom>
+    <nom> Silverio </nom>
+  </auteur>
+  <resume> Ceci est extrait du livre "Réaliser un compilateur : 
+	les outils Lex et Yacc" de Nino Silverio. </resume>
+  <chapitre>
+    <p>qsdqsdqsdddddds</p>
+    <p>qqqqqqqq  sq</p>
+    <titre> Introduction : concepts de base </titre>
+    <p>qsdqsd qs qs</p>
+  </chapitre>
+</rapport>
