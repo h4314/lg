@@ -3,6 +3,7 @@
  * @authors Hexanome 4314
  */
 
+#include <iostream>
 #include "attribute.hpp"
 
 using namespace std;
@@ -18,6 +19,11 @@ void Attribute::setName(std::string name) {
 
 void Attribute::setValue(std::string value) {
   _value = value;
+}
+
+void Attribute::display()
+{
+  cerr << "Attr:" << _name << ":" << _value << endl;
 }
 
 }

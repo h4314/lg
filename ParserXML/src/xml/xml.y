@@ -32,8 +32,8 @@ xml::Element* current_ = 0;
 }
 
 %token EQ SLASH CLOSE END CLOSESPECIAL DOCTYPE
-%token <s> ENCODING VALUE DATA COMMENT NAME NSNAME START 
-%token <en> NSSTART STARTSPECIAL
+%token <s> ENCODING VALUE DATA COMMENT NAME NSNAME 
+%token <en> NSSTART STARTSPECIAL START 
 
 %%
 
@@ -75,7 +75,8 @@ element
 
 start
  : START	{
- xml::Element * node = new xml::Element(current_, $1);
+cout << "$1:" << $1 << ":" << endl;
+ xml::Element * node = new xml::Element(current_, $1->second);
 if(current_ == 0)
 {
   document_->setRoot(node);

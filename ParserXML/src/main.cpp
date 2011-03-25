@@ -34,10 +34,10 @@ int main(int argc, char** argv)
   }
 
   Document doc(f);
-	doc.root();
   // A toi de jouer !
   doc.parse();
 
+	doc.root()->display();
 
 
  fclose(f);
