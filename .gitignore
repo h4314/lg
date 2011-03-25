@@ -9,3 +9,4 @@ lex.*.c
 *.output
 *~
 *.so
+tags
