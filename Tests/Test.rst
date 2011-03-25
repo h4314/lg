@@ -185,15 +185,22 @@ Modification de tests:
 Nouveaux tests à réaliser:
 
 4. tests de conformité avec `rap3.dtd`
+<<<<<<< HEAD
 
 	#. Tests avec l'ajout des éléments `<!ATTLIST chapitre titre CDATA #IMPLIED>` 
 
+=======
+	#. Tests avec l'ajout des éléments `<!ATTLIST chapitre titre CDATA #IMPLIED>` 
+>>>>>>> bbe1e82f076658b67075ab835cb6d5201456acc5
 		#. absence de l'attribut `titre` pour l'élément `<chapitre>..</chapitre>` dans un noeud `<chapitre>` -> Erreur
 		#. présence de l'attribut `titre` pour l'élément `<chapitre>..</chapitre>` dans un noeud `<chapitre>`-> Ok
 		#. absence de l'attribut `titre` mais présence de l'élément `<titre>..</titre>` pour l'élément `<chapitre>..</chapitre>` dans un noeud `<chapitre>` -> Erreur
 		#. présence de l'attribut `titre` et  présence de l'élément `<titre>..</titre>` pour l'élément `<chapitre>..</chapitre>` dans un noeud `<chapitre>` -> Erreur
 	#. Tests avec l'ajout de l'élément `<!ATTLIST section titre CDATA #IMPLIED>`
+<<<<<<< HEAD
 
+=======
+>>>>>>> bbe1e82f076658b67075ab835cb6d5201456acc5
 		#. Même test que 4.1.1 avec `chapitre` remplacé par `section`
 		#. Même test que 4.1.2 avec `chapitre` remplacé par `section`
 		#. Même test que 4.1.3 avec `chapitre` remplacé par `section`

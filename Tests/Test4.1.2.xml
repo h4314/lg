@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
+<<<<<<< HEAD
 <!DOCTYPE rapport SYSTEM "Fichiers-fournis/rap2.dtd">
+=======
+<!DOCTYPE rapport SYSTEM "rap2.dtd">
+>>>>>>> bbe1e82f076658b67075ab835cb6d5201456acc5
 <rapport>
  <titre>Réaliser un compilateur</titre>
  <auteur>
