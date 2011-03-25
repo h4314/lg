@@ -20,21 +20,25 @@
     <xsl:apply-templates/>
   </xsl:template>
   <xsl:template match="chapitre">
-    <h2>
-      Chapitre <xsl:value-of select="titre"/>
-    </h2>
     <xsl:apply-templates/>
   </xsl:template>
 
+  <xsl:template match="chapitre/titre">
+    <h2>
+      Chapitre <xsl:apply-templates/>
+    </h2>
+  </xsl:template>
+
   <xsl:template match="section">
+  <section>
     <xsl:apply-templates/>
+  </section>
   </xsl:template>
 
   <xsl:template match="section/titre">
     <h3>
       Section : <xsl:apply-templates/>
     </h3>
-
   </xsl:template>
 
   <xsl:template match="p">
