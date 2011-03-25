@@ -55,6 +55,14 @@ namespace xml {
         return _name;
       }
 
+      /**
+       * @brief Retourne la liste des noeuds fils
+       * @return liste des noeuds fils
+       */
+      inline const NodeList& children() const {
+        return _children;
+      }
+
       virtual void display();
 
     private:

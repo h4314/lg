@@ -4,16 +4,42 @@
  */
 
 #include "doctype.hpp"
-#include <iostream>
 
 using namespace std;
 
 namespace xml {
 
-Doctype::Doctype(const std::string& name)
-:_name(name) 
+Doctype::Doctype(const std::string& name) :_name(name), _elements()
+{}
+
+/**
+ * Parcours l'ensemble des éléments pour libérer la mémoire allouée.
+ */
+Doctype::~Doctype()
 {
-  cerr << "Creating doctype element: " << name << endl;
+  DtdElementList::iterator it = _elements.begin();
+  while(it != _elements.end()) {
+    delete it->second();
+    it++;
+  }
+}
+
+DtdElement Doctype::element(string name) {
+  DtdElement* elt(0);
+  DtdElementList::iterator q = _elements.find(name);
+  if(q == _elements.end()) {
+    elt = new DtdElement(name);
+    _elements.insert(name, elt);
+  }
+  else {
+    elt = q->second();
+  }
+  // TODO assert(elt != 0);
+  return elt;
+}
+
+DtdElement Doctype::element(const char* eltname) {
+  return element(string(eltname));
 }
 
 }
