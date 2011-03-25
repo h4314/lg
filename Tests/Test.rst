@@ -39,24 +39,34 @@ La technique et le plan de test qui a été développé ci-dessous est loin d'ê
 	- Les tests ci-dessous représentent des cas de mal-structuration du fichier xml à différents "niveaux de profondeur" dans l'arbre des noeuds liés aux éléments xml.
 
 	#. balises non fermées
+
 		#. balise `</rapport>` absente alors que balise `<rapport>` présente -> Erreur
 		#. balise `</chapitre>` absente alors que balise `<chapitre>` présente -> Erreur
 		#. balise `</p>` absente alors que balise `<p>` présente -> Erreur
+
 	#. balises fermées mais non ouvertes
+
 		#. balise `</rapport>` présente mais `<rapport>` absente -> Erreur
 		#. balise `</chapitre>` présente mais  `<chapitre>` absente -> Erreur
 		#. balise `</p>` présente mais `<p>` absente -> Erreur
+
 #. Fichier xml-conforme avec la DTD `rap1.dtd`
+
 	#. test par rapport à `<!ELEMENT titre (#PCDATA)>` de la DTD
+
 		#. absence de texte entre deux balises `<titre>` et `</titre>` -> Ok
 		#. présence de texte entre deux balises `<titre>` et `</titre>` -> Ok
 		#. combinaison des deux test précédents -> Ok
+
 	#. test par rapport à `<!ELEMENT p (#PCDATA)>` de la DTD
+
 		Tests similaires à ceux présentés en section 3.1.x
 		#. absence de texte entre deux balises `<p>` et `</p>` -> Ok
 		#. présence de texte entre deux balises `<p>` et `</p>` -> Ok
 		#. combinaison des deux test précédents -> Ok
-	#. test par rapport à `<!ELEMENT section (titre, p+)>` de la DTD
+	
+  #. test par rapport à `<!ELEMENT section (titre, p+)>` de la DTD
+
 		#. absence d'un élément `<titre>...</titre>` dans un noeud `<section>` -> Erreur
 		#. absence d'un élémént `<p>..</p>` à la suite d'un élément `<titre>...</titre>` dans un noeud `<section>` -> Erreur
 		#. présence d'un élémént `<p>..</p>` à la suite d'un élément `<titre>...</titre>` dans un noeud `<section>` -> Ok
@@ -75,6 +85,7 @@ La technique et le plan de test qui a été développé ci-dessous est loin d'ê
 		#. présence de plusieurs éléments `<titre>..</titre>` puis de plusieurs éléments `<p>..</p>` dans un noeud `<section>` -> Erreur
 
 	#. test par rapport à `<!ELEMENT chapitre (titre, (p | section)+)>` de la DTD
+
 		#. absence d'un élément `<titre>..</titre>` dans un noeud `<chapitre>` -> Erreur 
 		#. présence uniquement d'un élément `<titre>..</titre>` dans un noeud `<chapitre>` -> Erreur 
 		#. présence d'un élément `<titre>..</titre>` suivi d'un élément `<p>..</p>` dans un noeud `<chapitre>`  -> Ok
@@ -92,31 +103,40 @@ La technique et le plan de test qui a été développé ci-dessous est loin d'ê
 		#. présence d'un élément `<titre>..</titre>` suivi d'une combinaison dans un ordre quelconque d'éléments `<p>..</p>` et `<section>..</section>` dans un noeud `<chapitre>`  -> Ok
 		
 		- Les tests 3.4.11 à 3.4.14 n'ont pas les fichiers xml générés, donc ne peuvent être testés pour le moment.
+
 	#. test par rapport à `<!ELEMENT resume (#PCDATA)>` de la DTD
+
 		- Tests similaires à ceux présentés en section 3.1.x
 		- Pas de test 3.5.3, car normalement la balise `<resume>` n'apparait qu'une seule fois dans le fichier xml.
 
 		#. absence de texte entre deux balises `<resume>` et `</resume>` -> Ok
 		#. présence de texte entre deux balises `<resume>` et `</resume>` -> Ok
+
 	#. test par rapport à `<!ELEMENT p (#PCDATA)>` de la DTD
+
 		- Tests similaires à ceux présentés en section 3.1.x
 		- Pas de test 3.7.3, car normalement la balise `<prenom>` n'apparait qu'une seule fois dans le fichier xml.
 
 		#. absence de texte entre deux balises `<p>` et `</p>` -> Ok
 		#. présence de texte entre deux balises `<p>` et `</p>` -> Ok
 		#. combinaison des deux test précédents -> Ok
+
 	#. test par rapport à `<!ELEMENT prenom (#PCDATA)>` de la DTD
+
 		- Tests similaires à ceux présentés en section 3.1.x
 
 		#. absence de texte entre deux balises `<prenom>` et `</prenom>` -> Ok
 		#. présence de texte entre deux balises `<prenom>` et `</prenom>` -> Ok
 	#. test par rapport à `<!ELEMENT nom (#PCDATA)>` de la DTD
+
 		- Tests similaires à ceux présentés en section 3.1.x
 		- Pas de test 3.8.3, car normalement la balise `<nom>` n'apparait qu'une seule fois dans le fichier xml.
 
 		#. absence de texte entre deux balises `<nom>` et `</nom>` -> Ok
 		#. présence de texte entre deux balises `<nom>` et `</nom>` -> Ok
+
 	#. test par rapport à `<!ELEMENT auteur (prenom, nom)>` de la DTD
+
 		#. présence uniquement d'un élément `<prenom>..</prenom>` dans un noeud `<auteur>` -> Erreur
 		#. présence uniquement d'un élément `<nom>..</nom>` dans un noeud `<auteur>` -> Erreur
 		#. présence d'un élémént `<nom>..</nom>` à la suite d'un élément `<prenom>...</prenom>` dans un noeud `<auteur>` -> Ok
@@ -129,6 +149,7 @@ La technique et le plan de test qui a été développé ci-dessous est loin d'ê
 		- En clair, le noeud `<auteur>` ne peut pas avoir plus de 2 éléments, et ceux-ci doivent être précisément, dans l'ordre, les éléments `<prenom>..</prenom>` et `<nom>..</nom>`
 
 	#. test par rapport à `<!ELEMENT rapport (titre, auteur+, resume, chapitre+)>` de la DTD
+
 		#. absence d'un élément `<titre>..</titre>` dans le noeud `<rapport>` -> Erreur
 		#. absence d'un élément `<auteur>..</auteur>` dans le noeud `<rapport>` -> Erreur
 		#. absence d'un élément `<resume>..</resume>` dans le noeud `<rapport>` -> Erreur
@@ -164,12 +185,15 @@ Modification de tests:
 Nouveaux tests à réaliser:
 
 4. tests de conformité avec `rap3.dtd`
+
 	#. Tests avec l'ajout des éléments `<!ATTLIST chapitre titre CDATA #IMPLIED>` 
+
 		#. absence de l'attribut `titre` pour l'élément `<chapitre>..</chapitre>` dans un noeud `<chapitre>` -> Erreur
 		#. présence de l'attribut `titre` pour l'élément `<chapitre>..</chapitre>` dans un noeud `<chapitre>`-> Ok
 		#. absence de l'attribut `titre` mais présence de l'élément `<titre>..</titre>` pour l'élément `<chapitre>..</chapitre>` dans un noeud `<chapitre>` -> Erreur
 		#. présence de l'attribut `titre` et  présence de l'élément `<titre>..</titre>` pour l'élément `<chapitre>..</chapitre>` dans un noeud `<chapitre>` -> Erreur
 	#. Tests avec l'ajout de l'élément `<!ATTLIST section titre CDATA #IMPLIED>`
+
 		#. Même test que 4.1.1 avec `chapitre` remplacé par `section`
 		#. Même test que 4.1.2 avec `chapitre` remplacé par `section`
 		#. Même test que 4.1.3 avec `chapitre` remplacé par `section`

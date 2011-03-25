@@ -33,7 +33,7 @@ class Document
      * Les erreurs sont affichées sur la sortie d'erreur.
      * TODO vérifier.
      */
-    void parse();
+    bool parse();
 
     /**
      * @brief Donne l'élément racine du document XML

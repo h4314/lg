@@ -1,4 +1,4 @@
-#!/bin/sh -x
+#!/bin/sh
 
 PROC=../ParserXML/bin/parser
 
@@ -8,8 +8,8 @@ rm out.csv
 
 for i in $FILES
 do
-  $PROC $i
+  $PROC $i > /dev/null 2> /dev/null
   echo "$i $?" >> out.csv
 done
 
-diff test.csv out.csv
+diff -y --left-column --suppress-common-line test.csv out.csv | tr -s ' ' | cut -d ' ' -f1
