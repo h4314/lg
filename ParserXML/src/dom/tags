@@ -1,0 +1,182 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+Attribute	attribute.cpp	/^Attribute::Attribute(std::string name, std::string value): _name(name), _value(value) {$/;"	f	class:xml::Attribute	signature:(std::string name, std::string value)
+Attribute	attribute.hpp	/^	Attribute(std::string name = "", std::string value = "");$/;"	p	class:xml::Attribute	access:public	signature:(std::string name = Ó, std::string value = Ó)
+Attribute	attribute.hpp	/^class Attribute$/;"	c	namespace:xml
+AttributeList	attribute.hpp	/^typedef std::vector<Attribute*> AttributeList;$/;"	t	namespace:xml
+Cardinality	element.hpp	/^  typedef std::pair<int, int> Cardinality;$/;"	t	namespace:xml
+CardinalityList	element.hpp	/^  typedef std::map<std::string, Cardinality> CardinalityList;$/;"	t	namespace:xml
+DOM	dom.hpp	2;"	d
+Doctype	doctype.cpp	/^Doctype::Doctype(const std::string& name)$/;"	f	class:xml::Doctype	signature:(const std::string& name)
+Doctype	doctype.hpp	/^    Doctype(const std::string& name);$/;"	p	class:xml::Doctype	access:public	signature:(const std::string& name)
+Doctype	doctype.hpp	/^class Doctype$/;"	c	namespace:xml
+Document	document.cpp	/^  Document::Document(FILE* f):$/;"	f	class:xml::Document	signature:(FILE* f)
+Document	document.hpp	/^    Document(FILE* f = stdin);$/;"	p	class:xml::Document	access:public	signature:(FILE* f = stdin)
+Document	document.hpp	/^class Document$/;"	c	namespace:xml
+DtdElement	dtd_element.cpp	/^DtdElement::DtdElement()$/;"	f	class:xml::DtdElement	signature:()
+DtdElement	dtd_element.hpp	/^    DtdElement(const std::string& name);$/;"	p	class:xml::DtdElement	access:public	signature:(const std::string& name)
+DtdElement	dtd_element.hpp	/^class DtdElement$/;"	c	namespace:xml
+Element	element.cpp	/^Element::Element(Element* parent, const std::string& name) :$/;"	f	class:xml::Element	signature:(Element* parent, const std::string& name)
+Element	element.hpp	/^      Element(Element* parent, const std::string& name);$/;"	p	class:xml::Element	access:public	signature:(Element* parent, const std::string& name)
+Element	element.hpp	/^  class Element: public Node$/;"	c	namespace:xml	inherits:Node
+Node	node.cpp	/^Node::Node(Element* parent) $/;"	f	class:xml::Node	signature:(Element* parent)
+Node	node.hpp	/^    Node(Element* parent);$/;"	p	class:xml::Node	access:public	signature:(Element* parent)
+Node	node.hpp	/^class Node$/;"	c	namespace:xml
+NodeList	node.hpp	/^typedef std::vector<Node*> NodeList ;$/;"	t	namespace:xml
+TextNode	text_node.cpp	/^TextNode::TextNode(Element* parent, string content) $/;"	f	class:xml::TextNode	signature:(Element* parent, string content)
+TextNode	text_node.hpp	/^    TextNode(Element* parent, std::string content);$/;"	p	class:xml::TextNode	access:public	signature:(Element* parent, std::string content)
+TextNode	text_node.hpp	/^class TextNode : public Node$/;"	c	namespace:xml	inherits:Node
+XML_ATTRIBUTE_H	attribute.hpp	7;"	d
+XML_DOCTYPE_H	doctype.hpp	7;"	d
+XML_DOCUMENT_H	document.hpp	7;"	d
+XML_DTD_ELEMENT_H	dtd_element.hpp	7;"	d
+XML_ELEMENT_H	element.hpp	7;"	d
+XML_NODE_H	node.hpp	7;"	d
+XML_TEXT_NODE_H	text_node.hpp	7;"	d
+_attributes	element.hpp	/^        AttributeList _attributes;$/;"	m	class:xml::Element	access:private
+_cardinalityChildren	element.hpp	/^        CardinalityList _cardinalityChildren;$/;"	m	class:xml::Element	access:private
+_children	element.hpp	/^        NodeList _children;$/;"	m	class:xml::Element	access:private
+_content	text_node.hpp	/^    std::string _content;$/;"	m	class:xml::TextNode	access:private
+_doctype	document.hpp	/^    Doctype* _doctype;$/;"	m	class:xml::Document	access:private
+_name	attribute.hpp	/^	std::string _name;$/;"	m	class:xml::Attribute	access:private
+_name	doctype.hpp	/^    std::string _name;$/;"	m	class:xml::Doctype	access:private
+_name	element.hpp	/^        std::string _name;$/;"	m	class:xml::Element	access:private
+_value	attribute.hpp	/^	std::string _value;$/;"	m	class:xml::Attribute	access:private
+_xmlElement	document.hpp	/^    Element* _xmlElement;$/;"	m	class:xml::Document	access:private
+addAttribute	element.cpp	/^int Element::addAttribute(Attribute* newAttribute) {$/;"	f	class:xml::Element	signature:(Attribute* newAttribute)
+addAttribute	element.hpp	/^      int addAttribute(Attribute* newAttribute);$/;"	p	class:xml::Element	access:public	signature:(Attribute* newAttribute)
+appendChild	element.cpp	/^int Element::appendChild(Node* newChild) {$/;"	f	class:xml::Element	signature:(Node* newChild)
+appendChild	element.hpp	/^      int appendChild(Node* newChild);$/;"	p	class:xml::Element	access:public	signature:(Node* newChild)
+content	text_node.hpp	/^    inline const std::string& content() const {$/;"	f	class:xml::TextNode	access:public	signature:() const
+display	element.cpp	/^void Element::display()$/;"	f	class:xml::Element	signature:()
+display	element.hpp	/^      virtual void display();$/;"	p	class:xml::Element	access:public	signature:()
+display	node.cpp	/^void Node::display()$/;"	f	class:xml::Node	signature:()
+display	node.hpp	/^    virtual void display();$/;"	p	class:xml::Node	access:public	signature:()
+display	text_node.cpp	/^void TextNode::display()$/;"	f	class:xml::TextNode	signature:()
+display	text_node.hpp	/^    virtual void display();$/;"	p	class:xml::TextNode	access:public	signature:()
+doctype	document.hpp	/^    inline Doctype* doctype() const {$/;"	f	class:xml::Document	access:public	signature:() const
+endl	doctype.cpp	/^  cerr << "Creating doctype element: " << name << endl;$/;"	l
+endl	dtd_element.cpp	/^  cerr << "Creating doctype element: " << name << endl;$/;"	l
+endl	element.cpp	/^    cerr << "Creating Element: " << name << endl;$/;"	l
+endl	node.cpp	/^  cerr << "Creating Node element. Parent: " << (void*)parent << endl;$/;"	l
+endl	node.cpp	/^  std::cerr << "I am a plain node" << std::endl;$/;"	m	class:xml::std	file:
+endl	text_node.cpp	/^  cerr << "Creating TextNode element: " << content << endl;$/;"	l
+endl	text_node.cpp	/^cerr << "I am a text node : [" << _content << "]" << endl;$/;"	l
+f_	document.hpp	/^    FILE* f_;$/;"	m	class:xml::Document	access:private
+name	attribute.hpp	/^  inline const std::string& name() const {$/;"	f	class:xml::Attribute	access:public	signature:() const
+name	doctype.hpp	/^    inline std::string& name() {$/;"	f	class:xml::Doctype	access:public	signature:()
+name	element.hpp	/^      const std::string& name()$/;"	f	class:xml::Element	access:public	signature:()
+parent	node.cpp	/^Element* Node::parent() {$/;"	f	class:xml::Node	signature:()
+parent	node.hpp	/^		Element* parent();$/;"	p	class:xml::Node	access:public	signature:()
+parent_	node.hpp	/^		Element* parent_;$/;"	m	class:xml::Node	access:protected
+parse	document.cpp	/^  void Document::parse() {$/;"	f	class:xml::Document	signature:()
+parse	document.hpp	/^    void parse();$/;"	p	class:xml::Document	access:public	signature:()
+push_back	element.cpp	/^  _attributes.push_back(newAttribute);$/;"	p	file:	signature:(newAttribute)
+push_back	element.cpp	/^  _children.push_back(newChild);$/;"	p	file:	signature:(newChild)
+root	document.hpp	/^    inline Element* root() const {$/;"	f	class:xml::Document	access:public	signature:() const
+setContent	text_node.cpp	/^void TextNode::setContent(const std::string& content) {$/;"	f	class:xml::TextNode	signature:(const std::string& content)
+setContent	text_node.hpp	/^    void setContent(const std::string& content);$/;"	p	class:xml::TextNode	access:public	signature:(const std::string& content)
+setDoctype	document.cpp	/^  void Document::setDoctype(Doctype* doctype) {$/;"	f	class:xml::Document	signature:(Doctype* doctype)
+setDoctype	document.hpp	/^    void setDoctype(Doctype* doctype);$/;"	p	class:xml::Document	access:public	signature:(Doctype* doctype)
+setName	attribute.cpp	/^void Attribute::setName(std::string name) {$/;"	f	class:xml::Attribute	signature:(std::string name)
+setName	attribute.hpp	/^  void setName(std::string name);$/;"	p	class:xml::Attribute	access:public	signature:(std::string name)
+setRoot	document.cpp	/^  void Document::setRoot(Element* element) {$/;"	f	class:xml::Document	signature:(Element* element)
+setRoot	document.hpp	/^    void setRoot(Element* root);$/;"	p	class:xml::Document	access:public	signature:(Element* root)
+setValue	attribute.cpp	/^void Attribute::setValue(std::string value) {$/;"	f	class:xml::Attribute	signature:(std::string value)
+setValue	attribute.hpp	/^  void setValue(std::string name);$/;"	p	class:xml::Attribute	access:public	signature:(std::string name)
+value	attribute.hpp	/^  inline const std::string& value() const {$/;"	f	class:xml::Attribute	access:public	signature:() const
+xml	attribute.cpp	/^namespace xml {$/;"	n	file:
+xml	attribute.hpp	/^namespace xml {$/;"	n
+xml	doctype.cpp	/^namespace xml {$/;"	n	file:
+xml	doctype.hpp	/^namespace xml {$/;"	n
+xml	document.cpp	/^namespace xml {$/;"	n	file:
+xml	document.hpp	/^namespace xml {$/;"	n
+xml	dtd_element.cpp	/^namespace xml {$/;"	n	file:
+xml	dtd_element.hpp	/^namespace xml {$/;"	n
+xml	element.cpp	/^namespace xml {$/;"	n	file:
+xml	element.hpp	/^namespace xml {$/;"	n
+xml	node.cpp	/^namespace xml {$/;"	n	file:
+xml	node.hpp	/^namespace xml {$/;"	n
+xml	text_node.cpp	/^namespace xml {$/;"	n	file:
+xml	text_node.hpp	/^namespace xml {$/;"	n
+xml::Attribute	attribute.hpp	/^class Attribute$/;"	c	namespace:xml
+xml::Attribute::Attribute	attribute.cpp	/^Attribute::Attribute(std::string name, std::string value): _name(name), _value(value) {$/;"	f	class:xml::Attribute	signature:(std::string name, std::string value)
+xml::Attribute::Attribute	attribute.hpp	/^	Attribute(std::string name = "", std::string value = "");$/;"	p	class:xml::Attribute	access:public	signature:(std::string name = Ó, std::string value = Ó)
+xml::Attribute::_name	attribute.hpp	/^	std::string _name;$/;"	m	class:xml::Attribute	access:private
+xml::Attribute::_value	attribute.hpp	/^	std::string _value;$/;"	m	class:xml::Attribute	access:private
+xml::Attribute::name	attribute.hpp	/^  inline const std::string& name() const {$/;"	f	class:xml::Attribute	access:public	signature:() const
+xml::Attribute::setName	attribute.cpp	/^void Attribute::setName(std::string name) {$/;"	f	class:xml::Attribute	signature:(std::string name)
+xml::Attribute::setName	attribute.hpp	/^  void setName(std::string name);$/;"	p	class:xml::Attribute	access:public	signature:(std::string name)
+xml::Attribute::setValue	attribute.cpp	/^void Attribute::setValue(std::string value) {$/;"	f	class:xml::Attribute	signature:(std::string value)
+xml::Attribute::setValue	attribute.hpp	/^  void setValue(std::string name);$/;"	p	class:xml::Attribute	access:public	signature:(std::string name)
+xml::Attribute::value	attribute.hpp	/^  inline const std::string& value() const {$/;"	f	class:xml::Attribute	access:public	signature:() const
+xml::AttributeList	attribute.hpp	/^typedef std::vector<Attribute*> AttributeList;$/;"	t	namespace:xml
+xml::Cardinality	element.hpp	/^  typedef std::pair<int, int> Cardinality;$/;"	t	namespace:xml
+xml::CardinalityList	element.hpp	/^  typedef std::map<std::string, Cardinality> CardinalityList;$/;"	t	namespace:xml
+xml::Doctype	doctype.hpp	/^class Doctype$/;"	c	namespace:xml
+xml::Doctype::Doctype	doctype.cpp	/^Doctype::Doctype(const std::string& name)$/;"	f	class:xml::Doctype	signature:(const std::string& name)
+xml::Doctype::Doctype	doctype.hpp	/^    Doctype(const std::string& name);$/;"	p	class:xml::Doctype	access:public	signature:(const std::string& name)
+xml::Doctype::_name	doctype.hpp	/^    std::string _name;$/;"	m	class:xml::Doctype	access:private
+xml::Doctype::name	doctype.hpp	/^    inline std::string& name() {$/;"	f	class:xml::Doctype	access:public	signature:()
+xml::Document	document.hpp	/^class Document$/;"	c	namespace:xml
+xml::Document::Document	document.cpp	/^  Document::Document(FILE* f):$/;"	f	class:xml::Document	signature:(FILE* f)
+xml::Document::Document	document.hpp	/^    Document(FILE* f = stdin);$/;"	p	class:xml::Document	access:public	signature:(FILE* f = stdin)
+xml::Document::_doctype	document.hpp	/^    Doctype* _doctype;$/;"	m	class:xml::Document	access:private
+xml::Document::_xmlElement	document.hpp	/^    Element* _xmlElement;$/;"	m	class:xml::Document	access:private
+xml::Document::doctype	document.hpp	/^    inline Doctype* doctype() const {$/;"	f	class:xml::Document	access:public	signature:() const
+xml::Document::f_	document.hpp	/^    FILE* f_;$/;"	m	class:xml::Document	access:private
+xml::Document::parse	document.cpp	/^  void Document::parse() {$/;"	f	class:xml::Document	signature:()
+xml::Document::parse	document.hpp	/^    void parse();$/;"	p	class:xml::Document	access:public	signature:()
+xml::Document::root	document.hpp	/^    inline Element* root() const {$/;"	f	class:xml::Document	access:public	signature:() const
+xml::Document::setDoctype	document.cpp	/^  void Document::setDoctype(Doctype* doctype) {$/;"	f	class:xml::Document	signature:(Doctype* doctype)
+xml::Document::setDoctype	document.hpp	/^    void setDoctype(Doctype* doctype);$/;"	p	class:xml::Document	access:public	signature:(Doctype* doctype)
+xml::Document::setRoot	document.cpp	/^  void Document::setRoot(Element* element) {$/;"	f	class:xml::Document	signature:(Element* element)
+xml::Document::setRoot	document.hpp	/^    void setRoot(Element* root);$/;"	p	class:xml::Document	access:public	signature:(Element* root)
+xml::DtdElement	dtd_element.hpp	/^class DtdElement$/;"	c	namespace:xml
+xml::DtdElement::DtdElement	dtd_element.cpp	/^DtdElement::DtdElement()$/;"	f	class:xml::DtdElement	signature:()
+xml::DtdElement::DtdElement	dtd_element.hpp	/^    DtdElement(const std::string& name);$/;"	p	class:xml::DtdElement	access:public	signature:(const std::string& name)
+xml::Element	element.hpp	/^  class Element: public Node$/;"	c	namespace:xml	inherits:Node
+xml::Element::Element	element.cpp	/^Element::Element(Element* parent, const std::string& name) :$/;"	f	class:xml::Element	signature:(Element* parent, const std::string& name)
+xml::Element::Element	element.hpp	/^      Element(Element* parent, const std::string& name);$/;"	p	class:xml::Element	access:public	signature:(Element* parent, const std::string& name)
+xml::Element::_attributes	element.hpp	/^        AttributeList _attributes;$/;"	m	class:xml::Element	access:private
+xml::Element::_cardinalityChildren	element.hpp	/^        CardinalityList _cardinalityChildren;$/;"	m	class:xml::Element	access:private
+xml::Element::_children	element.hpp	/^        NodeList _children;$/;"	m	class:xml::Element	access:private
+xml::Element::_name	element.hpp	/^        std::string _name;$/;"	m	class:xml::Element	access:private
+xml::Element::addAttribute	element.cpp	/^int Element::addAttribute(Attribute* newAttribute) {$/;"	f	class:xml::Element	signature:(Attribute* newAttribute)
+xml::Element::addAttribute	element.hpp	/^      int addAttribute(Attribute* newAttribute);$/;"	p	class:xml::Element	access:public	signature:(Attribute* newAttribute)
+xml::Element::appendChild	element.cpp	/^int Element::appendChild(Node* newChild) {$/;"	f	class:xml::Element	signature:(Node* newChild)
+xml::Element::appendChild	element.hpp	/^      int appendChild(Node* newChild);$/;"	p	class:xml::Element	access:public	signature:(Node* newChild)
+xml::Element::display	element.cpp	/^void Element::display()$/;"	f	class:xml::Element	signature:()
+xml::Element::display	element.hpp	/^      virtual void display();$/;"	p	class:xml::Element	access:public	signature:()
+xml::Element::name	element.hpp	/^      const std::string& name()$/;"	f	class:xml::Element	access:public	signature:()
+xml::Node	node.hpp	/^class Node$/;"	c	namespace:xml
+xml::Node::Node	node.cpp	/^Node::Node(Element* parent) $/;"	f	class:xml::Node	signature:(Element* parent)
+xml::Node::Node	node.hpp	/^    Node(Element* parent);$/;"	p	class:xml::Node	access:public	signature:(Element* parent)
+xml::Node::display	node.cpp	/^void Node::display()$/;"	f	class:xml::Node	signature:()
+xml::Node::display	node.hpp	/^    virtual void display();$/;"	p	class:xml::Node	access:public	signature:()
+xml::Node::parent	node.cpp	/^Element* Node::parent() {$/;"	f	class:xml::Node	signature:()
+xml::Node::parent	node.hpp	/^		Element* parent();$/;"	p	class:xml::Node	access:public	signature:()
+xml::Node::parent_	node.hpp	/^		Element* parent_;$/;"	m	class:xml::Node	access:protected
+xml::NodeList	node.hpp	/^typedef std::vector<Node*> NodeList ;$/;"	t	namespace:xml
+xml::TextNode	text_node.hpp	/^class TextNode : public Node$/;"	c	namespace:xml	inherits:Node
+xml::TextNode::TextNode	text_node.cpp	/^TextNode::TextNode(Element* parent, string content) $/;"	f	class:xml::TextNode	signature:(Element* parent, string content)
+xml::TextNode::TextNode	text_node.hpp	/^    TextNode(Element* parent, std::string content);$/;"	p	class:xml::TextNode	access:public	signature:(Element* parent, std::string content)
+xml::TextNode::_content	text_node.hpp	/^    std::string _content;$/;"	m	class:xml::TextNode	access:private
+xml::TextNode::content	text_node.hpp	/^    inline const std::string& content() const {$/;"	f	class:xml::TextNode	access:public	signature:() const
+xml::TextNode::display	text_node.cpp	/^void TextNode::display()$/;"	f	class:xml::TextNode	signature:()
+xml::TextNode::display	text_node.hpp	/^    virtual void display();$/;"	p	class:xml::TextNode	access:public	signature:()
+xml::TextNode::setContent	text_node.cpp	/^void TextNode::setContent(const std::string& content) {$/;"	f	class:xml::TextNode	signature:(const std::string& content)
+xml::TextNode::setContent	text_node.hpp	/^    void setContent(const std::string& content);$/;"	p	class:xml::TextNode	access:public	signature:(const std::string& content)
+xml::endl	doctype.cpp	/^  cerr << "Creating doctype element: " << name << endl;$/;"	l
+xml::endl	dtd_element.cpp	/^  cerr << "Creating doctype element: " << name << endl;$/;"	l
+xml::endl	element.cpp	/^    cerr << "Creating Element: " << name << endl;$/;"	l
+xml::endl	node.cpp	/^  cerr << "Creating Node element. Parent: " << (void*)parent << endl;$/;"	l
+xml::endl	text_node.cpp	/^  cerr << "Creating TextNode element: " << content << endl;$/;"	l
+xml::endl	text_node.cpp	/^cerr << "I am a text node : [" << _content << "]" << endl;$/;"	l
+xml::push_back	element.cpp	/^  _attributes.push_back(newAttribute);$/;"	p	file:	signature:(newAttribute)
+xml::push_back	element.cpp	/^  _children.push_back(newChild);$/;"	p	file:	signature:(newChild)
+xml::std::endl	node.cpp	/^  std::cerr << "I am a plain node" << std::endl;$/;"	m	class:xml::std	file:
