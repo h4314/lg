@@ -3,21 +3,23 @@
  * @authors Hexanome 4314
  */
 
-#include "any.hpp"
+#include "data.hpp"
 #include <iostream>
 
 using namespace std;
 
 namespace xml {
 
-Any::Any()
+Data::Data()
 {
   cerr << "Creating doctype element: " << name << endl;
 }
 
-bool Any::valid()
+bool Data::valid(Element* elt)
 {
-  return true;
+  Node* child; // TODO fils de elt
+  // Est un noeud texte ?
+  return dynamic_cast<TextNode*>(child);
 }
 
 }

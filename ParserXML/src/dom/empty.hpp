@@ -3,8 +3,8 @@
  * @authors Hexanome 4314
  */
 
-#ifndef XML_DTD_MULTIPLE_H
-#define XML_DTD_MULTIPLE_H
+#ifndef XML_DTD_EMPTY_H
+#define XML_DTD_EMPTY_H
 
 #include <istream>
 #include <string>

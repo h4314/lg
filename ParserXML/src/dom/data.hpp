@@ -3,8 +3,8 @@
  * @authors Hexanome 4314
  */
 
-#ifndef XML_DTD_ANY_H
-#define XML_DTD_ANY_H
+#ifndef XML_DTD_DATA_H
+#define XML_DTD_DATA_H
 
 #include <istream>
 #include <string>
@@ -16,13 +16,13 @@ namespace xml {
 /**
  * @brief La classe représente le doctype d'un DTD
  */
-class Any : public DtdElement
+class Data: public DtdElement
 {
   public:
     /**
      * @brief Le constructeur
      */
-    Any();
+    Data();
 
     /**
      * @brief Valide un élément XML d'après sa définition dans la DTD
