@@ -24,8 +24,8 @@ namespace xml {
     _doctype = doctype;
   }
 
-  void Document::parse() {
-    parseXML(f_, this);
+  bool Document::parse() {
+    return parseXML(f_, this);
   }
 
 }

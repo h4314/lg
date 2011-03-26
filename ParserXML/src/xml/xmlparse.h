@@ -7,7 +7,7 @@
 #include "dom.hpp"
 
 void handle_dtd(const std::string& filename);
-void parseXML(FILE* f, xml::Document * doc);
+bool parseXML(FILE* f, xml::Document * doc);
 
 int xmlparse();
 

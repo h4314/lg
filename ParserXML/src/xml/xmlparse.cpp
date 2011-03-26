@@ -35,7 +35,7 @@ void handle_dtd(const std::string& filename)
   fclose(fid);
 }
 
-void parseXML(FILE* f, xml::Document * doc) {
+bool parseXML(FILE* f, xml::Document * doc) {
   int err;
 
   document_ = doc;
@@ -47,4 +47,6 @@ void parseXML(FILE* f, xml::Document * doc) {
     printf("XML file : parse ended with %d error(s)\n", err);
   else
     printf("XML file : parse ended with sucess\n");
+
+  return (bool)err;
 }

@@ -10,3 +10,4 @@ lex.*.c
 *~
 *.so
 tags
+out.csv

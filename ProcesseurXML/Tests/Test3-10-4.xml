@@ -1,8 +1,0 @@
-<!DOCTYPE rapport SYSTEM "rap1.dtd">
-<rapport>
-  <titre>Réaliser un compilateur</titre>
-  <auteur>
-    <prenom> Nino </prenom>
-    <nom> Silverio </nom>
-  </auteur>
-</rapport>

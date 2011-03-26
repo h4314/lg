@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<<<<<<< HEAD
+<!DOCTYPE rapport SYSTEM "Fichiers-fournis/rap2.dtd">
+=======
+<!DOCTYPE rapport SYSTEM "rap2.dtd">
+>>>>>>> bbe1e82f076658b67075ab835cb6d5201456acc5
+<rapport>
+ <titre>Réaliser un compilateur</titre>
+ <auteur>
+  <nom>Nino</nom>
+  <prenom>Silverio</prenom>
+ </auteur>
+ <resume>Ceci est un extrait du livre "Réaliser un compilateur: 
+	les outils Lex et Yacc" de Nino Silverio</resume>
+ <chapitre titre="Introduction: concepts de base">
+   <section>
+    <titre>Fonctions et structure d'un compilateur</titre>
+    <p>Tout programme rédigé dans un langage de programmation de haut 
+	niveau tel que Pascal ou C ne peut être exécuté par un ordinateur 
+	que s'il est traduit en instructions exécutables par l'ordinateur, 
+	généralement des instructions en langage machine. L'ordinateur qui 
+	doit exécuter le programme ainsi traduit est appelé machine cible.</p>
+   </section>
+ </chapitre>
+</rapport>

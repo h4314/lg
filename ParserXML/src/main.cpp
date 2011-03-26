@@ -35,11 +35,13 @@ int main(int argc, char** argv)
 
   Document doc(f);
   // A toi de jouer !
-  doc.parse();
+  bool ret = doc.parse();
 
-	doc.root()->display();
+  if( ! ret)
+    doc.root()->display();
 
 
  fclose(f);
-  return 0;
+ cerr << "ret: " << ret << endl;
+  return ! ret; // pour le unit testing
 }
