@@ -19,9 +19,11 @@ namespace xml {
   /** La cardinalité d'un noeud fils est défini par une paire d'entiers
    *  contenant le nombre min et max possible dans l'élement
    */
+  // TODO a supprimer
   typedef std::pair<int, int> Cardinality;
 
   /** La liste pour stocker le nom d'un noeud fils et sa cardinalité */
+  // TODO à supprimer
   typedef std::map<std::string, Cardinality> CardinalityList;
 
   /**
@@ -78,6 +80,7 @@ namespace xml {
         /** Les cardinalités des éléments fils dans un DTD
          *  Cet attribut n'est pas utile dans un fichier xml et sera mis à null
          */
+        // TODO a supprimer
         CardinalityList _cardinalityChildren;
   };
 

@@ -19,7 +19,7 @@ class DataValidator : public DtdValidator
     /**
      * @see DtdValidator::valid()
      */
-    virtual bool valid(NodeList::iterator* cursor NodeList::iterator& end);
+    virtual bool valid(NodeList::iterator* cursor, NodeList::iterator& end);
 };
 
 }

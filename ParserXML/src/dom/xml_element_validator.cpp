@@ -23,7 +23,7 @@ XmlElementValidator::valid(NodeList::iterator* cursor, NodeList::iterator& end) 
   bool must_continue(true);
 
   do {
-    if(dynamic_cast<Element*>(cursor->second()) &&
+    if(dynamic_cast<Element*>(*cursor) &&
       (_name == element->name())) {
       result = true;
 

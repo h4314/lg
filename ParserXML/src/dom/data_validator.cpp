@@ -18,7 +18,7 @@ DataValidator::valid(NodeList::iterator* cursor, NodeList::iterator& end) {
   bool must_continue(true);
 
   do {
-    if(dynamic_cast<Data*>(cursor->second())) {
+    if(dynamic_cast<Data*>(*cursor)) {
       // On en a trouvé 1, c'est bon
       result = true;
       // On avance donc le curseur

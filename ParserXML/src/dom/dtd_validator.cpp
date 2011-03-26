@@ -10,7 +10,6 @@ using namespace std;
 
 namespace xml {
 
-// TODO Gérer cardinalité avec enum
 DtdValidator::DtdValidator(): _cardinality(_1_1) {
 }
 
