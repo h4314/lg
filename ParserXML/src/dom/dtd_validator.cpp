@@ -11,10 +11,10 @@ using namespace std;
 namespace xml {
 
 // TODO Gérer cardinalité avec enum
-DtdValidator::DtdValidator(): _cardinality(1) {
+DtdValidator::DtdValidator(): _cardinality(_1_1) {
 }
 
-void DtdValidator::setCardinality(int cardinality) {
+void DtdValidator::setCardinality(_cardinality_t cardinality) {
   _cardinality = cardinality;
 }
 

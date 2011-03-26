@@ -9,7 +9,16 @@
 #include "node.hpp"
 
 namespace xml {
-// TODO enum sur la cardinalité ?
+/**
+ * @brief Cardinalité de la séquence à valider.
+ */
+enum cardinality_t {
+  _0_N, /** 0 ou plus, "*" */
+  _0_1, /** 0 ou 1, "?" */
+  _1_N, /** 1 ou plus, "+" */
+  _1_1 /** 1 et seulement 1 (par défaut) */
+};
+
 /**
  * @brief Un validateur est un objet qui va tester la validité d'une séquence de
  * noeuds XML.
@@ -43,12 +52,12 @@ class DtdValidator
      * fois où l'élément validé est attendu.
      * @param cardinality
      */
-    void setCardinality(int cardinality);
+    void setCardinality(cardinality_t cardinality);
 
   protected:
     /** cardinalité attendue, c'est à dire, intervalle de fois où l'élément
      * validé est attendu. */
-    int _cardinality;
+    cardinality_t _cardinality;
 };
 
 }

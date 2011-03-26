@@ -4,6 +4,7 @@
 !_TAG_PROGRAM_NAME	Exuberant Ctags	//
 !_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
 !_TAG_PROGRAM_VERSION	5.8	//
+AnyValidator	any_validator.hpp	/^class AnyValidator : public DtdValidator$/;"	c	namespace:xml	inherits:DtdValidator
 Attribute	attribute.cpp	/^Attribute::Attribute(std::string name, std::string value): _name(name), _value(value) {$/;"	f	class:xml::Attribute	signature:(std::string name, std::string value)
 Attribute	attribute.hpp	/^	Attribute(std::string name = "", std::string value = "");$/;"	p	class:xml::Attribute	access:public	signature:(std::string name = Ó, std::string value = Ó)
 Attribute	attribute.hpp	/^class Attribute$/;"	c	namespace:xml
@@ -11,18 +12,30 @@ AttributeList	attribute.hpp	/^typedef std::vector<Attribute*> AttributeList;$/;"
 Cardinality	element.hpp	/^  typedef std::pair<int, int> Cardinality;$/;"	t	namespace:xml
 CardinalityList	element.hpp	/^  typedef std::map<std::string, Cardinality> CardinalityList;$/;"	t	namespace:xml
 DOM	dom.hpp	2;"	d
-Doctype	doctype.cpp	/^Doctype::Doctype(const std::string& name)$/;"	f	class:xml::Doctype	signature:(const std::string& name)
+Data	data.cpp	/^Data::Data()$/;"	f	class:xml::Data	signature:()
+Data	data.hpp	/^    Data();$/;"	p	class:xml::Data	access:public	signature:()
+Data	data.hpp	/^class Data: public DtdElement$/;"	c	namespace:xml	inherits:DtdElement
+Doctype	doctype.cpp	/^Doctype::Doctype(const std::string& name) :_name(name), _elements()$/;"	f	class:xml::Doctype	signature:(const std::string& name)
 Doctype	doctype.hpp	/^    Doctype(const std::string& name);$/;"	p	class:xml::Doctype	access:public	signature:(const std::string& name)
 Doctype	doctype.hpp	/^class Doctype$/;"	c	namespace:xml
 Document	document.cpp	/^  Document::Document(FILE* f):$/;"	f	class:xml::Document	signature:(FILE* f)
 Document	document.hpp	/^    Document(FILE* f = stdin);$/;"	p	class:xml::Document	access:public	signature:(FILE* f = stdin)
 Document	document.hpp	/^class Document$/;"	c	namespace:xml
-DtdElement	dtd_element.cpp	/^DtdElement::DtdElement()$/;"	f	class:xml::DtdElement	signature:()
-DtdElement	dtd_element.hpp	/^    DtdElement(const std::string& name);$/;"	p	class:xml::DtdElement	access:public	signature:(const std::string& name)
+DtdAttributeList	dtd_element.hpp	/^typedef std::set<std::string> DtdAttributeList;$/;"	t	namespace:xml
+DtdElement	dtd_element.cpp	/^DtdElement::DtdElement(std::string& name): _name(name), _validator(0),$/;"	f	class:xml::DtdElement	signature:(std::string& name)
+DtdElement	dtd_element.hpp	/^    DtdElement(std::string& name);$/;"	p	class:xml::DtdElement	access:public	signature:(std::string& name)
 DtdElement	dtd_element.hpp	/^class DtdElement$/;"	c	namespace:xml
+DtdElementList	doctype.hpp	/^typedef std::map<std::string, DtdElement*> DtdElementList;$/;"	t	namespace:xml
+DtdMultiple	dtd_multiple.cpp	/^DtdMultiple::DtdMultiple()$/;"	f	class:xml::DtdMultiple	signature:()
+DtdMultiple	dtd_multiple.hpp	/^    DtdMultiple();$/;"	p	class:xml::DtdMultiple	access:public	signature:()
+DtdMultiple	dtd_multiple.hpp	/^class DtdMultiple : public DtdElement$/;"	c	namespace:xml	inherits:DtdElement
+DtdValidator	dtd_validator.cpp	/^DtdValidator::DtdValidator(): _cardinality(1) {$/;"	f	class:xml::DtdValidator	signature:()
+DtdValidator	dtd_validator.hpp	/^    DtdValidator();$/;"	p	class:xml::DtdValidator	access:public	signature:()
+DtdValidator	dtd_validator.hpp	/^class DtdValidator$/;"	c	namespace:xml
 Element	element.cpp	/^Element::Element(Element* parent, const std::string& name) :$/;"	f	class:xml::Element	signature:(Element* parent, const std::string& name)
 Element	element.hpp	/^      Element(Element* parent, const std::string& name);$/;"	p	class:xml::Element	access:public	signature:(Element* parent, const std::string& name)
 Element	element.hpp	/^  class Element: public Node$/;"	c	namespace:xml	inherits:Node
+EmptyValidator	empty_validator.hpp	/^class EmptyValidator : public DtdValidator$/;"	c	namespace:xml	inherits:DtdValidator
 Node	node.cpp	/^Node::Node(Element* parent) $/;"	f	class:xml::Node	signature:(Element* parent)
 Node	node.hpp	/^    Node(Element* parent);$/;"	p	class:xml::Node	access:public	signature:(Element* parent)
 Node	node.hpp	/^class Node$/;"	c	namespace:xml
@@ -33,25 +46,50 @@ TextNode	text_node.hpp	/^class TextNode : public Node$/;"	c	namespace:xml	inheri
 XML_ATTRIBUTE_H	attribute.hpp	7;"	d
 XML_DOCTYPE_H	doctype.hpp	7;"	d
 XML_DOCUMENT_H	document.hpp	7;"	d
+XML_DTD_ANY_VALIDATOR_H	any_validator.hpp	7;"	d
+XML_DTD_DATA_H	data.hpp	7;"	d
 XML_DTD_ELEMENT_H	dtd_element.hpp	7;"	d
+XML_DTD_EMPTY_VALIDATOR_H	empty_validator.hpp	7;"	d
+XML_DTD_MULTIPLE_H	dtd_multiple.hpp	7;"	d
+XML_DTD_VALIDATOR_H	dtd_validator.hpp	7;"	d
+XML_DTD_XML_ELEMENT_VALIDATOR_H	xml_element_validator.hpp	7;"	d
 XML_ELEMENT_H	element.hpp	7;"	d
 XML_NODE_H	node.hpp	7;"	d
 XML_TEXT_NODE_H	text_node.hpp	7;"	d
+XmlElementValidator	xml_element_validator.cpp	/^XmlElementValidator::XmlElementValidator(std::string &name): DtdValidator(), _name(name) {$/;"	f	class:xml::XmlElementValidator	signature:(std::string &name)
+XmlElementValidator	xml_element_validator.hpp	/^    XmlElementValidator(std::string &name);$/;"	p	class:xml::XmlElementValidator	access:public	signature:(std::string &name)
+XmlElementValidator	xml_element_validator.hpp	/^class XmlElementValidator : public DtdValidator$/;"	c	namespace:xml	inherits:DtdValidator
+_attributes	dtd_element.hpp	/^    DtdAttributeList _attributes;$/;"	m	class:xml::DtdElement	access:private
 _attributes	element.hpp	/^        AttributeList _attributes;$/;"	m	class:xml::Element	access:private
+_cardinality	dtd_validator.hpp	/^    int _cardinality;$/;"	m	class:xml::DtdValidator	access:protected
 _cardinalityChildren	element.hpp	/^        CardinalityList _cardinalityChildren;$/;"	m	class:xml::Element	access:private
 _children	element.hpp	/^        NodeList _children;$/;"	m	class:xml::Element	access:private
 _content	text_node.hpp	/^    std::string _content;$/;"	m	class:xml::TextNode	access:private
 _doctype	document.hpp	/^    Doctype* _doctype;$/;"	m	class:xml::Document	access:private
+_elements	doctype.hpp	/^    DtdElementList _elements;$/;"	m	class:xml::Doctype	access:private
 _name	attribute.hpp	/^	std::string _name;$/;"	m	class:xml::Attribute	access:private
 _name	doctype.hpp	/^    std::string _name;$/;"	m	class:xml::Doctype	access:private
+_name	dtd_element.hpp	/^    std::string _name;$/;"	m	class:xml::DtdElement	access:private
 _name	element.hpp	/^        std::string _name;$/;"	m	class:xml::Element	access:private
+_name	xml_element_validator.hpp	/^    std::string _name;$/;"	m	class:xml::XmlElementValidator	access:private
+_validator	dtd_element.hpp	/^    DtdValidator* _validator;$/;"	m	class:xml::DtdElement	access:private
 _value	attribute.hpp	/^	std::string _value;$/;"	m	class:xml::Attribute	access:private
 _xmlElement	document.hpp	/^    Element* _xmlElement;$/;"	m	class:xml::Document	access:private
+addAttribute	dtd_element.cpp	/^void DtdElement::addAttribute(std::string& attrname) {$/;"	f	class:xml::DtdElement	signature:(std::string& attrname)
+addAttribute	dtd_element.hpp	/^    void addAttribute(std::string& attrname);$/;"	p	class:xml::DtdElement	access:public	signature:(std::string& attrname)
 addAttribute	element.cpp	/^int Element::addAttribute(Attribute* newAttribute) {$/;"	f	class:xml::Element	signature:(Attribute* newAttribute)
 addAttribute	element.hpp	/^      int addAttribute(Attribute* newAttribute);$/;"	p	class:xml::Element	access:public	signature:(Attribute* newAttribute)
+ae	element.cpp	/^  AttributeList::iterator ae = _attributes.end();$/;"	l
+ai	element.cpp	/^  AttributeList::iterator ai = _attributes.begin();$/;"	l
 appendChild	element.cpp	/^int Element::appendChild(Node* newChild) {$/;"	f	class:xml::Element	signature:(Node* newChild)
 appendChild	element.hpp	/^      int appendChild(Node* newChild);$/;"	p	class:xml::Element	access:public	signature:(Node* newChild)
+child	data.cpp	/^  Node* child; \/\/ TODO fils de elt$/;"	l
+children	element.hpp	/^      inline const NodeList& children() const {$/;"	f	class:xml::Element	access:public	signature:() const
 content	text_node.hpp	/^    inline const std::string& content() const {$/;"	f	class:xml::TextNode	access:public	signature:() const
+display	attribute.cpp	/^void Attribute::display()$/;"	f	class:xml::Attribute	signature:()
+display	attribute.hpp	/^  void display();$/;"	p	class:xml::Attribute	access:public	signature:()
+display	element.cpp	/^    (*ai)->display();$/;"	p	file:	signature:()
+display	element.cpp	/^    (*ni)->display();$/;"	p	file:	signature:()
 display	element.cpp	/^void Element::display()$/;"	f	class:xml::Element	signature:()
 display	element.hpp	/^      virtual void display();$/;"	p	class:xml::Element	access:public	signature:()
 display	node.cpp	/^void Node::display()$/;"	f	class:xml::Node	signature:()
@@ -59,25 +97,43 @@ display	node.hpp	/^    virtual void display();$/;"	p	class:xml::Node	access:publ
 display	text_node.cpp	/^void TextNode::display()$/;"	f	class:xml::TextNode	signature:()
 display	text_node.hpp	/^    virtual void display();$/;"	p	class:xml::TextNode	access:public	signature:()
 doctype	document.hpp	/^    inline Doctype* doctype() const {$/;"	f	class:xml::Document	access:public	signature:() const
-endl	doctype.cpp	/^  cerr << "Creating doctype element: " << name << endl;$/;"	l
-endl	dtd_element.cpp	/^  cerr << "Creating doctype element: " << name << endl;$/;"	l
+element	doctype.cpp	/^DtdElement Doctype::element(const char* eltname) {$/;"	f	class:xml::Doctype	signature:(const char* eltname)
+element	doctype.cpp	/^DtdElement Doctype::element(string name) {$/;"	f	class:xml::Doctype	signature:(string name)
+element	doctype.hpp	/^    DtdElement* element(const char* eltname);$/;"	p	class:xml::Doctype	access:public	signature:(const char* eltname)
+element	doctype.hpp	/^    DtdElement* element(std::string eltname);$/;"	p	class:xml::Doctype	access:public	signature:(std::string eltname)
+endl	attribute.cpp	/^  cerr << "Attr:" << _name << ":" << _value << endl;$/;"	l
+endl	data.cpp	/^  cerr << "Creating doctype element: " << name << endl;$/;"	l
+endl	dtd_multiple.cpp	/^  cerr << "Creating doctype element: " << name << endl;$/;"	l
 endl	element.cpp	/^    cerr << "Creating Element: " << name << endl;$/;"	l
+endl	element.cpp	/^    cerr << "Parent Element: " << (void*)parent << endl;$/;"	l
+endl	element.cpp	/^  cerr << "Attributes:" << endl;$/;"	l
 endl	node.cpp	/^  cerr << "Creating Node element. Parent: " << (void*)parent << endl;$/;"	l
 endl	node.cpp	/^  std::cerr << "I am a plain node" << std::endl;$/;"	m	class:xml::std	file:
 endl	text_node.cpp	/^  cerr << "Creating TextNode element: " << content << endl;$/;"	l
 endl	text_node.cpp	/^cerr << "I am a text node : [" << _content << "]" << endl;$/;"	l
 f_	document.hpp	/^    FILE* f_;$/;"	m	class:xml::Document	access:private
+insert	doctype.cpp	/^    _elements.insert(name, elt);$/;"	p	file:	signature:(name, elt)
+insert	dtd_element.cpp	/^  _attributes.insert(attrname);$/;"	p	file:	signature:(attrname)
+it	doctype.cpp	/^  DtdElementList::iterator it = _elements.begin();$/;"	l
 name	attribute.hpp	/^  inline const std::string& name() const {$/;"	f	class:xml::Attribute	access:public	signature:() const
 name	doctype.hpp	/^    inline std::string& name() {$/;"	f	class:xml::Doctype	access:public	signature:()
 name	element.hpp	/^      const std::string& name()$/;"	f	class:xml::Element	access:public	signature:()
+ne	element.cpp	/^  std::vector<Node*>::iterator ne = _children.end();$/;"	l
+ni	element.cpp	/^  std::vector<Node*>::iterator ni = _children.begin();$/;"	l
 parent	node.cpp	/^Element* Node::parent() {$/;"	f	class:xml::Node	signature:()
 parent	node.hpp	/^		Element* parent();$/;"	p	class:xml::Node	access:public	signature:()
 parent_	node.hpp	/^		Element* parent_;$/;"	m	class:xml::Node	access:protected
-parse	document.cpp	/^  void Document::parse() {$/;"	f	class:xml::Document	signature:()
-parse	document.hpp	/^    void parse();$/;"	p	class:xml::Document	access:public	signature:()
+parse	document.cpp	/^  bool Document::parse() {$/;"	f	class:xml::Document	signature:()
+parse	document.hpp	/^    bool parse();$/;"	p	class:xml::Document	access:public	signature:()
 push_back	element.cpp	/^  _attributes.push_back(newAttribute);$/;"	p	file:	signature:(newAttribute)
 push_back	element.cpp	/^  _children.push_back(newChild);$/;"	p	file:	signature:(newChild)
+q	doctype.cpp	/^  DtdElementList::iterator q = _elements.find(name);$/;"	l
+result	dtd_element.cpp	/^  bool result(false);$/;"	p	file:	signature:(false)
+result	xml_element_validator.cpp	/^  bool result = dynamic_cast<Element*>(cursor->second()) &&$/;"	l
 root	document.hpp	/^    inline Element* root() const {$/;"	f	class:xml::Document	access:public	signature:() const
+second	doctype.cpp	/^    delete it->second();$/;"	p	file:	signature:()
+setCardinality	dtd_validator.cpp	/^void DtdValidator::setCardinality(int cardinality) {$/;"	f	class:xml::DtdValidator	signature:(int cardinality)
+setCardinality	dtd_validator.hpp	/^    void setCardinality(int cardinality);$/;"	p	class:xml::DtdValidator	access:public	signature:(int cardinality)
 setContent	text_node.cpp	/^void TextNode::setContent(const std::string& content) {$/;"	f	class:xml::TextNode	signature:(const std::string& content)
 setContent	text_node.hpp	/^    void setContent(const std::string& content);$/;"	p	class:xml::TextNode	access:public	signature:(const std::string& content)
 setDoctype	document.cpp	/^  void Document::setDoctype(Doctype* doctype) {$/;"	f	class:xml::Document	signature:(Doctype* doctype)
@@ -86,28 +142,59 @@ setName	attribute.cpp	/^void Attribute::setName(std::string name) {$/;"	f	class:
 setName	attribute.hpp	/^  void setName(std::string name);$/;"	p	class:xml::Attribute	access:public	signature:(std::string name)
 setRoot	document.cpp	/^  void Document::setRoot(Element* element) {$/;"	f	class:xml::Document	signature:(Element* element)
 setRoot	document.hpp	/^    void setRoot(Element* root);$/;"	p	class:xml::Document	access:public	signature:(Element* root)
+setValidator	dtd_element.cpp	/^void DtdElement::setValidator(DtdValidator* validator) {$/;"	f	class:xml::DtdElement	signature:(DtdValidator* validator)
+setValidator	dtd_element.hpp	/^    void setValidator(DtdValidator* validator);$/;"	p	class:xml::DtdElement	access:public	signature:(DtdValidator* validator)
 setValue	attribute.cpp	/^void Attribute::setValue(std::string value) {$/;"	f	class:xml::Attribute	signature:(std::string value)
 setValue	attribute.hpp	/^  void setValue(std::string name);$/;"	p	class:xml::Attribute	access:public	signature:(std::string name)
+valid	any_validator.cpp	/^AnyValidator::valid(NodeList::iterator* cursor, NodeList::iterator& end) {$/;"	f	class:xml::AnyValidator	signature:(NodeList::iterator* cursor, NodeList::iterator& end)
+valid	any_validator.hpp	/^    virtual bool valid(NodeList::iterator* cursor NodeList::iterator& end);$/;"	p	class:xml::AnyValidator	access:public	signature:(NodeList::iterator* cursor NodeList::iterator& end)
+valid	data.cpp	/^bool Data::valid(Element* elt)$/;"	f	class:xml::Data	signature:(Element* elt)
+valid	data.hpp	/^    virtual bool valid(Element* elt);$/;"	p	class:xml::Data	access:public	signature:(Element* elt)
+valid	dtd_element.cpp	/^bool valid(Element* elt)$/;"	f	namespace:xml	signature:(Element* elt)
+valid	dtd_element.hpp	/^    bool valid(Element* elt);$/;"	p	class:xml::DtdElement	access:public	signature:(Element* elt)
+valid	dtd_multiple.hpp	/^    virtual bool valid(Element* elt) = 0;$/;"	p	class:xml::DtdMultiple	access:public	signature:(Element* elt)
+valid	dtd_validator.hpp	/^    virtual bool valid(NodeList::iterator* cursor, NodeList::iterator& end)$/;"	p	class:xml::DtdValidator	access:public	signature:(NodeList::iterator* cursor, NodeList::iterator& end) const
+valid	empty_validator.cpp	/^EmptyValidator::valid(NodeList::iterator* cursor, NodeList::iterator& end) {$/;"	f	class:xml::EmptyValidator	signature:(NodeList::iterator* cursor, NodeList::iterator& end)
+valid	empty_validator.hpp	/^    virtual bool valid(NodeList::iterator* cursor NodeList::iterator& end);$/;"	p	class:xml::EmptyValidator	access:public	signature:(NodeList::iterator* cursor NodeList::iterator& end)
+valid	xml_element_validator.cpp	/^XmlElementValidator::valid(NodeList::iterator* cursor, NodeList::iterator& end) {$/;"	f	class:xml::XmlElementValidator	signature:(NodeList::iterator* cursor, NodeList::iterator& end)
+valid	xml_element_validator.hpp	/^    virtual bool valid(NodeList::iterator* cursor NodeList::iterator& end);$/;"	p	class:xml::XmlElementValidator	access:public	signature:(NodeList::iterator* cursor NodeList::iterator& end)
 value	attribute.hpp	/^  inline const std::string& value() const {$/;"	f	class:xml::Attribute	access:public	signature:() const
+xml	any_validator.cpp	/^namespace xml {$/;"	n	file:
+xml	any_validator.hpp	/^namespace xml {$/;"	n
 xml	attribute.cpp	/^namespace xml {$/;"	n	file:
 xml	attribute.hpp	/^namespace xml {$/;"	n
+xml	data.cpp	/^namespace xml {$/;"	n	file:
+xml	data.hpp	/^namespace xml {$/;"	n
 xml	doctype.cpp	/^namespace xml {$/;"	n	file:
 xml	doctype.hpp	/^namespace xml {$/;"	n
 xml	document.cpp	/^namespace xml {$/;"	n	file:
 xml	document.hpp	/^namespace xml {$/;"	n
 xml	dtd_element.cpp	/^namespace xml {$/;"	n	file:
 xml	dtd_element.hpp	/^namespace xml {$/;"	n
+xml	dtd_multiple.cpp	/^namespace xml {$/;"	n	file:
+xml	dtd_multiple.hpp	/^namespace xml {$/;"	n
+xml	dtd_validator.cpp	/^namespace xml {$/;"	n	file:
+xml	dtd_validator.hpp	/^namespace xml {$/;"	n
 xml	element.cpp	/^namespace xml {$/;"	n	file:
 xml	element.hpp	/^namespace xml {$/;"	n
+xml	empty_validator.cpp	/^namespace xml {$/;"	n	file:
+xml	empty_validator.hpp	/^namespace xml {$/;"	n
 xml	node.cpp	/^namespace xml {$/;"	n	file:
 xml	node.hpp	/^namespace xml {$/;"	n
 xml	text_node.cpp	/^namespace xml {$/;"	n	file:
 xml	text_node.hpp	/^namespace xml {$/;"	n
+xml	xml_element_validator.cpp	/^namespace xml {$/;"	n	file:
+xml	xml_element_validator.hpp	/^namespace xml {$/;"	n
+xml::AnyValidator	any_validator.hpp	/^class AnyValidator : public DtdValidator$/;"	c	namespace:xml	inherits:DtdValidator
+xml::AnyValidator::valid	any_validator.cpp	/^AnyValidator::valid(NodeList::iterator* cursor, NodeList::iterator& end) {$/;"	f	class:xml::AnyValidator	signature:(NodeList::iterator* cursor, NodeList::iterator& end)
+xml::AnyValidator::valid	any_validator.hpp	/^    virtual bool valid(NodeList::iterator* cursor NodeList::iterator& end);$/;"	p	class:xml::AnyValidator	access:public	signature:(NodeList::iterator* cursor NodeList::iterator& end)
 xml::Attribute	attribute.hpp	/^class Attribute$/;"	c	namespace:xml
 xml::Attribute::Attribute	attribute.cpp	/^Attribute::Attribute(std::string name, std::string value): _name(name), _value(value) {$/;"	f	class:xml::Attribute	signature:(std::string name, std::string value)
 xml::Attribute::Attribute	attribute.hpp	/^	Attribute(std::string name = "", std::string value = "");$/;"	p	class:xml::Attribute	access:public	signature:(std::string name = Ó, std::string value = Ó)
 xml::Attribute::_name	attribute.hpp	/^	std::string _name;$/;"	m	class:xml::Attribute	access:private
 xml::Attribute::_value	attribute.hpp	/^	std::string _value;$/;"	m	class:xml::Attribute	access:private
+xml::Attribute::display	attribute.cpp	/^void Attribute::display()$/;"	f	class:xml::Attribute	signature:()
+xml::Attribute::display	attribute.hpp	/^  void display();$/;"	p	class:xml::Attribute	access:public	signature:()
 xml::Attribute::name	attribute.hpp	/^  inline const std::string& name() const {$/;"	f	class:xml::Attribute	access:public	signature:() const
 xml::Attribute::setName	attribute.cpp	/^void Attribute::setName(std::string name) {$/;"	f	class:xml::Attribute	signature:(std::string name)
 xml::Attribute::setName	attribute.hpp	/^  void setName(std::string name);$/;"	p	class:xml::Attribute	access:public	signature:(std::string name)
@@ -117,11 +204,23 @@ xml::Attribute::value	attribute.hpp	/^  inline const std::string& value() const 
 xml::AttributeList	attribute.hpp	/^typedef std::vector<Attribute*> AttributeList;$/;"	t	namespace:xml
 xml::Cardinality	element.hpp	/^  typedef std::pair<int, int> Cardinality;$/;"	t	namespace:xml
 xml::CardinalityList	element.hpp	/^  typedef std::map<std::string, Cardinality> CardinalityList;$/;"	t	namespace:xml
+xml::Data	data.hpp	/^class Data: public DtdElement$/;"	c	namespace:xml	inherits:DtdElement
+xml::Data::Data	data.cpp	/^Data::Data()$/;"	f	class:xml::Data	signature:()
+xml::Data::Data	data.hpp	/^    Data();$/;"	p	class:xml::Data	access:public	signature:()
+xml::Data::valid	data.cpp	/^bool Data::valid(Element* elt)$/;"	f	class:xml::Data	signature:(Element* elt)
+xml::Data::valid	data.hpp	/^    virtual bool valid(Element* elt);$/;"	p	class:xml::Data	access:public	signature:(Element* elt)
 xml::Doctype	doctype.hpp	/^class Doctype$/;"	c	namespace:xml
-xml::Doctype::Doctype	doctype.cpp	/^Doctype::Doctype(const std::string& name)$/;"	f	class:xml::Doctype	signature:(const std::string& name)
+xml::Doctype::Doctype	doctype.cpp	/^Doctype::Doctype(const std::string& name) :_name(name), _elements()$/;"	f	class:xml::Doctype	signature:(const std::string& name)
 xml::Doctype::Doctype	doctype.hpp	/^    Doctype(const std::string& name);$/;"	p	class:xml::Doctype	access:public	signature:(const std::string& name)
+xml::Doctype::_elements	doctype.hpp	/^    DtdElementList _elements;$/;"	m	class:xml::Doctype	access:private
 xml::Doctype::_name	doctype.hpp	/^    std::string _name;$/;"	m	class:xml::Doctype	access:private
+xml::Doctype::element	doctype.cpp	/^DtdElement Doctype::element(const char* eltname) {$/;"	f	class:xml::Doctype	signature:(const char* eltname)
+xml::Doctype::element	doctype.cpp	/^DtdElement Doctype::element(string name) {$/;"	f	class:xml::Doctype	signature:(string name)
+xml::Doctype::element	doctype.hpp	/^    DtdElement* element(const char* eltname);$/;"	p	class:xml::Doctype	access:public	signature:(const char* eltname)
+xml::Doctype::element	doctype.hpp	/^    DtdElement* element(std::string eltname);$/;"	p	class:xml::Doctype	access:public	signature:(std::string eltname)
 xml::Doctype::name	doctype.hpp	/^    inline std::string& name() {$/;"	f	class:xml::Doctype	access:public	signature:()
+xml::Doctype::~Doctype	doctype.cpp	/^Doctype::~Doctype()$/;"	f	class:xml::Doctype	signature:()
+xml::Doctype::~Doctype	doctype.hpp	/^    ~Doctype();$/;"	p	class:xml::Doctype	access:public	signature:()
 xml::Document	document.hpp	/^class Document$/;"	c	namespace:xml
 xml::Document::Document	document.cpp	/^  Document::Document(FILE* f):$/;"	f	class:xml::Document	signature:(FILE* f)
 xml::Document::Document	document.hpp	/^    Document(FILE* f = stdin);$/;"	p	class:xml::Document	access:public	signature:(FILE* f = stdin)
@@ -129,16 +228,38 @@ xml::Document::_doctype	document.hpp	/^    Doctype* _doctype;$/;"	m	class:xml::D
 xml::Document::_xmlElement	document.hpp	/^    Element* _xmlElement;$/;"	m	class:xml::Document	access:private
 xml::Document::doctype	document.hpp	/^    inline Doctype* doctype() const {$/;"	f	class:xml::Document	access:public	signature:() const
 xml::Document::f_	document.hpp	/^    FILE* f_;$/;"	m	class:xml::Document	access:private
-xml::Document::parse	document.cpp	/^  void Document::parse() {$/;"	f	class:xml::Document	signature:()
-xml::Document::parse	document.hpp	/^    void parse();$/;"	p	class:xml::Document	access:public	signature:()
+xml::Document::parse	document.cpp	/^  bool Document::parse() {$/;"	f	class:xml::Document	signature:()
+xml::Document::parse	document.hpp	/^    bool parse();$/;"	p	class:xml::Document	access:public	signature:()
 xml::Document::root	document.hpp	/^    inline Element* root() const {$/;"	f	class:xml::Document	access:public	signature:() const
 xml::Document::setDoctype	document.cpp	/^  void Document::setDoctype(Doctype* doctype) {$/;"	f	class:xml::Document	signature:(Doctype* doctype)
 xml::Document::setDoctype	document.hpp	/^    void setDoctype(Doctype* doctype);$/;"	p	class:xml::Document	access:public	signature:(Doctype* doctype)
 xml::Document::setRoot	document.cpp	/^  void Document::setRoot(Element* element) {$/;"	f	class:xml::Document	signature:(Element* element)
 xml::Document::setRoot	document.hpp	/^    void setRoot(Element* root);$/;"	p	class:xml::Document	access:public	signature:(Element* root)
+xml::DtdAttributeList	dtd_element.hpp	/^typedef std::set<std::string> DtdAttributeList;$/;"	t	namespace:xml
 xml::DtdElement	dtd_element.hpp	/^class DtdElement$/;"	c	namespace:xml
-xml::DtdElement::DtdElement	dtd_element.cpp	/^DtdElement::DtdElement()$/;"	f	class:xml::DtdElement	signature:()
-xml::DtdElement::DtdElement	dtd_element.hpp	/^    DtdElement(const std::string& name);$/;"	p	class:xml::DtdElement	access:public	signature:(const std::string& name)
+xml::DtdElement::DtdElement	dtd_element.cpp	/^DtdElement::DtdElement(std::string& name): _name(name), _validator(0),$/;"	f	class:xml::DtdElement	signature:(std::string& name)
+xml::DtdElement::DtdElement	dtd_element.hpp	/^    DtdElement(std::string& name);$/;"	p	class:xml::DtdElement	access:public	signature:(std::string& name)
+xml::DtdElement::_attributes	dtd_element.hpp	/^    DtdAttributeList _attributes;$/;"	m	class:xml::DtdElement	access:private
+xml::DtdElement::_name	dtd_element.hpp	/^    std::string _name;$/;"	m	class:xml::DtdElement	access:private
+xml::DtdElement::_validator	dtd_element.hpp	/^    DtdValidator* _validator;$/;"	m	class:xml::DtdElement	access:private
+xml::DtdElement::addAttribute	dtd_element.cpp	/^void DtdElement::addAttribute(std::string& attrname) {$/;"	f	class:xml::DtdElement	signature:(std::string& attrname)
+xml::DtdElement::addAttribute	dtd_element.hpp	/^    void addAttribute(std::string& attrname);$/;"	p	class:xml::DtdElement	access:public	signature:(std::string& attrname)
+xml::DtdElement::setValidator	dtd_element.cpp	/^void DtdElement::setValidator(DtdValidator* validator) {$/;"	f	class:xml::DtdElement	signature:(DtdValidator* validator)
+xml::DtdElement::setValidator	dtd_element.hpp	/^    void setValidator(DtdValidator* validator);$/;"	p	class:xml::DtdElement	access:public	signature:(DtdValidator* validator)
+xml::DtdElement::valid	dtd_element.hpp	/^    bool valid(Element* elt);$/;"	p	class:xml::DtdElement	access:public	signature:(Element* elt)
+xml::DtdElementList	doctype.hpp	/^typedef std::map<std::string, DtdElement*> DtdElementList;$/;"	t	namespace:xml
+xml::DtdMultiple	dtd_multiple.hpp	/^class DtdMultiple : public DtdElement$/;"	c	namespace:xml	inherits:DtdElement
+xml::DtdMultiple::DtdMultiple	dtd_multiple.cpp	/^DtdMultiple::DtdMultiple()$/;"	f	class:xml::DtdMultiple	signature:()
+xml::DtdMultiple::DtdMultiple	dtd_multiple.hpp	/^    DtdMultiple();$/;"	p	class:xml::DtdMultiple	access:public	signature:()
+xml::DtdMultiple::valid	dtd_multiple.hpp	/^    virtual bool valid(Element* elt) = 0;$/;"	p	class:xml::DtdMultiple	access:public	signature:(Element* elt)
+xml::DtdValidator	dtd_validator.hpp	/^class DtdValidator$/;"	c	namespace:xml
+xml::DtdValidator::DtdValidator	dtd_validator.cpp	/^DtdValidator::DtdValidator(): _cardinality(1) {$/;"	f	class:xml::DtdValidator	signature:()
+xml::DtdValidator::DtdValidator	dtd_validator.hpp	/^    DtdValidator();$/;"	p	class:xml::DtdValidator	access:public	signature:()
+xml::DtdValidator::_cardinality	dtd_validator.hpp	/^    int _cardinality;$/;"	m	class:xml::DtdValidator	access:protected
+xml::DtdValidator::setCardinality	dtd_validator.cpp	/^void DtdValidator::setCardinality(int cardinality) {$/;"	f	class:xml::DtdValidator	signature:(int cardinality)
+xml::DtdValidator::setCardinality	dtd_validator.hpp	/^    void setCardinality(int cardinality);$/;"	p	class:xml::DtdValidator	access:public	signature:(int cardinality)
+xml::DtdValidator::valid	dtd_validator.hpp	/^    virtual bool valid(NodeList::iterator* cursor, NodeList::iterator& end)$/;"	p	class:xml::DtdValidator	access:public	signature:(NodeList::iterator* cursor, NodeList::iterator& end) const
+xml::DtdValidator::~DtdValidator	dtd_validator.hpp	/^    virtual ~DtdValidator();$/;"	p	class:xml::DtdValidator	access:public	signature:()
 xml::Element	element.hpp	/^  class Element: public Node$/;"	c	namespace:xml	inherits:Node
 xml::Element::Element	element.cpp	/^Element::Element(Element* parent, const std::string& name) :$/;"	f	class:xml::Element	signature:(Element* parent, const std::string& name)
 xml::Element::Element	element.hpp	/^      Element(Element* parent, const std::string& name);$/;"	p	class:xml::Element	access:public	signature:(Element* parent, const std::string& name)
@@ -150,9 +271,13 @@ xml::Element::addAttribute	element.cpp	/^int Element::addAttribute(Attribute* ne
 xml::Element::addAttribute	element.hpp	/^      int addAttribute(Attribute* newAttribute);$/;"	p	class:xml::Element	access:public	signature:(Attribute* newAttribute)
 xml::Element::appendChild	element.cpp	/^int Element::appendChild(Node* newChild) {$/;"	f	class:xml::Element	signature:(Node* newChild)
 xml::Element::appendChild	element.hpp	/^      int appendChild(Node* newChild);$/;"	p	class:xml::Element	access:public	signature:(Node* newChild)
+xml::Element::children	element.hpp	/^      inline const NodeList& children() const {$/;"	f	class:xml::Element	access:public	signature:() const
 xml::Element::display	element.cpp	/^void Element::display()$/;"	f	class:xml::Element	signature:()
 xml::Element::display	element.hpp	/^      virtual void display();$/;"	p	class:xml::Element	access:public	signature:()
 xml::Element::name	element.hpp	/^      const std::string& name()$/;"	f	class:xml::Element	access:public	signature:()
+xml::EmptyValidator	empty_validator.hpp	/^class EmptyValidator : public DtdValidator$/;"	c	namespace:xml	inherits:DtdValidator
+xml::EmptyValidator::valid	empty_validator.cpp	/^EmptyValidator::valid(NodeList::iterator* cursor, NodeList::iterator& end) {$/;"	f	class:xml::EmptyValidator	signature:(NodeList::iterator* cursor, NodeList::iterator& end)
+xml::EmptyValidator::valid	empty_validator.hpp	/^    virtual bool valid(NodeList::iterator* cursor NodeList::iterator& end);$/;"	p	class:xml::EmptyValidator	access:public	signature:(NodeList::iterator* cursor NodeList::iterator& end)
 xml::Node	node.hpp	/^class Node$/;"	c	namespace:xml
 xml::Node::Node	node.cpp	/^Node::Node(Element* parent) $/;"	f	class:xml::Node	signature:(Element* parent)
 xml::Node::Node	node.hpp	/^    Node(Element* parent);$/;"	p	class:xml::Node	access:public	signature:(Element* parent)
@@ -171,12 +296,39 @@ xml::TextNode::display	text_node.cpp	/^void TextNode::display()$/;"	f	class:xml:
 xml::TextNode::display	text_node.hpp	/^    virtual void display();$/;"	p	class:xml::TextNode	access:public	signature:()
 xml::TextNode::setContent	text_node.cpp	/^void TextNode::setContent(const std::string& content) {$/;"	f	class:xml::TextNode	signature:(const std::string& content)
 xml::TextNode::setContent	text_node.hpp	/^    void setContent(const std::string& content);$/;"	p	class:xml::TextNode	access:public	signature:(const std::string& content)
-xml::endl	doctype.cpp	/^  cerr << "Creating doctype element: " << name << endl;$/;"	l
-xml::endl	dtd_element.cpp	/^  cerr << "Creating doctype element: " << name << endl;$/;"	l
+xml::XmlElementValidator	xml_element_validator.hpp	/^class XmlElementValidator : public DtdValidator$/;"	c	namespace:xml	inherits:DtdValidator
+xml::XmlElementValidator::XmlElementValidator	xml_element_validator.cpp	/^XmlElementValidator::XmlElementValidator(std::string &name): DtdValidator(), _name(name) {$/;"	f	class:xml::XmlElementValidator	signature:(std::string &name)
+xml::XmlElementValidator::XmlElementValidator	xml_element_validator.hpp	/^    XmlElementValidator(std::string &name);$/;"	p	class:xml::XmlElementValidator	access:public	signature:(std::string &name)
+xml::XmlElementValidator::_name	xml_element_validator.hpp	/^    std::string _name;$/;"	m	class:xml::XmlElementValidator	access:private
+xml::XmlElementValidator::valid	xml_element_validator.cpp	/^XmlElementValidator::valid(NodeList::iterator* cursor, NodeList::iterator& end) {$/;"	f	class:xml::XmlElementValidator	signature:(NodeList::iterator* cursor, NodeList::iterator& end)
+xml::XmlElementValidator::valid	xml_element_validator.hpp	/^    virtual bool valid(NodeList::iterator* cursor NodeList::iterator& end);$/;"	p	class:xml::XmlElementValidator	access:public	signature:(NodeList::iterator* cursor NodeList::iterator& end)
+xml::ae	element.cpp	/^  AttributeList::iterator ae = _attributes.end();$/;"	l
+xml::ai	element.cpp	/^  AttributeList::iterator ai = _attributes.begin();$/;"	l
+xml::child	data.cpp	/^  Node* child; \/\/ TODO fils de elt$/;"	l
+xml::display	element.cpp	/^    (*ai)->display();$/;"	p	file:	signature:()
+xml::display	element.cpp	/^    (*ni)->display();$/;"	p	file:	signature:()
+xml::endl	attribute.cpp	/^  cerr << "Attr:" << _name << ":" << _value << endl;$/;"	l
+xml::endl	data.cpp	/^  cerr << "Creating doctype element: " << name << endl;$/;"	l
+xml::endl	dtd_multiple.cpp	/^  cerr << "Creating doctype element: " << name << endl;$/;"	l
 xml::endl	element.cpp	/^    cerr << "Creating Element: " << name << endl;$/;"	l
+xml::endl	element.cpp	/^    cerr << "Parent Element: " << (void*)parent << endl;$/;"	l
+xml::endl	element.cpp	/^  cerr << "Attributes:" << endl;$/;"	l
 xml::endl	node.cpp	/^  cerr << "Creating Node element. Parent: " << (void*)parent << endl;$/;"	l
 xml::endl	text_node.cpp	/^  cerr << "Creating TextNode element: " << content << endl;$/;"	l
 xml::endl	text_node.cpp	/^cerr << "I am a text node : [" << _content << "]" << endl;$/;"	l
+xml::insert	doctype.cpp	/^    _elements.insert(name, elt);$/;"	p	file:	signature:(name, elt)
+xml::insert	dtd_element.cpp	/^  _attributes.insert(attrname);$/;"	p	file:	signature:(attrname)
+xml::it	doctype.cpp	/^  DtdElementList::iterator it = _elements.begin();$/;"	l
+xml::ne	element.cpp	/^  std::vector<Node*>::iterator ne = _children.end();$/;"	l
+xml::ni	element.cpp	/^  std::vector<Node*>::iterator ni = _children.begin();$/;"	l
 xml::push_back	element.cpp	/^  _attributes.push_back(newAttribute);$/;"	p	file:	signature:(newAttribute)
 xml::push_back	element.cpp	/^  _children.push_back(newChild);$/;"	p	file:	signature:(newChild)
+xml::q	doctype.cpp	/^  DtdElementList::iterator q = _elements.find(name);$/;"	l
+xml::result	dtd_element.cpp	/^  bool result(false);$/;"	p	file:	signature:(false)
+xml::result	xml_element_validator.cpp	/^  bool result = dynamic_cast<Element*>(cursor->second()) &&$/;"	l
+xml::second	doctype.cpp	/^    delete it->second();$/;"	p	file:	signature:()
 xml::std::endl	node.cpp	/^  std::cerr << "I am a plain node" << std::endl;$/;"	m	class:xml::std	file:
+xml::valid	dtd_element.cpp	/^bool valid(Element* elt)$/;"	f	namespace:xml	signature:(Element* elt)
+~Doctype	doctype.cpp	/^Doctype::~Doctype()$/;"	f	class:xml::Doctype	signature:()
+~Doctype	doctype.hpp	/^    ~Doctype();$/;"	p	class:xml::Doctype	access:public	signature:()
+~DtdValidator	dtd_validator.hpp	/^    virtual ~DtdValidator();$/;"	p	class:xml::DtdValidator	access:public	signature:()
