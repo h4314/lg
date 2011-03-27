@@ -36,6 +36,13 @@ class Document
     bool parse();
 
     /**
+     * @brief valide l'arbre XML d'après la DTD
+     * @return Retourne vrai si l'arbre est validé, faux sinon.
+     * Si aucune DTD n'est renseignée, la méthode retourne faux.
+     */
+    bool validateWithDtd() const;
+
+    /**
      * @brief Donne l'élément racine du document XML
      */
     inline Element* root() const {
@@ -62,8 +69,15 @@ class Document
     void setDoctype(Doctype* doctype);
 
   private:
+    /**
+     * @brief Valide l'élement elt et tous ses descendants.
+     * @param elt Pointeur sur l'élément à valider
+     * @return Vrai si l'élément et tous ses descendants sont validés
+     */
+    bool _validateElementChildrenWithDtd(Element* elt) const;
+
     /** flux de lecture du document XML. */
-    FILE* f_;
+    FILE* _f;
 
     /** element racine */
     Element* _xmlElement;

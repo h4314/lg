@@ -53,6 +53,7 @@ class Attribute
    * @brief identifie la valeur de l'attribut
    */
   void setValue(std::string name);
+
   void display();
 	private:
   /** Nom de l'attribut */

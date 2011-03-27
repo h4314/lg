@@ -3,6 +3,7 @@
  * @authors Hexanome 4314
  */
 
+#include "common.hpp"
 #include "node.hpp"
 #include "element.hpp"
 
@@ -12,19 +13,15 @@ using namespace std;
 
 namespace xml {
 
-Node::Node(Element* parent) 
-	:parent_(parent)
+Node::Node(Element* parent) : _parent(parent)
 {
-  cerr << "Creating Node element. Parent: " << (void*)parent << endl;
-}
-
-Element* Node::parent() {
-	return parent_;
+  DBG_STREAM << "Creating Node element. Parent: " << (void*)parent << endl;
 }
 
 void Node::display()
 {
-  std::cerr << "I am a plain node" << std::endl;
+  assert(false); // Afficher un noeud non spécialisé est une erreur !
+  DBG_STREAM << "plain node (abstract)" << endl;
 }
 
 }

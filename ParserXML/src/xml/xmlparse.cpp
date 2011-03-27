@@ -48,5 +48,5 @@ bool parseXML(FILE* f, xml::Document * doc) {
   else
     printf("XML file : parse ended with sucess\n");
 
-  return (bool)err;
+  return (err == 0);
 }
