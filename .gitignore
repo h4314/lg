@@ -5,6 +5,7 @@ analyseDTD
 *.o
 *.obj
 *.tab.c
+*.tab.h
 lex.*.c
 *.output
 *~
