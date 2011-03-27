@@ -29,7 +29,7 @@ class MultipleValidator : public DtdValidator
      */
     void pushValidator(DtdValidator& validator);
 
-  private:
+  protected:
     /** Suite de validateurs */
     std::list<DtdValidator> _validators;
 };

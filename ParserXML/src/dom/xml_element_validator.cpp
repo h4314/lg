@@ -28,7 +28,7 @@ XmlElementValidator::valid(NodeList::iterator* cursor, NodeList::iterator& end) 
       result = true;
 
       // Element validé : on avance le curseur.
-      ++(it);
+      ++(*cursor);
 
       // On va vérifier si, d'après la cardinalité, on en attend d'autres
       must_continue = (_cardinality == _0_N || _cardinality == _1_N);

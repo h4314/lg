@@ -22,7 +22,7 @@ DataValidator::valid(NodeList::iterator* cursor, NodeList::iterator& end) {
       // On en a trouvé 1, c'est bon
       result = true;
       // On avance donc le curseur
-      ++(*it);
+      ++(*cursor);
     }
     else {
       // Element non validé, on arrête de chercher

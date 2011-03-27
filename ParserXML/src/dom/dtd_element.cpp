@@ -30,7 +30,12 @@ bool valid(Element* elt)
 
   // Validation du contenu du noeud
   NodeList::iterator cursor(elt->children().begin());
-  result = DtdValidator->valid(&cursor, elt->children().end());
+  // La validation est correcte si et seulement si le validateur répond vrai et
+  // que tous les noeuds fils ont été analysés.
+  // Par exemple (FOO*|BAR*|BAZ*) pourrait retourner vrai sans pour autant
+  // valider tous les fils, ce qui est en fait une erreur.
+  result = DtdValidator->valid(&cursor, elt->children().end()) &&
+    cursor == elt->children()->end();
 
   if(result) {
     // TODO Valider les attributs
