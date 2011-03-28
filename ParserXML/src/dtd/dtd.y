@@ -7,8 +7,13 @@ using namespace std;
 #include <cstdlib>
 #include "dtd.h"
 
+#include "dtd_element.hpp"
+#include "multiple_validator.hpp"
+#include "alt_validator.hpp"
+#include "seq_validator.hpp"
+
 xml::DtdElement * current_elt_ = 0;
-stack<xml::MultipleValidator*> current_multi_; 
+stack<xml::MultipleValidator*> current_multi_;
 
 
 void dtderror(char *msg);
@@ -37,7 +42,8 @@ element:
 	ELEMENT NAME contenu CLOSE
 {
 	/* nouvel element DTD a ajouter à la liste des element DTD du doctype */
-	xml::DtdElement * elt = new DtdElement($2);
+  // TODO c'est qui document ?
+	xml::DtdElement * elt = document_->doctype->element($2);
 	document_->doctype()->addElement(elt);
 	
 	/* garde cet element comme courant */
@@ -140,7 +146,7 @@ liste_enum_plus
 ;
 
 liste_enum
-: item_enum               
+: item_enum
 | liste_enum PIPE item_enum
 ;
 
@@ -149,9 +155,9 @@ item_enum
 ;
 
 defaut_declaration
-: DECLARATION 
-| STRING     
-| FIXED STRING 
+: DECLARATION
+| STRING
+| FIXED STRING
 ;
 %%
 int parse_dtd()

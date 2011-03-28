@@ -67,7 +67,7 @@ typedef union YYSTYPE
 {
 
 /* Line 1685 of yacc.c  */
-#line 19 "src/dtd/dtd.y"
+#line 22 "src/dtd/dtd.y"
  
    char *s; 
    
