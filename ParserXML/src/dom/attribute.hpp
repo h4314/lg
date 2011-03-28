@@ -55,6 +55,7 @@ class Attribute
   void setValue(std::string name);
 
   void display();
+
 	private:
   /** Nom de l'attribut */
 	std::string _name;

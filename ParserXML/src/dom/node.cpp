@@ -8,6 +8,7 @@
 #include "element.hpp"
 
 #include <iostream>
+#include <cassert>
 
 using namespace std;
 

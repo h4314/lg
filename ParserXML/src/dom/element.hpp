@@ -54,6 +54,14 @@ class Element: public Node
       return _children;
     }
 
+    /**
+     * @brief Retourne la liste des attributs de l'élément
+     * @return liste des attributs de l'élément
+     */
+    inline const AttributeList& attributes() const {
+      return _attributes;
+    }
+
     virtual void display();
 
   private:

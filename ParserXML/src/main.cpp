@@ -3,6 +3,7 @@
 #include <cstdio>
 #include <cstring>
 
+#include "common.hpp"
 #include "document.hpp"
 #include "xmlparse.h"
 
@@ -37,11 +38,21 @@ int main(int argc, char** argv)
   // A toi de jouer !
   bool ret = doc.parse();
 
-  if( ! ret)
+  // Retour de doc.parse() modifié pour qu'il retourne vrai si pas d'erreur
+  if(ret)
     doc.root()->display();
 
+  // Validation
+  bool valid = doc.validateWithDtd();
+  if(valid) {
+    DBG_STREAM << "Valide selon la DTD" << endl;
+  }
+  else {
+    DBG_STREAM << "Invalide selon la DTD" << endl;
+  }
 
- fclose(f);
- cerr << "ret: " << ret << endl;
-  return ! ret; // pour le unit testing
+  fclose(f);
+  DBG_STREAM << "ret: " << ret << endl;
+
+  return ret; // pour le unit testing
 }

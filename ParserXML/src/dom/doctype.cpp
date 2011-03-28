@@ -19,26 +19,26 @@ Doctype::~Doctype()
 {
   DtdElementList::iterator it = _elements.begin();
   while(it != _elements.end()) {
-    delete it->second();
+    delete it->second;
     it++;
   }
 }
 
-DtdElement Doctype::element(string name) {
+DtdElement* Doctype::element(string name) {
   DtdElement* elt(0);
   DtdElementList::iterator q = _elements.find(name);
   if(q == _elements.end()) {
     elt = new DtdElement(name);
-    _elements.insert(name, elt);
+    _elements[name] = elt;
   }
   else {
-    elt = q->second();
+    elt = q->second;
   }
   // TODO assert(elt != 0);
   return elt;
 }
 
-DtdElement Doctype::element(const char* eltname) {
+DtdElement* Doctype::element(const char* eltname) {
   return element(string(eltname));
 }
 

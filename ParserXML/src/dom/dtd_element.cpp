@@ -24,7 +24,7 @@ void DtdElement::addAttribute(std::string& attrname) {
   _attributes.insert(attrname);
 }
 
-bool valid(Element* elt)
+bool valid(const Element* const elt)
 {
   bool result(false);
 
@@ -38,7 +38,21 @@ bool valid(Element* elt)
     cursor == elt->children()->end();
 
   if(result) {
-    // TODO Valider les attributs
+    // On a validé les noeuds fils, on va vérifier les attributs
+    AttributeList::iterator attr_it = elt.attributes().begin();
+    AttributeList::iterator attr_it_end = elt.attributes().end();
+
+    DtdAttributeList::iterator found;
+    while(attr_it != attr_it_end) {
+      found = _attributes.find(attr->name());
+
+      if(found == _attributes.end()) {
+        // On a pas trouvé l'attribut, c'est une erreur
+        result = false;
+        // Pas la peine d'aller plus loin
+        break;
+      }
+    }
   }
 
   return result;

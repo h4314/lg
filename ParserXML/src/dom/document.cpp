@@ -24,7 +24,7 @@ void Document::setDoctype(Doctype* doctype) {
 }
 
 bool Document::parse() {
-  return parseXML(f_, this);
+  return parseXML(_f, this);
 }
 
 /**
@@ -42,7 +42,7 @@ bool Document::validateWithDtd() const {
  * fait un parcours d'une branche en profondeur, en traitant le noeud père
  * d'abord (ce qui est *potentiellement* un peu plus optimisé).
  */
-bool Document::_validateElementChildrenWithDtd(Element* elt) const
+bool Document::_validateElementChildrenWithDtd(const Element* const elt) const
 {
   DtdElement* dtd_element(_doctype->element(elt->name()));
 
@@ -51,14 +51,16 @@ bool Document::_validateElementChildrenWithDtd(Element* elt) const
   // L'élement est valide, on teste ses enfants
   if(result)
   {
-    NodeList::iterator it = elt.children().begin();
-    NodeList::iterator end = elt.children().end();
-
+    NodeList::const_iterator it = elt->children().begin();
+    NodeList::const_iterator end = elt->children().end();
+    Element* child(0);
     while(it != end) {
-      if(!_validateElementChildrenWithDtd(it))
+      child = reinterpret_cast<Element*>(*it);
+      if(!_validateElementChildrenWithDtd(child)) {
         result = false;
         break;
       }
+      ++it;
     }
   }
 
