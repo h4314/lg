@@ -12,7 +12,7 @@ namespace xml {
 
 TextNode::TextNode(Element* parent, string content)
   : Node(parent), _content(content) {
-  DBG_STREAM << "Creating TextNode element: " << content << endl;
+  // DBG_STREAM << "Creating TextNode element: " << content << endl;
 }
 
 void TextNode::setContent(const string& content) {
@@ -20,7 +20,7 @@ void TextNode::setContent(const string& content) {
 }
 
 void TextNode::display() {
-  DBG_STREAM << "I am a text node : [" << _content << "]" << endl;
+  DBG_STREAM << "<![CDATA[" << _content << "]>" << endl;
 }
 
 }

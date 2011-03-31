@@ -31,7 +31,6 @@ class Document
     /**
      * @brief Lance l'analyse du fichier xml.
      * Les erreurs sont affichées sur la sortie d'erreur.
-     * TODO vérifier.
      */
     bool parse();
 

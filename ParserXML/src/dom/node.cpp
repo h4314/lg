@@ -7,7 +7,6 @@
 #include "node.hpp"
 #include "element.hpp"
 
-#include <iostream>
 #include <cassert>
 
 using namespace std;
@@ -16,7 +15,7 @@ namespace xml {
 
 Node::Node(Element* parent) : _parent(parent)
 {
-  DBG_STREAM << "Creating Node element. Parent: " << (void*)parent << endl;
+//  DBG_STREAM << "Creating Node element. Parent: " << (void*)parent << endl;
 }
 
 void Node::display()

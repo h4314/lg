@@ -13,9 +13,9 @@ namespace xml {
 
 Element::Element(Element* parent, const std::string& name) :
   Node(parent), _name(name), _children(), _attributes() {
-    DBG_STREAM << "Creating Element: " << name << endl;
-    DBG_STREAM << "Parent Element: " << (void*)parent << endl;
-    DBG_STREAM << "Element: " << (void*)this<< endl;
+//    DBG_STREAM << "Creating Element: " << name << endl;
+//    DBG_STREAM << "Parent Element: " << (void*)parent << endl;
+//    DBG_STREAM << "Element: " << (void*)this<< endl;
 }
 
 int Element::appendChild(Node* newChild) {
@@ -31,15 +31,16 @@ int Element::addAttribute(Attribute* newAttribute) {
 
 void Element::display()
 {
-  DBG_STREAM << "I am an Element: " << name() << endl;
+  DBG_STREAM << "<" << name();
 
   AttributeList::iterator ai = _attributes.begin();
   AttributeList::iterator ae = _attributes.end();
-  DBG_STREAM << "Attributes:" << endl;
   for(;ai != ae;ai++)
   {
     (*ai)->display();
   }
+
+  DBG_STREAM << ">" << endl;
 
   NodeList::iterator ni = _children.begin();
   NodeList::iterator ne = _children.end();
@@ -47,6 +48,8 @@ void Element::display()
   {
     (*ni)->display();
   }
+
+  DBG_STREAM << "</" << name() << ">" << endl;
 }
 
 
