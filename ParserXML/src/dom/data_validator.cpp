@@ -18,7 +18,7 @@ namespace xml {
 /**
  * Data est vrai si on pointe une séquence de noeuds Data.
  */
-bool DataValidator::valid(NodeList::iterator* cursor, NodeList::iterator& end) const {
+bool DataValidator::valid(NodeList::iterator* cursor, NodeList::iterator& end) {
   bool result=false;
   bool must_continue = true;
 

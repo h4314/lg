@@ -68,14 +68,18 @@ typedef union YYSTYPE
 {
 
 /* Line 1676 of yacc.c  */
-#line 29 "src/dtd/dtd.y"
+#line 41 "src/dtd/dtd.y"
  
-   char *s; 
-   
+   char *s;
+   xml::DtdValidator* v;
+   std::vector<xml::DtdValidator* > * ls;
+   xml::cardinality_t c;
+   xml::SeqValidator * sv;
+
 
 
 /* Line 1676 of yacc.c  */
-#line 79 "src/dtd/dtd.tab.h"
+#line 83 "src/dtd/dtd.tab.h"
 } YYSTYPE;
 # define YYSTYPE_IS_TRIVIAL 1
 # define yystype YYSTYPE /* obsolescent; will be withdrawn */

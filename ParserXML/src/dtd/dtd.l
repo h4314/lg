@@ -1,11 +1,24 @@
 %option 8bit nodefault
+%option noyywrap
+
+
 
 %{
 #include <stdio.h>
 #include <ctype.h>
 #include <string.h>
 #include <stdlib.h>
+#include <vector>
+class A;
+
+
+
+#include "dtd_validator.hpp"
+#include "seq_validator.hpp"
+
 #include "dtd.tab.h"
+
+using namespace std;
 
 static char* skipSpace(char *s) {
   char *buf;
