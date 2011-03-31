@@ -42,9 +42,9 @@ bool Document::validateWithDtd() const {
  * fait un parcours d'une branche en profondeur, en traitant le noeud père
  * d'abord (ce qui est *potentiellement* un peu plus optimisé).
  */
-bool Document::_validateElementChildrenWithDtd(const Element* const elt) const
+bool Document::_validateElementChildrenWithDtd(Element* elt) const
 {
-  DtdElement* dtd_element(_doctype->element(elt->name()));
+  DtdElement* dtd_element = _doctype->element(elt->name());
 
   bool result(dtd_element->valid(elt));
 

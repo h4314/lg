@@ -6,7 +6,7 @@
 #ifndef XML_DTD_SEQ_VALIDATOR_H
 #define XML_DTD_SEQ_VALIDATOR_H
 
-#include "multi_validator.hpp"
+#include "multiple_validator.hpp"
 
 namespace xml {
 
@@ -17,6 +17,7 @@ namespace xml {
 class SeqValidator : public MultipleValidator
 {
   public:
+    ~SeqValidator();
     /**
      * @see DtdValidator::valid()
      */

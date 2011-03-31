@@ -30,6 +30,7 @@ class DtdValidator
 
     // TODO vérifier si effectivement un destructeur virtuel est utile
     // nb : d'un autre côté, c'est pas très important la classe est vp
+    // si
     virtual ~DtdValidator();
 
     /**
@@ -44,8 +45,7 @@ class DtdValidator
      * @param end fin de la séquence
      * @return vrai si aucune erreur n'a été détectée
      */
-    virtual bool valid(NodeList::iterator* cursor, NodeList::iterator& end)
-      const = 0;
+    virtual bool valid(NodeList::iterator* cursor, NodeList::iterator& end) = 0;
 
     /**
      * @brief enregistre la cardinalité attendue, c'est à dire, l'intevalle de

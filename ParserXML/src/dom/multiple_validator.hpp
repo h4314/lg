@@ -27,11 +27,11 @@ class MultipleValidator : public DtdValidator
      * @brief ajoute un validateur à la liste
      * @param validator validateur à ajouter
      */
-    void pushValidator(DtdValidator& validator);
+    void pushValidator(DtdValidator* validator);
 
   protected:
     /** Suite de validateurs */
-    std::list<DtdValidator> _validators;
+    std::list<DtdValidator*> _validators;
 };
 
 }

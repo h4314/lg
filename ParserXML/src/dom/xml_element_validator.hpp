@@ -22,12 +22,14 @@ class XmlElementValidator : public DtdValidator
      * @brief constructeur
      * @param name Nom de la balise attendue
      */
-    XmlElementValidator(std::string &name);
+    XmlElementValidator(const std::string &name);
+
+    virtual ~XmlElementValidator();
 
     /**
      * @see DtdValidator::valid()
      */
-    virtual bool valid(NodeList::iterator* cursor, NodeList::iterator& end);
+    virtual bool valid(NodeList::iterator* cursor, NodeList::iterator& end) ;
 
   private:
     /** nom de la balise attendue */

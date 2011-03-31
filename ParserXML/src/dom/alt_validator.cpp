@@ -11,6 +11,10 @@ using namespace std;
 
 namespace xml {
 
+AltValidator::~AltValidator()
+{
+}
+
 /**
  * On va vérifier qu'au moins un validateur "fils" est conforme. On s'arrête dès
  * qu'un élément est validé.
@@ -21,13 +25,13 @@ bool AltValidator::valid(NodeList::iterator* cursor, NodeList::iterator& end)
   bool result(false);
   bool must_continue(false);
 
-  list<Validator*>::iterator validator_it = _validators.begin();
-  list<Validator*>::iterator validator_it_end = _validators.end();
+  list<DtdValidator*>::iterator validator_it = _validators.begin();
+  list<DtdValidator*>::iterator validator_it_end = _validators.end();
 
   do {
     while(validator_it != validator_it_end)
     {
-      if(validator_it->valid(cursor, end)) {
+      if((*validator_it)->valid(cursor, end)) {
         result = true;
         ++(*cursor);
 

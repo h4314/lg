@@ -12,7 +12,7 @@ namespace xml {
 /**
  * Le curseur est placé à la fin (toute la séquence est validée).
  */
-AnyValidator::valid(NodeList::iterator* cursor, NodeList::iterator& end) {
+bool AnyValidator::valid(NodeList::iterator* cursor, NodeList::iterator& end) {
   *cursor = end;
   return true;
 }

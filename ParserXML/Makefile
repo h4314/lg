@@ -9,7 +9,8 @@ BIN=bin
 DOC=doc
 DEPS=$(SRC)/dtd/dtd.tab.c $(SRC)/dtd/lex.dtd.c 
 XMLDEPS=$(SRC)/xml/xml.tab.c $(SRC)/xml/lex.xml.c $(SRC)/xml/xmlparse.o
-DOMDEPS=obj/dom/attribute.o  obj/dom/doctype.o  obj/dom/document.o  obj/dom/element.o  obj/dom/node.o  obj/dom/text_node.o
+DOMDEPS= obj/dom/alt_validator.o obj/dom/any_validator.o obj/dom/attribute.o obj/dom/data_validator.o obj/dom/doctype.o obj/dom/document.o obj/dom/dtd_element.o obj/dom/dtd_validator.o obj/dom/element.o obj/dom/empty_validator.o obj/dom/multiple_validator.o obj/dom/node.o obj/dom/seq_validator.o obj/dom/text_node.o obj/dom/xml_element_validator.o
+
 DEPS+=$(DOMDEPS) $(XMLDEPS) $(OBJ)/main.o 
 
 $(OBJ)/%.o : $(SRC)/%.cpp $(SRC)/%.o

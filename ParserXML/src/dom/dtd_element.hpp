@@ -45,7 +45,12 @@ class DtdElement
      * @brief Valide un élément XML d'après sa définition dans la DTD
      * @param elt L'élément à valider dans l'arbre XML
      */
-    bool valid(const Element* const elt);
+    bool valid(Element* elt);
+
+    inline const std::string& name()
+    {
+      return _name;
+    }
 
   private:
     /** Nom de l'élément */

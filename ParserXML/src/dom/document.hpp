@@ -74,7 +74,7 @@ class Document
      * @param elt Pointeur sur l'élément à valider
      * @return Vrai si l'élément et tous ses descendants sont validés
      */
-    bool _validateElementChildrenWithDtd(const Element* const elt) const;
+    bool _validateElementChildrenWithDtd(Element* elt) const;
 
     /** flux de lecture du document XML. */
     FILE* _f;

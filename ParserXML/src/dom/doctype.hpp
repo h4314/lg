@@ -45,6 +45,8 @@ class Doctype
     DtdElement* element(std::string eltname);
     DtdElement* element(const char* eltname);
 
+    void addElement(DtdElement* element);
+
   private:
     /** Nom du doctype */
     std::string _name;

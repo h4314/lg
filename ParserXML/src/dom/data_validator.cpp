@@ -4,21 +4,26 @@
  */
 
 #include "data_validator.hpp"
-#include "data.hpp"
+#include "text_node.hpp"
 
 using namespace std;
 
 namespace xml {
 
+  DataValidator::~DataValidator()
+  {
+  
+  }
+
 /**
  * Data est vrai si on pointe une séquence de noeuds Data.
  */
-DataValidator::valid(NodeList::iterator* cursor, NodeList::iterator& end) {
-  bool result(true);
-  bool must_continue(true);
+bool DataValidator::valid(NodeList::iterator* cursor, NodeList::iterator& end) const {
+  bool result=false;
+  bool must_continue = true;
 
   do {
-    if(dynamic_cast<Data*>(*cursor)) {
+    if(dynamic_cast<TextNode*>(**cursor)) {
       // On en a trouvé 1, c'est bon
       result = true;
       // On avance donc le curseur

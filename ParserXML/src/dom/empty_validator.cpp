@@ -9,10 +9,13 @@ using namespace std;
 
 namespace xml {
 
+EmptyValidator::~EmptyValidator()
+{}
+
 /**
  * Empty est vrai si on est à la fin de la séquence.
  */
-EmptyValidator::valid(NodeList::iterator* cursor, NodeList::iterator& end) {
+bool EmptyValidator::valid(NodeList::iterator* cursor, NodeList::iterator& end) {
   return (*cursor == end);
 }
 

@@ -50,7 +50,7 @@ class Element: public Node
      * @brief Retourne la liste des noeuds fils
      * @return liste des noeuds fils
      */
-    inline const NodeList& children() const {
+    inline NodeList& children() {
       return _children;
     }
 
@@ -58,7 +58,7 @@ class Element: public Node
      * @brief Retourne la liste des attributs de l'élément
      * @return liste des attributs de l'élément
      */
-    inline const AttributeList& attributes() const {
+    inline AttributeList& attributes() {
       return _attributes;
     }
 

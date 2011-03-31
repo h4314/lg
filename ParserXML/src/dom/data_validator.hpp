@@ -16,10 +16,11 @@ namespace xml {
 class DataValidator : public DtdValidator
 {
   public:
+    virtual ~DataValidator();
     /**
      * @see DtdValidator::valid()
      */
-    virtual bool valid(NodeList::iterator* cursor, NodeList::iterator& end);
+    virtual bool valid(NodeList::iterator* cursor, NodeList::iterator& end) ;
 };
 
 }

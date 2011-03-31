@@ -13,7 +13,12 @@ namespace xml {
 DtdValidator::DtdValidator(): _cardinality(_1_1) {
 }
 
-void DtdValidator::setCardinality(_cardinality_t cardinality) {
+DtdValidator::~DtdValidator()
+{
+
+}
+
+void DtdValidator::setCardinality(cardinality_t cardinality) {
   _cardinality = cardinality;
 }
 

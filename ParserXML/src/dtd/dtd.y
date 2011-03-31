@@ -2,6 +2,7 @@
 using namespace std;
 #include <stack>
 #include <list>
+#include <cassert>
 #include <cstring>
 #include <cstdio>
 #include <cstdlib>
@@ -9,8 +10,12 @@ using namespace std;
 
 #include "dtd_element.hpp"
 #include "multiple_validator.hpp"
+#include "xmlparse.h"
 #include "alt_validator.hpp"
 #include "seq_validator.hpp"
+#include "empty_validator.hpp"
+#include "any_validator.hpp"
+#include "xml_element_validator.hpp"
 
 xml::DtdElement * current_elt_ = 0;
 stack<xml::MultipleValidator*> current_multi_;
@@ -42,8 +47,7 @@ element:
 	ELEMENT NAME contenu CLOSE
 {
 	/* nouvel element DTD a ajouter à la liste des element DTD du doctype */
-  // TODO c'est qui document ?
-	xml::DtdElement * elt = document_->doctype->element($2);
+	xml::DtdElement * elt = document_->doctype()->element($2);
 	document_->doctype()->addElement(elt);
 	
 	/* garde cet element comme courant */
@@ -76,20 +80,26 @@ liste_sequence
 ;
 
 cardinalite
-: QMARK
-| PLUS
-| AST
-| /* vide */
-{
-	
-}
+: QMARK { $$ = xml::_0_1; }
+| PLUS  { $$ = xml::_1_N; }
+| AST {$$ = xml::_0_N; }
+| /* */ {$$ = xml::_1_1;}
 ;
 
 item
 : NAME cardinalite 
 {
 	/* item trouvé dans une sequence ou un choix */
-	current_multi_.top()->appendValidator(new XmlElementValidator($1));
+  if(current_multi_.empty())
+  {
+    current_multi_.push(new xml::XmlElementValidator($1));
+    current_multi_.top()->setCardinality($2);
+  }
+  else
+  {
+    current_multi_.top()->push(new xml::XmlElementValidator($1));
+    current_multi_.top()->setCardinality($2);
+  }
 }
 | att_type
 | children
@@ -114,9 +124,9 @@ liste_choix
 : liste_choix PIPE item 
 {
 	/* sequence rencontré */
-	xml::AltValidator * v = new AltValidator();
+	xml::AltValidator * v = new xml::AltValidator();
 	/* defini ce validateur de choix comme le validateur multiple courant */
-	current_multi_.push_back(v);
+	current_multi_.push(v);
 }
 | item
 ;

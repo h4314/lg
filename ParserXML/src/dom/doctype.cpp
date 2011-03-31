@@ -42,5 +42,11 @@ DtdElement* Doctype::element(const char* eltname) {
   return element(string(eltname));
 }
 
+void Doctype::addElement(DtdElement* element) {
+  _elements[element->name()] = element;
 }
+
+}
+
+
 

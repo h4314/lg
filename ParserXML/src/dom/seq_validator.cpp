@@ -9,7 +9,12 @@
 
 using namespace std;
 
+
+
 namespace xml {
+
+  SeqValidator::~SeqValidator()
+  { }
 
 /**
  * Pour chaque validateur fils, on vérifie que l'élément lui est conforme.
@@ -25,15 +30,15 @@ bool SeqValidator::valid(NodeList::iterator* cursor, NodeList::iterator& end)
   NodeList::iterator* begining = cursor;
 
   // Itérateur sur les validateurs
-  list<Validator*>::iterator validator_it = _validators.begin();
-  list<Validator*>::iterator validator_it_end = _validators.end();
+  list<DtdValidator*>::iterator validator_it = _validators.begin();
+  list<DtdValidator*>::iterator validator_it_end = _validators.end();
 
   do {
     while(validator_it != validator_it_end) {
       // Pas besoin de faire avancer le curseur si l'élément est valide : le
       // validateur appelé l'a déjà fait
       // On a donc rien à faire si l'élément est validé
-      if(!validator_it->valid(cursor, end))
+      if(!(*validator_it)->valid(cursor, end))
       {
         // on invalide tout le début de séquence
         cursor = begining;
