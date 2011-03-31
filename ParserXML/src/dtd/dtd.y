@@ -27,13 +27,13 @@ using namespace std;
 
 #include "dtd.tab.h"
 
-xml::DtdElement * current_elt_ = 0;
-stack<xml::MultipleValidator*> current_multi_;
-
 
 void dtderror(char *msg);
 int dtdwrap(void);
 int dtdlex(void);
+
+
+extern xml::Document* document_;
 
 
 %}
@@ -41,17 +41,17 @@ int dtdlex(void);
 %union { 
    char *s;
    xml::DtdValidator* v;
-   std::vector<xml::DtdValidator* > * ls;
+   std::vector<xml::DtdValidator* > * lv;
    xml::cardinality_t c;
-   xml::SeqValidator * sv;
+   xml::MultipleValidator * mv;
 }
 
 %token ELEMENT ATTLIST CLOSE OPENPAR CLOSEPAR COMMA PIPE FIXED EMPTY ANY PCDATA AST QMARK PLUS CDATA
 %token <s> NAME TOKENTYPE DECLARATION STRING
-%type <v> item children att_type
-%type <ls> liste_sequence 
+%type <v> item children att_type contenu sequence_ou_choix
+%type <lv> liste_sequence liste_choix
 %type <c> cardinalite
-%type <sv> sequence
+%type <mv> sequence choix
 %%
 
 main: dtd
@@ -66,36 +66,63 @@ dtd: dtd ATTLIST NAME
 element:
 	ELEMENT NAME contenu CLOSE
 {
+cerr << document_->doctype() << endl;
 	/* nouvel element DTD a ajouter à la liste des element DTD du doctype */
 	xml::DtdElement * elt = document_->doctype()->element($2);
 	document_->doctype()->addElement(elt);
 	
-	/* garde cet element comme courant */
-	current_elt_ = elt;
+	// affecter a elt le validator
+	elt->setValidator($3);
 }
 ;
 
 contenu
-: EMPTY {current_elt_->setValidator(new xml::EmptyValidator());}
-| ANY {current_elt_->setValidator(new xml::AnyValidator());}
+: EMPTY 
+{
+	$$ = new xml::EmptyValidator();
+}
+| ANY 
+{
+	$$ = new xml::AnyValidator();
+}
 | children
-| /* vide */
+{
+	$$ = $1;
+}
+//| /* vide */
 ;
 
 children
-: sequence_ou_choix cardinalite;
+: sequence_ou_choix cardinalite
+{
+	xml::DtdValidator * v = $1;
+	
+	// ajout cardinalite a la sequence ou choix
+	v->setCardinality($2);
+	
+	$$ = v;
+}
+;
 
 sequence_ou_choix
 : sequence 
-| choix 
+{
+	$$ = $1;
+}
+| choix
+{
+ 	$$ = $1;
+} 
 ;
 
 sequence
 : OPENPAR liste_sequence CLOSEPAR
 {
+cerr << "sequence" << endl;
+
    // construction de la liste des items de la sequence terminee
    // => construction d'un SeqValidator
-   xml::SeqValidator * seqValidator = new xml::SeqValidator();
+   xml::MultipleValidator * seqValidator = new xml::SeqValidator();
    
    // recuperation de la liste des items
    vector<xml::DtdValidator*> * l = $2;
@@ -106,7 +133,12 @@ sequence
 
    while(validator_it != validator_it_end) {
    		seqValidator->pushValidator(*validator_it);
+   		validator_it++;
    }
+   
+   // nettoyage liste items
+   l->clear();
+   delete l;
    
    // passe seqValidator
    $$ = seqValidator;
@@ -116,6 +148,7 @@ sequence
 liste_sequence
 : item 
 {
+     cerr << "liste_sequence FIRST" << endl;
 	// 1er item de la sequence
 	// allocation d'une liste d'item pour stocker tous les item de la sequence
 	vector<xml::DtdValidator*> * l = new  vector<xml::DtdValidator*>;
@@ -159,25 +192,11 @@ cardinalite
 item
 : NAME cardinalite 
 {
-
   // creation d'un xml element validator
   xml::XmlElementValidator * xmlValidator = new xml::XmlElementValidator($1);
   xmlValidator->setCardinality($2);
   
   $$ = xmlValidator;
-
-	/* item trouvé dans une sequence ou un choix
-  if(current_multi_.empty())
-  {
-    current_multi_.push(new xml::XmlElementValidator($1));
-    current_multi_.top()->setCardinality($2);
-  }
-  else
-  {
-    current_multi_.top()->push(new xml::XmlElementValidator($1));
-    current_multi_.top()->setCardinality($2);
-  }
-   */
 }
 | att_type
 {
@@ -190,29 +209,58 @@ item
 ;
 
 choix
-: OPENPAR liste_choix_plus CLOSEPAR
+: OPENPAR liste_choix CLOSEPAR
 {
-	/* fin d'un choix, elimination du validator mulitple courant situe en top de la stack*/
-	current_multi_.pop();
-	/* le top de la stack est maintenant soit vide : pas de multiple validator en cours de parsage 
-	   soit le top de la pile est le multiple validator du niveau du dessus
-	*/
-}
-;
+cerr << "choix" << endl;
 
-liste_choix_plus
-: liste_choix  PIPE item
+   // construction de la liste des items du choix terminee
+   // => construction d'un AltValidator
+   xml::MultipleValidator * altValidator = new xml::AltValidator();
+   
+   // recuperation de la liste des items
+   vector<xml::DtdValidator*> * l = $2;
+   
+   // ajout des validators fils dans seqValidator
+   vector<xml::DtdValidator*>::iterator validator_it = l->begin();
+   vector<xml::DtdValidator*>::iterator validator_it_end = l->end();
+
+   while(validator_it != validator_it_end) {
+   		altValidator->pushValidator(*validator_it);
+   		validator_it++;
+   }
+   
+   // nettoyage liste items
+   l->clear();
+   delete l;
+   
+   // passe altValidator
+   $$ = altValidator;
+}
 ;
 
 liste_choix
-: liste_choix PIPE item 
+: item 
 {
-	/* sequence rencontré */
-	xml::AltValidator * v = new xml::AltValidator();
-	/* defini ce validateur de choix comme le validateur multiple courant */
-	current_multi_.push(v);
+     cerr << "liste_choix FIRST" << endl;
+	// 1er item du choix
+	// allocation d'une liste d'item pour stocker tous les item du choix
+	vector<xml::DtdValidator*> * l = new  vector<xml::DtdValidator*>;
+	
+	// ajout de l'item
+	l->push_back($1);
+	
+	// passe liste
+ 	$$ = l;
 }
-| item
+| liste_choix PIPE item 
+{
+	// recuperation de la liste des items en construction
+	vector<xml::DtdValidator*> * l = $1;
+	// un autre item dans la liste a ete trouve, on l'ajoute a la liste des items 
+	l->push_back($3);
+	// on passe la liste au suivant
+	$$ = l;
+}
 ;
 
 att_definition
@@ -226,14 +274,25 @@ attribut
 
 att_type
 : CDATA
+{
+	xml::DataValidator * v = new xml::DataValidator();
+	$$ = v;
+}
 | PCDATA
 {
+cerr << "PCDATA" << endl;
 	// creation d'un validateur PCData
 	xml::DataValidator * v = new xml::DataValidator();
 	$$ = v;
 }
 | TOKENTYPE
+{
+	cerr << "TOKENTYPE non implemte" << endl;
+}
 | type_enumere
+{
+	cerr << "type_enumere non implemte" << endl;
+}
 ;
 
 type_enumere

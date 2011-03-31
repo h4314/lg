@@ -72,9 +72,9 @@ typedef union YYSTYPE
  
    char *s;
    xml::DtdValidator* v;
-   std::vector<xml::DtdValidator* > * ls;
+   std::vector<xml::DtdValidator* > * lv;
    xml::cardinality_t c;
-   xml::SeqValidator * sv;
+   xml::MultipleValidator * mv;
 
 
 

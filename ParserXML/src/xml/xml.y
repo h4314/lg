@@ -61,10 +61,9 @@ declaration
  : DOCTYPE NAME NAME VALUE CLOSE
 {
 	dtd_name = $4;
-	handle_dtd(dtd_name);
-
-
+	// create doctype before parsing dtd cause dtd parser relies on doctype
 	document_->setDoctype(new xml::Doctype(dtd_name));
+	handle_dtd(dtd_name);
 }
  ;
 
