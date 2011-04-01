@@ -4,6 +4,7 @@
  */
 
 #include "seq_validator.hpp"
+#include "common.hpp"
 
 #include <list>
 

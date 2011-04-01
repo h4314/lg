@@ -6,6 +6,9 @@
 #include "dtd_element.hpp"
 #include "dtd_validator.hpp"
 #include "node.hpp"
+#include "common.hpp"
+
+#include <cassert>
 
 using namespace std;
 

@@ -12,7 +12,6 @@ namespace xml {
 
   DataValidator::~DataValidator()
   {
-  
   }
 
 /**
@@ -28,6 +27,8 @@ bool DataValidator::valid(NodeList::iterator* cursor, NodeList::iterator& end) {
       result = true;
       // On avance donc le curseur
       ++(*cursor);
+
+      must_continue = (*cursor != end);
     }
     else {
       // Element non validé, on arrête de chercher

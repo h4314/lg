@@ -43,7 +43,7 @@ int main(int argc, char** argv)
     doc.root()->display();
 
   // Validation
-  bool valid = false;//doc.validateWithDtd();
+  bool valid = doc.validateWithDtd();
   if(valid) {
     DBG_STREAM << "Valide selon la DTD" << endl;
   }

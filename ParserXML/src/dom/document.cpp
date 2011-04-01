@@ -6,6 +6,7 @@
 #include "document.hpp"
 #include "xmlparse.h"
 #include "dtd_element.hpp"
+#include "common.hpp"
 
 using namespace std;
 
@@ -55,8 +56,8 @@ bool Document::_validateElementChildrenWithDtd(Element* elt) const
     NodeList::const_iterator end = elt->children().end();
     Element* child(0);
     while(it != end) {
-      child = reinterpret_cast<Element*>(*it);
-      if(!_validateElementChildrenWithDtd(child)) {
+      child = dynamic_cast<Element*>(*it);
+      if(child && !_validateElementChildrenWithDtd(child)) {
         result = false;
         break;
       }
