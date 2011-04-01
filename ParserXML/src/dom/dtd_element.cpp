@@ -31,6 +31,10 @@ bool DtdElement::valid(Element* elt)
 {
   bool result(false);
 
+  if(_validator == 0) {
+    return false;
+  }
+
   // Validation du contenu du noeud
   NodeList::iterator cursor = elt->children().begin();
   NodeList::iterator end= elt->children().end();
