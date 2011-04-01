@@ -1,5 +1,8 @@
 #!/bin/sh
 
+# Sort sur la sortie standard les tests qui ne passent pas.
+# Se référer au document Test.html pour voir la description du test
+
 PROC=../ParserXML/bin/parser
 
 FILES=$(cat test.csv |tr -s ' ' | cut -d ' ' -f1)

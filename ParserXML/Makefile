@@ -35,7 +35,8 @@ $(SRC)/dtd/dtd.tab.c : $(SRC)/dtd/dtd.y $(SRC)/dtd/dtd.tab.h $(SRC)/dtd/lex.dtd.
 	bison -p dtd --debug --verbose --defines=$(SRC)/dtd/dtd.tab.h $(SRC)/dtd/dtd.y -o $(SRC)/dtd/dtd.tab.c
 
 all : $(BIN)/parser
-	@echo "done."
+	@echo "Compilation OK"
+	(cd ../Tests/ && ./unit_test.sh)
 
 xml: $(SRC)/xml/xml.tab.c $(SRC)/xml/lex.xml.c $(OBJ)/xml/xmlparse.o
 	@echo "Xml done"
@@ -47,7 +48,6 @@ dtd: $(SRC)/dtd/dtd.tab.c $(SRC)/dtd/lex.dtd.c
 	@echo "DTD done"
 
 
-	
 clean:
 	find . -name "*.o" -exec rm {} \;
 	rm src/xml/xml.tab.c
